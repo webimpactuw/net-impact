@@ -4,8 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type Params = { }
-
 export const metadata: Metadata = {
   title: {
     template: "%s | Net Impact",
