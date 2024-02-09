@@ -4,9 +4,15 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+type Params = { }
+
 export const metadata: Metadata = {
-  title: "Net Impact",
-  description: "",
+  title: {
+    template: "%s | Net Impact",
+    default: "Net Impact",
+  },
+  // TODO: replace
+  description: "...",
 };
 
 export default function RootLayout({
