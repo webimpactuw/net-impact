@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow } from 'next/font/google';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow({
+  weight: ['600', '900'],
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={barlow.className}>{children}</body>
     </html>
   );
 }
