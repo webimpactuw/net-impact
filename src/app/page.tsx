@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import NavBar from "./components/NavBar";
 
 import bg from '../../public/headerimg.jpg';
@@ -27,6 +28,7 @@ export default function Home() {
       <div>
 
       </div>
+      <Footer/>
     </main>
   );
 }
