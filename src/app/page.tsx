@@ -49,7 +49,7 @@ export default function Home() {
         Net Impact UW is a sustainable business club, aiming to inspire environmental action and increase awareness through Education, Activism, & Career Development.
       </div>
 
-      <div className="bg-gray-100 flex m-20 rounded-3xl">
+      <div className="bg-gray-100 flex m-20 rounded-2xl">
         <div className="w-1/4 p-8 rounded">
           Weekly Meetings
           <br /><br />
@@ -59,7 +59,7 @@ export default function Home() {
           <br /><br />
           *Open to all UW Students*
         </div>
-        <div className="bg-gray-200 w-1/3 my-12 text-center p-8 italic">
+        <div className="bg-gray-200 w-1/3 my-12 text-center p-8 italic rounded-2xl">
         “Come to create tangible environmental change, connect with like-minded peers, learn more about sustainability and fulfilling career pathways, and get free snacks!”
         </div>
         <div className="w-1/4">
