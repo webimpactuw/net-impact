@@ -25,9 +25,48 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <div>
 
+      <div className="flex gap-10 m-16">
+        <div className="bg-[#EFEFEF] rounded-lg p-6">
+          <h2 className="text-xl uppercase mb-4">Career</h2>
+          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
+        </div>
+
+        <div className="bg-[#EFEFEF] rounded-lg p-6">
+          <h2 className="text-xl uppercase mb-4">Career</h2>
+          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
+        </div>
+
+        <div className="bg-[#EFEFEF] rounded-lg p-6">
+          <h2 className="text-xl uppercase mb-4">Career</h2>
+          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
+        </div>
       </div>
+
+      <div className="m-20">
+        Our Mission 
+        <br /><br />
+        Net Impact UW is a sustainable business club, aiming to inspire environmental action and increase awareness through Education, Activism, & Career Development.
+      </div>
+
+      <div className="bg-gray-100 flex m-20 rounded-3xl">
+        <div className="w-1/4 p-8 rounded">
+          Weekly Meetings
+          <br /><br />
+          Wednesdays<br/>
+          5:30pm-6:30pm<br/>
+          Paccar 297
+          <br /><br />
+          *Open to all UW Students*
+        </div>
+        <div className="bg-gray-200 w-1/3 my-12 text-center p-8 italic">
+        “Come to create tangible environmental change, connect with like-minded peers, learn more about sustainability and fulfilling career pathways, and get free snacks!”
+        </div>
+        <div className="w-1/4">
+          Image here
+        </div>
+      </div>
+
       <Footer/>
     </main>
   );

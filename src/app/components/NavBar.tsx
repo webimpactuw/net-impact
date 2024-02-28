@@ -2,7 +2,7 @@ import "./NavBarStyles.css";
 
 export default function NavBar() {
     return (     
-        <nav className="flex flex-row items-center justify-between bg-[#29FAD1] p-5">
+        <nav className="flex flex-row items-center justify-between p-5">
             <ul id="navbar">
                 <h1>
                     This is a NavBar 
