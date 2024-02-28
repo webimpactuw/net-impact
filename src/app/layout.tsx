@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Barlow } from 'next/font/google';
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const barlow = Barlow({
-  weight: ['600', '900'],
-  subsets: ['latin'],
-})
+const generalSans = localFont({ src: './GeneralSans-Variable.woff2' });
 
 export const metadata: Metadata = {
   title: {
@@ -22,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={barlow.className}>{children}</body>
+    <html lang="en" className="font-light">
+      <body className={generalSans.className}>{children}</body>
     </html>
   );
 }
