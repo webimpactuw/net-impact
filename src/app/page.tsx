@@ -67,6 +67,12 @@ export default function Home() {
         </div>
       </div>
 
+      {/* TODO: New splash homepage
+      TODO: "Our Mission"
+      TODO: Current Information 
+      TODO: "Our Values"
+      TODO: Past Sponsors */}
+
       <Footer/>
     </main>
   );
