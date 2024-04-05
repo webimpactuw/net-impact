@@ -1,78 +1,36 @@
 import Footer from "./Footer";
 import NavBar from "./components/NavBar";
 
-import bg from '../../public/headerimg.jpg';
-
 export default function Home() {
   return (
     <main>
       <NavBar />
-      <header className="m-auto">
-        <div className='relative m-auto my-5 h-[512px] w-11/12 bg-center bg-cover rounded-3xl bg-opacity-30' style={{
-          backgroundImage: `url(${bg.src})`
-        }}>
-          <div className="absolute top-[36%] left-14 w-1/2">
-            <h1 className="text-6xl uppercase text-white font-[900]">Net Impact UW</h1>
-            <h2 className="text-2xl text-white">We are a sustainable business club,<br/>open for all undergraduate students</h2>
-          </div> 
-          <div className="absolute bottom-0 w-full flex gap-6 justify-center py-8">
-            <div className="bg-neutral-400 w-3/4 h-10 rounded-full text-center leading-8 text-white font-[400]">
-              <p>We aim to inspire environmental action and increase awareness through <strong>Education</strong>, <strong>Activism</strong>, & <strong>Career Development</strong>.</p>
+      <header className="w-[1440px] h-[751px] px-[64px] flex gap-[64px] items-center bg-slate-100">
+        <div className="w-[664px] h-[377px] flex gap-[64px] flex-col">
+          <div className="h-[105px]">
+            <h1 className="font-semibold text-[41px] leading-[110%]">Let's create a more</h1>
+            <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2B9575]">Sustainable Future</h1>
+          </div>
+          <div className="w-[615px] h-[93px]">
+            <p className="text-[#11122D] text-[23px] font-medium">We are <strong className="text-[#2B9575] font-semibold">Net Impact UW</strong> and we aim to inspire environmental action and increase awareness through <strong className="text-[#2B9575] font-semibold">Education, Activism, & Career Development.</strong></p>
+          </div>
+          <div className="w-[615px] h-[51px] flex gap-[23px]">
+            <div className="w-[472px] h-[51px] py-[12px] px-[24px] bg-white border-[1px] border-[#2B9575] rounded-full text-[18px] font-medium opacity-50">
+              Join our team by adding your email...
             </div>
-            <button className="bg-white w-1/12 h-10 rounded-full text-center">
-              JOIN US
-            </button>
+            <div className="w-[120px] h-[51px] flex bg-[#2B9575] uppercase rounded-full justify-center items-center">
+              <p className="text-[18px] font-medium text-white">Join Us</p>
+            </div>
           </div>
         </div>
+        <div>
+        </div>
       </header>
-
-      <div className="flex gap-10 m-16">
-        <div className="bg-[#EFEFEF] rounded-lg p-6">
-          <h2 className="text-xl uppercase mb-4">Career</h2>
-          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
-        </div>
-
-        <div className="bg-[#EFEFEF] rounded-lg p-6">
-          <h2 className="text-xl uppercase mb-4">Career</h2>
-          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
-        </div>
-
-        <div className="bg-[#EFEFEF] rounded-lg p-6">
-          <h2 className="text-xl uppercase mb-4">Career</h2>
-          <p className="font-light">Foster sustainability knowledge and skills through engaging expert speakers and the innovative Sustainability Curriculum Initiative.</p>
-        </div>
-      </div>
-
-      <div className="m-20">
-        Our Mission 
-        <br /><br />
-        Net Impact UW is a sustainable business club, aiming to inspire environmental action and increase awareness through Education, Activism, & Career Development.
-      </div>
-
-      <div className="bg-gray-100 flex m-20 rounded-2xl">
-        <div className="w-1/4 p-8 rounded">
-          Weekly Meetings
-          <br /><br />
-          Wednesdays<br/>
-          5:30pm-6:30pm<br/>
-          Paccar 297
-          <br /><br />
-          *Open to all UW Students*
-        </div>
-        <div className="bg-gray-200 w-1/3 my-12 text-center p-8 italic rounded-2xl">
-        “Come to create tangible environmental change, connect with like-minded peers, learn more about sustainability and fulfilling career pathways, and get free snacks!”
-        </div>
-        <div className="w-1/4">
-          Image here
-        </div>
-      </div>
-
       {/* TODO: New splash homepage
       TODO: "Our Mission"
       TODO: Current Information 
       TODO: "Our Values"
       TODO: Past Sponsors */}
-
       <Footer/>
     </main>
   );
