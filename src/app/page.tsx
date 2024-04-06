@@ -98,6 +98,15 @@ export default function Home() {
       {/* ====================
       PAST SPONSORS
       ==================== */}
+      <div className="flex w-[1440px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
+        <div className="flex gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
+          <p className="text-[16px] font-medium leading-6">Our Connections</p>
+          <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
+        </div>
+        <div className="flex gap-[64px] items-center h-[103px]">
+        </div>
+      </div>
+
       <Footer/>
     </main>
   );
