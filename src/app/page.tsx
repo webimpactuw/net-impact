@@ -39,28 +39,28 @@ export default function Home() {
           </div>
         </div>
         <div className="relative h-full">
-          <div className="absolute w-[264px] h-[303px] left-[32px] top-[82px] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover rounded-lg z-0 shadow-lg shadow-black/15"></div>
-          <div className="absolute w-[202px] h-[210px] left-[468px] top-[40px] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15"></div>
-          <div className="absolute w-[460px] h-[460px] left-[171px] top-[122px] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover rounded-lg z-10 shadow-lg shadow-black/15"></div>
-          <div className="absolute w-[230px] h-[230px] left-[29px] top-[469px] rotate-[-3.1deg] bg-[url('/home4.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15"></div>
-          <div className="absolute w-[193px] h-[108px] left-[399px] top-[565px] rotate-[2.7deg] bg-[url('/home5.png')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15"></div>
+          <figure className="absolute w-[264px] h-[303px] left-[32px] top-[82px] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover rounded-lg z-0 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[202px] h-[210px] left-[468px] top-[40px] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[460px] h-[460px] left-[171px] top-[122px] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover rounded-lg z-10 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[230px] h-[230px] left-[29px] top-[469px] rotate-[-3.1deg] bg-[url('/home4.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[193px] h-[108px] left-[399px] top-[565px] rotate-[2.7deg] bg-[url('/home5.png')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
         </div>
       </header>
 
       {/* ====================
       OUR MISSION
       ==================== */}
-      <div className="flex w-[1440px] justify-center px-[64px] py-[112px]">
+      <section className="flex w-[1440px] justify-center px-[64px] py-[112px]">
         <div className=" flex justify-center items-center gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Mission</p>
           <p className="text-[24px] font-normal leading-8">Net Impact UW is a sustainable business club, aiming to <strong className="font-semibold">inspire environmental action</strong> and <strong className="font-semibold">increase awareness</strong> through Education, Activism, & Career Development.</p>
         </div>
-      </div>
+      </section>
       
       {/* ====================
       CURRENT INFORMATION
       ==================== */}
-      <div className="flex w-[1440px] h-[1276px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
+      <section className="flex w-[1440px] h-[1276px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
           <h1 className="text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-[32px]">
             <div className="w-[640px] h-[272px] flex rounded-[20px] border-[1px] border-[#2B9575]">
-              <div className="w-1/2 bg-[url('/infobox1.jpg')] bg-cover rounded-l-[20px]"></div>
+              <figure className="w-1/2 bg-[url('/infobox1.jpg')] bg-cover rounded-l-[20px]" />
               <div className="flex flex-col justify-between p-[24px] w-1/2">
                 <div>
                   <p className="text-[16px] font-medium mb-[8px]">See more?</p>
@@ -128,70 +128,70 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover rounded-b-[20px]"></div>
+              <figure className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover rounded-b-[20px]" />
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ====================
       OUR VALUES
       ==================== */}
-      <div className="flex w-[1440px] justify-center px-[64px] py-[112px] gap-[80px] flex-col">
+      <section className="flex w-[1440px] justify-center px-[64px] py-[112px] gap-[80px] flex-col">
         <div className="flex gap-[16px] flex-col w-[1312px] text-[#11122D]">
           <p className="text-[16px] font-medium leading-6">Our Values</p>
           <p className="text-[36px] font-medium leading-8">Education. Activism. Career Development.</p>
         </div>
         <div className="w-[773px] h-[742px] relative m-auto">
-          <div className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full"></div>
-          <div className="absolute right-0 bottom-0 w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full"></div>
-          <div className="absolute bottom-0 w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full"></div>
-          <div className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover"></div>
+          <figure className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
+          <figure className="absolute right-0 bottom-0 w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
+          <figure className="absolute bottom-0 w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
+          <figure className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
         </div>
         <div className="flex gap-[48px] w-[1312px] h-[410px] text-[#11122D]">
           <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
-            <div className="bg-[url('/values1.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <figure className="bg-[url('/values1.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]" />
             <div>
               <h2 className="text-[32px] font-medium mb-[24px]">Education</h2>
               <p className="text-[16px] font-normal">Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative.</p>
             </div>
           </div>
           <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
-            <div className="bg-[url('/values2.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <figure className="bg-[url('/values2.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]" />
             <div>
               <h2 className="text-[32px] font-medium mb-[24px]">Activism</h2>
               <p className="text-[16px] font-normal">Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy.</p>
             </div>
           </div>
           <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
-            <div className="bg-[url('/values3.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <figure className="bg-[url('/values3.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]" />
             <div>
               <h2 className="text-[32px] font-medium mb-[24px]">Career Development</h2>
               <p className="text-[16px] font-normal">Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS).</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ====================
       PAST SPONSORS
       ==================== */}
-      <div className="flex w-[1440px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
+      <section className="flex w-[1440px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
         <div className="flex gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
         <div className="flex gap-[64px] items-center h-[103px] overflow-hidden">
-          <div className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/rei.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/kitsapbank.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/lmn.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/emeraldcities.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
-          <div className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <figure className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/rei.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/kitsapbank.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/lmn.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/emeraldcities.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
         </div>
-      </div>
+      </section>
 
       <Footer/>
     </main>
