@@ -25,30 +25,31 @@ export default function Home() {
       <NavBar />
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
-      <header className="w-[1440px] h-[751px] px-[64px] flex gap-[64px] items-center bg-slate-100">
-        <div className="w-[664px] h-[377px] flex gap-[64px] flex-col z-10">
-          <div className="h-[105px]">
+      {/* w-[1440px] h-[751px] */}
+      <header className="h-[1000px] px-[3.5%] flex gap-[3.5%] items-center bg-slate-100">
+        <div className="w-1/2 h-1/2 flex gap-16 flex-col z-10">
+          <div>
             <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
             <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2B9575]">Sustainable Future</h1>
           </div>
-          <div className="w-[615px] h-[93px]">
+          <div className="w-[90%]">
             <p className="text-[#11122D] text-[23px] font-medium">We are <strong className="text-[#2B9575] font-semibold">Net Impact UW</strong> and we aim to inspire environmental action and increase awareness through <strong className="text-[#2B9575] font-semibold">Education, Activism, & Career Development.</strong></p>
           </div>
-          <div className="w-[615px] h-[51px] flex gap-[23px]">
-            <div className="w-[472px] h-[51px] py-[12px] px-[24px] bg-white border-[1px] border-[#2B9575] rounded-full text-[18px] font-medium">
+          <div className="flex gap-[4%] text-[18px] font-medium">
+            <div className="w-3/4 py-3 px-6 bg-white border border-[#2B9575] rounded-full">
               <p className="opacity-50">Join our team by adding your email...</p>
             </div>
-            <div className="w-[120px] h-[51px] flex bg-[#2B9575] uppercase rounded-full justify-center items-center">
-              <p className="text-[18px] font-medium text-white">Join Us</p>
+            <div className="w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center">
+              <p className="text-white">Join Us</p>
             </div>
           </div>
         </div>
-        <div className="relative h-full">
-          <figure className="absolute w-[264px] h-[303px] left-[32px] top-[82px] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover rounded-lg z-0 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[202px] h-[210px] left-[468px] top-[40px] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[460px] h-[460px] left-[171px] top-[122px] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover rounded-lg z-10 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[230px] h-[230px] left-[29px] top-[469px] rotate-[-3.1deg] bg-[url('/home4.jpg')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[193px] h-[108px] left-[399px] top-[565px] rotate-[2.7deg] bg-[url('/home5.png')] bg-cover rounded-lg z-20 shadow-lg shadow-black/15" />
+        <div className="relative w-[44%] h-full">
+          <figure className="absolute w-[44%] h-[40%] left-[5%] top-[11%] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover bg-center rounded-lg z-0 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[34%] h-[28%] left-[78%] top-[5%] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[77%] h-[61%] left-[28.5%] top-[16%] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover bg-center rounded-lg z-10 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[38%] h-[31%] left-[5%] top-[62.5%] rotate-[-3.1deg] bg-[url('/home4.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
+          <figure className="absolute w-[32%] h-[14%] left-[66.5%] top-[75%] rotate-[2.7deg] bg-[url('/home5.png')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
         </div>
       </header>
 
