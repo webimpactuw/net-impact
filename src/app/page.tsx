@@ -67,15 +67,69 @@ export default function Home() {
         </div>
         <div className="flex gap-[32px]">
           <div className="flex flex-col gap-[32px]">
-            <div className="w-[640px] h-[629px] p-[48px] rounded-[20px] border-[1px] border-[#2B9575]"></div>
+            <div className="w-[640px] h-[629px] p-[48px] rounded-[20px] border-[1px] border-[#2B9575]">
+              <p className="text-[16px] font-medium">When we meet?</p>
+              <h1 className="text-[40px] font-medium mb-[70px]">Weekly Meetings</h1>
+              <h2 className="text-[24px] font-medium mb-[36px]">Wednesdays <br /> 5:30pm - 6:30pm <br /> Paccar 297</h2>
+              <p className="text-[25px] font-light italic mb-[65px]">“Come to create tangible environmental change, connect with like-minded peers, 
+              learn more about sustainability and fulfilling career pathways, and get free snacks!”</p>
+              <h2 className="text-[24px] font-medium italic">*Open to all UW Students*</h2>
+            </div>
             <div className="flex gap-[32px] h-[340px]">
-              <div className="w-[304px] h-[212px] p-[24px] rounded-[20px] border-[1px] border-[#2B9575]"></div>
-              <div className="w-[304px] h-[212px] p-[24px] rounded-[20px] border-[1px] border-[#2B9575]"></div>
+              <div className="w-[304px] h-[212px] p-[24px] rounded-[20px] border-[1px] border-[#2B9575] flex flex-col justify-between">
+                <div>
+                  <h2 className="text-[24px] font-medium mb-[8px]">Take a look at who we are & what we do</h2>
+                  <p className="text-[16px] font-normal">View our event pictures</p>
+                </div>
+                <div className="flex gap-[8px]">
+                  <p className="text-[16px] font-normal">See more</p>
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.9603 12.1159C15.18 12.3356 15.18 12.6917 14.9603 12.9114L9.22541 18.6463C9.00573 18.8659 8.64963 18.8659 8.42996 18.6463L8.16476 18.3811C7.94508 18.1614 7.94508 17.8053 8.16476 17.5856L13.2367 12.5137L8.16476 7.44172C7.94508 7.22204 7.94508 6.86594 8.16476 6.64627L8.42996 6.38107C8.64963 6.16139 9.00573 6.16139 9.22541 6.38107L14.9603 12.1159Z" fill="#132515"/></svg>
+                </div>
+              </div>
+              <div className="w-[304px] h-[212px] p-[24px] rounded-[20px] border-[1px] border-[#2B9575] flex flex-col justify-between">
+                <div>
+                  <h2 className="text-[24px] font-medium mb-[8px]">Read through our journey!</h2>
+                  <p className="text-[16px] font-normal">Read how Net Impact was created</p>
+                </div>
+                <div className="flex gap-[8px]">
+                  <p className="text-[16px] font-normal">See more</p>
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.9603 12.1159C15.18 12.3356 15.18 12.6917 14.9603 12.9114L9.22541 18.6463C9.00573 18.8659 8.64963 18.8659 8.42996 18.6463L8.16476 18.3811C7.94508 18.1614 7.94508 17.8053 8.16476 17.5856L13.2367 12.5137L8.16476 7.44172C7.94508 7.22204 7.94508 6.86594 8.16476 6.64627L8.42996 6.38107C8.64963 6.16139 9.00573 6.16139 9.22541 6.38107L14.9603 12.1159Z" fill="#132515"/></svg>
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-[32px]">
-            <div className="w-[640px] h-[272px] flex rounded-[20px] border-[1px] border-[#2B9575]"></div>
-            <div className="w-[640px] h-[572px] flex flex-col rounded-[20px] border-[1px] border-[#2B9575]"></div>
+            <div className="w-[640px] h-[272px] flex rounded-[20px] border-[1px] border-[#2B9575]">
+              <div className="w-1/2 bg-[url('/infobox1.jpg')] bg-cover rounded-l-[20px]"></div>
+              <div className="flex flex-col justify-between p-[24px] w-1/2">
+                <div>
+                  <p className="text-[16px] font-medium mb-[8px]">See more?</p>
+                  <h1 className="text-[24px] font-medium mb-[8px]">See Our Past Weekly Meetings</h1>
+                  <p className="text-[16px] font-normal">View our past meeting activities!</p>
+                </div>
+                <div className="flex gap-[8px]">
+                  <p className="text-[16px] font-normal">Weekly Meetings</p>
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.9603 12.1159C15.18 12.3356 15.18 12.6917 14.9603 12.9114L9.22541 18.6463C9.00573 18.8659 8.64963 18.8659 8.42996 18.6463L8.16476 18.3811C7.94508 18.1614 7.94508 17.8053 8.16476 17.5856L13.2367 12.5137L8.16476 7.44172C7.94508 7.22204 7.94508 6.86594 8.16476 6.64627L8.42996 6.38107C8.64963 6.16139 9.00573 6.16139 9.22541 6.38107L14.9603 12.1159Z" fill="#132515"/></svg>
+                </div>
+              </div>
+            </div>
+            <div className="w-[640px] h-[572px] flex flex-col rounded-[20px] border-[1px] border-[#2B9575]">
+              <div className="h-[328px] p-[48px] flex flex-col justify-center gap-[32px]">
+                <div>
+                  <p className="text-[16px] font-medium mb-[8px]">Fall 2024</p>
+                  <h1 className="text-[40px] font-medium mb-[24px]">Fall Panel Coming Soon...</h1>
+                  <p className="text-[16px] font-normal">Stay tuned for our upcoming Fall Panel! For quicker updates follow our instagram @netimpactuw</p>
+                </div>
+                <div className="flex items-center gap-[24px]">
+                  <button className="px-[24px] py-[12px] bg-[#E1E0DC] text-[16px] font-normal text-[#62615D] rounded-[8px]">View Past Fall Panels</button>
+                  <div className="flex gap-[8px]">
+                    <p className="text-[16px] font-normal">Stay Updated</p>
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.9603 12.1159C15.18 12.3356 15.18 12.6917 14.9603 12.9114L9.22541 18.6463C9.00573 18.8659 8.64963 18.8659 8.42996 18.6463L8.16476 18.3811C7.94508 18.1614 7.94508 17.8053 8.16476 17.5856L13.2367 12.5137L8.16476 7.44172C7.94508 7.22204 7.94508 6.86594 8.16476 6.64627L8.42996 6.38107C8.64963 6.16139 9.00573 6.16139 9.22541 6.38107L14.9603 12.1159Z" fill="#132515"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover rounded-b-[20px]"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -88,10 +142,34 @@ export default function Home() {
           <p className="text-[16px] font-medium leading-6">Our Values</p>
           <p className="text-[36px] font-medium leading-8">Education. Activism. Career Development.</p>
         </div>
-        <div className="w-[773px] h-[742px]">
-          VENN DIAGRAM HERE
+        <div className="w-[773px] h-[742px] relative m-auto">
+          <div className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full"></div>
+          <div className="absolute right-0 bottom-0 w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full"></div>
+          <div className="absolute bottom-0 w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full"></div>
+          <div className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover"></div>
         </div>
         <div className="flex gap-[48px] w-[1312px] h-[410px] text-[#11122D]">
+          <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
+            <div className="bg-[url('/values1.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <div>
+              <h2 className="text-[32px] font-medium mb-[24px]">Education</h2>
+              <p className="text-[16px] font-normal">Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative.</p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
+            <div className="bg-[url('/values2.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <div>
+              <h2 className="text-[32px] font-medium mb-[24px]">Activism</h2>
+              <p className="text-[16px] font-normal">Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy.</p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-[32px] w-[405.33px] h-[410px]">
+            <div className="bg-[url('/values3.png')] bg-cover bg-center w-[405.33px] h-[240px] rounded-[20px]"></div>
+            <div>
+              <h2 className="text-[32px] font-medium mb-[24px]">Career Development</h2>
+              <p className="text-[16px] font-normal">Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS).</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -103,7 +181,15 @@ export default function Home() {
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="flex gap-[64px] items-center h-[103px]">
+        <div className="flex gap-[64px] items-center h-[103px] overflow-hidden">
+          <div className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/rei.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/kitsapbank.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/lmn.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/emeraldcities.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
+          <div className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]"></div>
         </div>
       </div>
 
