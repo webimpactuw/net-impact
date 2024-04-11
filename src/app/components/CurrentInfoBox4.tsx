@@ -14,7 +14,7 @@ export default function CurrentInfoBox4() {
                     <ChevronLink text="Stay Updated" />
                 </div>
             </div>
-            <figure className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover rounded-b-[20px]" />
+            <figure className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover bg-[center_bottom_-1.5rem] rounded-b-[20px]" />
         </div>
     )
 }
