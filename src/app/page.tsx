@@ -44,6 +44,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
         <div className="relative w-[44%] h-full">
           <figure className="absolute w-[44%] h-[40%] left-[5%] top-[11%] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover bg-center rounded-lg z-0 shadow-lg shadow-black/15" />
           <figure className="absolute w-[34%] h-[28%] left-[78%] top-[5%] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
@@ -56,8 +57,8 @@ export default function Home() {
       {/* ====================
       OUR MISSION
       ==================== */}
-      <section className="flex w-[1440px] justify-center px-[64px] py-[112px]">
-        <div className=" flex justify-center items-center gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
+      <section className="flex justify-center py-[250px]">
+        <div className=" flex justify-center items-center gap-[16px] flex-col w-1/2 text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Mission</p>
           <p className="text-[24px] font-normal leading-8">Net Impact UW is a sustainable business club, aiming to <strong className="font-semibold">inspire environmental action</strong> and <strong className="font-semibold">increase awareness</strong> through Education, Activism, & Career Development.</p>
         </div>
@@ -66,20 +67,20 @@ export default function Home() {
       {/* ====================
       CURRENT INFORMATION
       ==================== */}
-      <section className="flex w-[1440px] h-[1276px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
+      <section className="flex h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
           <h1 className="text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
         </div>
-        <div className="flex gap-[32px]">
-          <div className="flex flex-col gap-[32px]">
+        <div className="flex gap-8">
+          <div className="flex flex-col gap-8">
             <CurrentInfoBox1 />
-            <div className="flex gap-[32px] h-[340px]">
+            <div className="flex gap-8 h-[340px]">
               <CurrentInfoBox2 header="Take a look at who we are & what we do" desc="View our event pictures" />
               <CurrentInfoBox2 header="Read through our journey!" desc="Read how Net Impact was created" />
             </div>
           </div>
-          <div className="flex flex-col gap-[32px]">
+          <div className="flex flex-col gap-8">
             <CurrentInfoBox3 />
             <CurrentInfoBox4 />
           </div>
@@ -89,18 +90,18 @@ export default function Home() {
       {/* ====================
       OUR VALUES
       ==================== */}
-      <section className="flex w-[1440px] justify-center px-[64px] py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-[16px] flex-col w-[1312px] text-[#11122D]">
+      <section className="flex justify-center px-16 py-[112px] gap-[80px] flex-col">
+        <div className="flex gap-4 flex-col w-[1312px] text-[#11122D]">
           <p className="text-[16px] font-medium leading-6">Our Values</p>
           <p className="text-[36px] font-medium leading-8">Education. Activism. Career Development.</p>
         </div>
         <div className="w-[773px] h-[742px] relative m-auto">
           <figure className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
-          <figure className="absolute right-0 bottom-0 w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
-          <figure className="absolute bottom-0 w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
+          <figure className="absolute left-[310px] top-[279px] w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
+          <figure className="absolute top-[279px] w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
           <figure className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
         </div>
-        <div className="flex gap-[48px] w-[1312px] h-[410px] text-[#11122D]">
+        <div className="flex h-[500px] text-[#11122D] justify-between">
           <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
           <ValuesBox img="values2.png" header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
           <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
@@ -110,12 +111,12 @@ export default function Home() {
       {/* ====================
       PAST SPONSORS
       ==================== */}
-      <section className="flex w-[1440px] items-center px-[64px] py-[112px] gap-[80px] flex-col">
+      <section className="flex items-center px-16 py-[112px] gap-[80px] flex-col">
         <div className="flex gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="flex gap-[64px] items-center h-[103px] overflow-hidden">
+        <div className="flex gap-16 items-center h-[103px] overflow-hidden">
           <figure className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
