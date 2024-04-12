@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import ValuesBox from "./components/ValuesBox";
 import CurrentInfoBox1 from "./components/CurrentInfoBox1";
