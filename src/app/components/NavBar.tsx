@@ -1,17 +1,20 @@
-import "./NavBarStyles.css";
+import Image from 'next/image'
+import DropDownButton from "./DropDownButton"
+export default function NavBar(){
+    return( 
+        <header className = "flex items-center px-16 py-5 justify-between absolute w-full"> {/*60 px horizontal 20 px vertical */}
+            <div>
+                <Image src="/logo.png" alt="My Image" width={62} height={62}/>
+            </div>
 
-export default function NavBar() {
-    return (     
-        <nav className="flex flex-row items-center justify-between p-5">
-            <ul id="navbar">
-                <h1>
-                    This is a NavBar 
-                </h1>  
-                <li><a href="index.html">About</a></li>
-                <li><a href="index.html">Gallery</a></li>
-                <li><a href="index.html">Events</a></li>
-                <li><a href="index.html">Projects</a></li>
-             </ul>
-        </nav>
-    );
-};
+            <ul className = "flex gap-6">
+                <li className = "text-base inline-block mr-10"><a href = "index.html">Home</a></li>
+                <DropDownButton buttonName="About Us"/>
+                <DropDownButton buttonName="Events"/>
+                <li className = "text-base inline-block mr-6"><a href = "index.html">Projects</a></li>
+                <li className = "text-base inline-block ml-5"><a href = "index.html">Contacts</a></li>
+            </ul>
+        </header>
+        
+    )
+}
