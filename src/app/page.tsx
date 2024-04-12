@@ -26,7 +26,7 @@ export default function Home() {
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
       {/* w-[1440px] h-[751px] */}
-      <header className="h-[1000px] px-[3.5%] flex gap-[3.5%] items-center bg-slate-100">
+      <header className="h-[1000px] px-[3.5%] pt-[5%] flex gap-[3.5%] items-center bg-slate-100">
         <div className="w-1/2 h-1/2 flex gap-16 flex-col z-10">
           <div>
             <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
