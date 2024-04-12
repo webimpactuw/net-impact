@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Climate Solutions Summit',
 }
 
-export default function Contacts() {
+export default function Summit() {
   return (
     <main>
-      <h1>Contacts</h1>
+      <h1>Climate Solutions Summit</h1>
     </main>
   );
 }

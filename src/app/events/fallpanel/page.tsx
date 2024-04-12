@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Fall Panel',
 }
 
-export default function Contacts() {
+export default function FallPanel() {
   return (
     <main>
-      <h1>Contacts</h1>
+      <h1>Fall Panel</h1>
     </main>
   );
 }
