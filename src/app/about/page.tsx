@@ -9,9 +9,9 @@ export default function About() {
     <main>
       <h1>About Us</h1>
 
-      TODO: title/splash image 
+      {/* TODO: title/splash image 
       TODO: Net Impact timeline 
-      TODO: Our Mission
+      TODO: Our Mission */}
       
     </main>
   );
