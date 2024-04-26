@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "masonry-layout": "^4.2.2",
+
+    "@emailjs/browser": "^4.3.3",
+    "emailjs": "^4.0.3",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",

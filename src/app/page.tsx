@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
-        <div className="relative w-[44%] h-full">
+        <div className="relative w-[44%] h-full pointer-events-none">
           <figure className="absolute w-[44%] h-[40%] left-[5%] top-[11%] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover bg-center rounded-lg z-0 shadow-lg shadow-black/15" />
           <figure className="absolute w-[34%] h-[28%] left-[78%] top-[5%] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
           <figure className="absolute w-[77%] h-[61%] left-[28.5%] top-[16%] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover bg-center rounded-lg z-10 shadow-lg shadow-black/15" />
