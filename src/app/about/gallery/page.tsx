@@ -20,21 +20,27 @@ export default function Gallery() {
           <h1 className="text-[48px] font-medium leading-[120%] mb-[24px]">Gallery</h1>
           <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">See more about what we do at Net Impact!</p>
         </div>
-        <div className="grid">
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[234px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[234px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[234px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[234px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
-          <div className="bg-slate-500 w-[416px] h-[416px]"></div>
+        <div className="flex gap-[32px]">
+          <div className="flex flex-col gap-[32px]">
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+          </div>
+          <div className="flex flex-col gap-[32px]">
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+          </div>
+          <div className="flex flex-col gap-[32px]">
+            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
+          </div>
         </div>
       </main>
       <Footer/>
