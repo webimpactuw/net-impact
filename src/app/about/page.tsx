@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
-import NavBar from '../components/NavBar';
 import TimeLineBox from '../components/TimeLineBox';
 import ValuesBox from '../components/ValuesBox';
-import Footer from '../components/Footer';
 import Image from 'next/image';
  
 export const metadata: Metadata = {
@@ -24,7 +22,6 @@ export default function About() {
       {/* ====================
       SPLASH
       ==================== */}
-      <NavBar />
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
       {/* w-[1440px] h-[751px] */}
@@ -84,7 +81,6 @@ export default function About() {
           <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
         </div>
       </section>
-      <Footer/>
     </main>
   );
 }
