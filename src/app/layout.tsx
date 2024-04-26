@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const generalSans = localFont({ src: './GeneralSans-Variable.woff2' });
 
@@ -21,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="font-light">
-      <body className={generalSans.className}>{children}</body>
+      <body className={generalSans.className}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

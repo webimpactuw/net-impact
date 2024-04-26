@@ -1,5 +1,3 @@
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
 import ValuesBox from "./components/ValuesBox";
 import CurrentInfoBox1 from "./components/CurrentInfoBox1";
 import CurrentInfoBox2 from "./components/CurrentInfoBox2";
@@ -22,7 +20,6 @@ export default function Home() {
       {/* ====================
       SPLASH
       ==================== */}
-      <NavBar />
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
       {/* w-[1440px] h-[751px] */}
@@ -127,8 +124,6 @@ export default function Home() {
           <figure className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
         </div>
       </section>
-
-      <Footer/>
     </main>
   );
 }
