@@ -28,24 +28,24 @@ export default function About() {
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
       {/* w-[1440px] h-[751px] */}
-      <header className="h-[1440px] px-[64px] pb-[80px] pt-[180px] box-border flex flex-col gap-[80px] items-center bg-slate-100 z-10">
+      <header className="px-16 pb-20 pt-44 box-border flex flex-col gap-20 items-center bg-slate-100 z-10">
         <div className="flex flex-col items-center text-[#11122D] z-10">
           <Image src="/NI+logo.png" width={130} height={130} alt="logo" />
           <h1 className="text-center text-[56px] font-medium leading-[120%]">About Us</h1>
           <p className="text-center text-[#2F8097] text-[18px] font-normal leading-[150%]">Who Are We: Introducing Net Impact</p>
         </div>
-        <figure className="w-[1312px] h-[700px] bg-[url('/home1.png')] bg-cover bg-center rounded-3xl z-10" />
+        <figure className="w-[90%] h-[700px] bg-[url('/home1.png')] bg-cover bg-center rounded-3xl z-10" />
       </header>
 
       {/* ====================
       TIMELINE
       ==================== */}
-      <section className="w-[1440px] h-[1104px] px-[64px] py-[112px] flex gap-[80px] items-start text-[#11122D]">
-        <div className="w-[510px] flex flex-col gap-[16px] z-10">
+      <section className="px-16 py-28 flex gap-20 items-start text-[#11122D]">
+        <div className="w-[200%] flex flex-col gap-4 z-10">
           <p className="text-[16px] font-medium leading-[150%]">Our story</p>
           <h1 className="text-[48px] font-medium leading-[120%]">Net Impact&apos;s Journey</h1>
         </div>
-        <div className="w-[722px] flex flex-col gap-[16px] z-10">
+        <div className="flex flex-col gap-4 z-10">
           <TimeLineBox top="Start" header="Who founded Net Impact?" desc="UW Undergraduate Net Impact was founded in 2016 by Jennifer Louie, who's goal was to open a conversation about Corporate Social Responsibility in the Foster School of Business." />
           <TimeLineBox top="" header="What is our impact?" desc="In its short life, our chapter has made an even greater impact than we could have imagined. Hosting dozens of speakers and gaining membership from students all across campus, we are proud of the progress we've made and excited to see how we can keep achieving in the future." />
           <TimeLineBox top="" header="Who are our speakers?" desc="In its short life, our chapter has made an even greater impact than we could have imagined. Hosting dozens of speakers and gaining membership from students all across campus, we are proud of the progress we’ve made and excited to see how we can keep achieving in the future. " />
@@ -57,8 +57,8 @@ export default function About() {
       {/* ====================
       OUR MISSION
       ==================== */}
-      <section className="flex justify-center py-[250px]">
-        <div className=" flex justify-center items-center gap-[16px] flex-col w-1/2 text-[#11122D] text-center">
+      <section className="flex justify-center py-60">
+        <div className=" flex justify-center items-center gap-4 flex-col w-1/2 text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Mission</p>
           <p className="text-[24px] font-normal leading-8">Net Impact UW is a sustainable business club, aiming to <strong className="font-semibold">inspire environmental action</strong> and <strong className="font-semibold">increase awareness</strong> through Education, Activism, & Career Development.</p>
         </div>
@@ -67,18 +67,18 @@ export default function About() {
       {/* ====================
       OUR VALUES
       ==================== */}
-      <section className="flex justify-center px-16 py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-4 flex-col w-[1312px] text-[#11122D]">
+      <section className="flex justify-center px-16 py-28 gap-20 flex-col">
+        <div className="flex gap-4 flex-col text-[#11122D]">
           <p className="text-[16px] font-medium leading-6">Our Values</p>
           <p className="text-[36px] font-medium leading-8">Education. Activism. Career Development.</p>
         </div>
-        <div className="w-[773px] h-[742px] relative m-auto">
-          <figure className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
-          <figure className="absolute left-[310px] top-[279px] w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
-          <figure className="absolute top-[279px] w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
-          <figure className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
+        <div className="w-[773px] h-[773px] relative m-auto">
+          <figure className="absolute left-[20%] w-[60%] h-[60%] bg-[#2B9575] bg-opacity-45 rounded-full" />
+          <figure className="absolute left-[40%] top-[38%] w-[60%] h-[60%] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
+          <figure className="absolute top-[38%] w-[60%] h-[60%] bg-[#097E97] bg-opacity-50 rounded-full" />
+          <figure className="absolute left-[40%] top-[45%] w-[20%] h-[20%] bg-[url('/NI+logo.png')] bg-cover" />
         </div>
-        <div className="flex h-[500px] text-[#11122D] justify-between">
+        <div className="flex text-[#11122D] justify-between">
           <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
           <ValuesBox img="values2.png" header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
           <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
