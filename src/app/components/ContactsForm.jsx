@@ -25,16 +25,16 @@ export default function ContactsForm() {
   };
     return(
         
-        <div className ="flex flex-col justify-between w-[616px] h-[685px] ">
+        <div className ="flex flex-col justify-between w-[45%] h-[685px] ">
           {/* Title*/}
             <form ref= {form} onSubmit = {sendEmail} className = "flex-grow ">
-          <div className = "flex flex-col gap-2 w-[616px] h-[100px]">
+          <div className = "flex flex-col gap-2 w-full h-[100px]">
             <h1 className="font-medium text-6xl leading-16 tracking-tight text-left">Join us</h1>
             <h1 className="text-base font-normal leading-7 text-left text-green-600">Be a part of the business team that puts nature first</h1>
           </div>
 
           {/*Name */}
-          <div className = "flex flex-col justify-between w-[616px] h-[80px] mt-6">
+          <div className = "flex flex-col justify-between w-full h-[80px] mt-6">
             <h1>Name</h1>
             <div className="flex h-200">
               <input name= "user_name" type="name" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-green-600" required />
@@ -42,7 +42,7 @@ export default function ContactsForm() {
           </div>
 
           {/* Email*/}
-          <div className = "flex flex-col justify-between w-[616px] h-[80px] mt-6">
+          <div className = "flex flex-col justify-between w-full h-[80px] mt-6">
             <h1>Email</h1>
             <div className="flex h-200">
               <input name= "user_email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-green-600" required />
@@ -50,7 +50,7 @@ export default function ContactsForm() {
           </div>
 
           {/* Message*/}
-            <div className = "flex flex-col gap-2 mb-4 w-[616px] h-[212px]  mt-6">
+            <div className = "flex flex-col gap-2 mb-4 w-full h-[212px]  mt-6">
             <h1>Message</h1>
             <textarea
             name= "user_email" className="peer h-[180px] w-full resize-none rounded-lg border border-green-600 px-3 py-2.5 text-sm font-normal"
