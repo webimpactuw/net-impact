@@ -23,14 +23,15 @@ export default function Home() {
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
       {/* w-[1440px] h-[751px] */}
-      <header className="h-[1000px] px-[3.5%] pt-[5%] flex gap-[3.5%] items-center bg-slate-100">
+      <header className="h-[1000px] px-[3.5%] pt-[5%] flex justify-between gap-[3.5%] items-center bg-slate-100">
         <div className="w-1/2 h-1/2 flex gap-16 flex-col z-10">
+          <h2 className="text-[#2C3E3E] text-[40px] font-semibold leading-[110%]">Net Impact UW</h2>
           <div>
             <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
-            <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2B9575]">Sustainable Future</h1>
+            <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
           </div>
           <div className="w-[90%]">
-            <p className="text-[#11122D] text-[23px] font-medium">We are <strong className="text-[#2B9575] font-semibold">Net Impact UW</strong> and we aim to inspire environmental action and increase awareness through <strong className="text-[#2B9575] font-semibold">Education, Activism, & Career Development.</strong></p>
+            <p className="text-[#11122D] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
           </div>
           <div className="flex gap-[4%] text-[18px] font-medium">
             <div className="w-3/4 py-3 px-6 bg-white border border-[#2B9575] rounded-full">
@@ -42,13 +43,9 @@ export default function Home() {
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
-        <div className="relative w-[44%] h-full pointer-events-none">
-          <figure className="absolute w-[44%] h-[40%] left-[5%] top-[11%] rotate-[-2.5deg] bg-[url('/home1.png')] bg-cover bg-center rounded-lg z-0 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[34%] h-[28%] left-[78%] top-[5%] rotate-[3.1deg] bg-[url('/home2.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[77%] h-[61%] left-[28.5%] top-[16%] rotate-[1.2deg] bg-[url('/home3.jpg')] bg-cover bg-center rounded-lg z-10 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[38%] h-[31%] left-[5%] top-[62.5%] rotate-[-3.1deg] bg-[url('/home4.jpg')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
-          <figure className="absolute w-[32%] h-[14%] left-[66.5%] top-[75%] rotate-[2.7deg] bg-[url('/home5.png')] bg-cover bg-center rounded-lg z-20 shadow-lg shadow-black/15" />
-        </div>
+        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-[609px] h-[700px]">
+          <Image alt="headerimg" src="/headerimg.jpg" layout="fill" objectFit="cover" />
+        </figure>
       </header>
 
       {/* ====================
