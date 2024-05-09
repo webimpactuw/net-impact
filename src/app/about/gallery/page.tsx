@@ -21,7 +21,9 @@ export default async function Gallery() {
   const {
     images
   } = gallery[0];
-  console.log(images);
+  const imgLength = images.length;
+  const colSize = imgLength / 3;
+  const columns = [images.slice(0, colSize), images.slice(colSize, 2 * colSize), images.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
   
   return (
     <div className="bg-slate-100">
@@ -35,34 +37,20 @@ export default async function Gallery() {
           <h1 className="text-[48px] font-medium leading-[120%] mb-[24px]">Gallery</h1>
           <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">See more about what we do at Net Impact!</p>
         </div>
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-8">
-            {
-              images.map((img: SanityImageSource) => {
-                // const newUrl: string = urlForImage(img);
-                const newUrl = img ? urlFor(img)?.width(416).height(300).url() : null;
-                return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={300} width={416} className="grid-item" />
-              })
-            }
-            {/* <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div> */}
-          </div>
-          <div className="flex flex-col gap-8">
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <div className="bg-slate-500 w-[416px] h-[234px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-            <div className="bg-slate-500 w-[416px] h-[416px] grid-item"></div>
-          </div>
+        <div className="flex gap-8 m-auto">
+          {
+            columns.map((imgs) => {
+              return <div key={imgs[0]} className="flex flex-col gap-8">
+                {
+                  imgs.map((img: SanityImageSource) => {
+                    // const newUrl: string = urlForImage(img);
+                    const newUrl = img ? urlFor(img)?.width(416).url() : null;
+                    return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={300} width={416} className="grid-item rounded-2xl" />
+                  })
+                }
+              </div>
+            })
+          }
         </div>
       </main>
     </div>

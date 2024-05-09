@@ -16,6 +16,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.41.1",
     "emailjs": "^4.0.3",
+    "masonry-layout": "^4.2.2",
     "next": "14.1.0",
     "next-sanity": "^7.1.4",
     "react": "^18",
