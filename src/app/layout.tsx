@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className="font-light">
       <body className={generalSans.className}>
         <NavBar />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>

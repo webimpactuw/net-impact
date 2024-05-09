@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity": "cd sanity && sanity start"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@sanity/client": "^6.18.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.41.1",
     "emailjs": "^4.0.3",
