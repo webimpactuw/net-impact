@@ -4,8 +4,10 @@ import CurrentInfoBox2 from "./components/CurrentInfoBox2";
 import CurrentInfoBox3 from "./components/CurrentInfoBox3";
 import CurrentInfoBox4 from "./components/CurrentInfoBox4";
 import Image from "next/image";
+import { SanityDocument } from "next-sanity";
+import { sanityFetch } from "@/sanity/client";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
       {/* ====================

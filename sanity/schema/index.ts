@@ -1,6 +1,6 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import { doc } from './documents/doc'
+import { galleryType } from './documents/gallery'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [doc],
+  types: [galleryType],
 }
