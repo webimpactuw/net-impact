@@ -38,16 +38,15 @@ export default async function Home() {
       ==================== */}
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
-      {/* w-[1440px] h-[751px] */}
-      <header className="h-[1000px] px-[3.5%] pt-[5%] flex justify-between gap-[3.5%] items-center bg-slate-100">
-        <div className="w-1/2 h-1/2 flex gap-16 flex-col z-10">
-          <h2 className="text-[#2C3E3E] text-[40px] font-semibold leading-[110%]">Net Impact UW</h2>
-          <div>
+      <header className="lg:h-[1000px] px-[3.5%] py-[10%] lg:pt-[5%] flex flex-col-reverse lg:flex-row justify-between gap-[3.5%] items-center bg-slate-100">
+        <div className="lg:w-1/2 h-1/2 flex gap-16 flex-col z-10 pt-16 lg:pt-0">
+          <h2 className="text-[#2C3E3E] text-[40px] font-semibold leading-[110%] z-20 text-center lg:text-left">Net Impact UW</h2>
+          <div className="z-20 text-center lg:text-left">
             <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
             <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
           </div>
-          <div className="w-[90%]">
-            <p className="text-[#11122D] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
+          <div className="lg:w-[90%] z-20 text-center lg:text-left">
+            <p className="text-[rgb(17,18,45)] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
           </div>
           <div className="flex gap-[4%] text-[18px] font-medium">
             <div className="w-3/4 py-3 px-6 bg-white border border-[#2B9575] rounded-full">
@@ -59,7 +58,7 @@ export default async function Home() {
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
-        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-[609px] h-[700px]">
+        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] h-[300px] lg:h-[700px] mt-16 lg:mt-0">
           <Image alt="headerimg" src="/headerimg.jpg" layout="fill" objectFit="cover" />
         </figure>
       </header>
@@ -77,20 +76,20 @@ export default async function Home() {
       {/* ====================
       CURRENT INFORMATION
       ==================== */}
-      <section className="flex h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
+      <section className="flex lg:h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
           <h1 className="text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
         </div>
-        <div className="flex gap-8">
-          <div className="flex flex-col gap-8">
+        <div className="lg:flex gap-8">
+          <div className="lg:flex flex-col gap-8">
             <CurrentInfoBox1 />
-            <div className="flex gap-8 h-[340px]">
+            <div className="lg:flex gap-8 lg:h-[340px]">
               <CurrentInfoBox2 header="Take a look at who we are & what we do" desc="View our event pictures" />
               <CurrentInfoBox2 header="Read through our journey!" desc="Read how Net Impact was created" />
             </div>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="lg:flex flex-col gap-8">
             <CurrentInfoBox3 />
             <CurrentInfoBox4 />
           </div>
@@ -101,17 +100,17 @@ export default async function Home() {
       OUR VALUES
       ==================== */}
       <section className="flex justify-center px-16 py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-4 flex-col w-[1312px] text-[#11122D]">
-          <p className="text-[16px] font-medium leading-6">Our Values</p>
-          <p className="text-[36px] font-medium leading-8">Education. Activism. Career Development.</p>
+        <div className="flex gap-4 flex-col lg:w-[1312px] text-[#11122D]">
+          <p className="text-[16px] font-medium leading-6 text-center lg:text-left">Our Values</p>
+          <p className="text-[36px] font-medium leading-12 lg:leading-8">Education. Activism. Career Development.</p>
         </div>
-        <div className="w-[773px] h-[742px] relative m-auto">
-          <figure className="absolute left-[155px] w-[463px] h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
-          <figure className="absolute left-[310px] top-[279px] w-[463px] h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
-          <figure className="absolute top-[279px] w-[463px] h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
-          <figure className="absolute left-[307.12px] top-[336.12px] w-[156.752px] h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
+        <div className="w-[386.5px] lg:w-[773px] h-[371px] lg:h-[742px] relative m-auto">
+          <figure className="absolute left-[77.5px] lg:left-[155px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
+          <figure className="absolute left-[155px] lg:left-[310px] top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
+          <figure className="absolute top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
+          <figure className="absolute left-[153.56px] lg:left-[307.12px] top-[168.06px] lg:top-[336.12px] w-[78.376px] lg:w-[156.752px] h-[78.376px] lg:h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
         </div>
-        <div className="flex h-[500px] text-[#11122D] justify-between">
+        <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
           <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
           <ValuesBox img="values2.png" header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
           <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
@@ -133,14 +132,6 @@ export default async function Home() {
               return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={103} width={103} />
             })
           }
-          {/* <figure className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/rei.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/kitsapbank.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/lmn.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/emeraldcities.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" /> */}
         </div>
       </section>
     </main>
