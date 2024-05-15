@@ -1,11 +1,28 @@
 import { Metadata } from 'next'
 import TeamPage from '@/app/components/TeamPage';
+import { SanityDocument } from "next-sanity";
+import { client, sanityFetch } from "@/sanity/client";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import imageUrlBuilder from "@sanity/image-url";
+import { BiPhotoAlbum } from 'react-icons/bi';
+
+const TEAM_QUERY = `*[_type == "team"]`;
+
+const { projectId, dataset } = client.config();
+function urlFor(source: SanityImageSource) {
+  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
+}
  
 export const metadata: Metadata = {
   title: 'Our Team',
 }
 
-export default function OurTeam() {
+export default async function OurTeam() {
+  const team = await sanityFetch<SanityDocument[]>({query: TEAM_QUERY});
+  const {
+    members
+  } = team[0];
+
   return (
     <div className="bg-slate-100">
       <div className="h-[110px]">
@@ -17,17 +34,24 @@ export default function OurTeam() {
         <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">Our Team</p>
         <h1 className="text-[48px] font-medium leading-[120%]">Introduce the team</h1>
         <div className="flex justify-between flex-wrap">
-          <TeamPage img="toliver.png" name="TJ Oliver" role="President" year="Senior" major="Finance" minor="" statement="In joining Net Impact, I found meaning in the business world, and a group of driven peers looking to use their skills to become a positive force in their future careers. Through learning about and experiencing the world of sustainable business first-hand, I want to be part of a new wave of UW students that enters the workforce empowered with a vision of environmental change." linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="avaughan.png" name="Ava Vaughan" role="Vice President" year="Sophomore" major="Business Admin & Environmental Studies" minor="Nutritional Sciences" statement="I have always been fascinated with the idea of changing the world for the better. When choosing my career trajectory, I knew I wanted something that would allow me to enact widespread action, while providing my life with meaning. With this criteria in mind, I set off on a path that fused my passion for equity and community with the largest challenge our population has ever faced: the climate crisis. Net Impact has not only allowed me to bridge the gap between my cross-disciplinary education, but has gifted me lifelong friendships, clarity, and the skills to facilitate broad social and environmental action for the public good." linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="mmedeiros.png" name="Monet Medeiros" role="Director of Consulting" year="Junior" major="Marketing" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="mpaul.png" name="Mohini Paul" role="Director of Communications" year="Sophomore" major="Marketing & Information Systems" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="ptran.png" name="Phi Tran" role="Director of Fundraising" year="Junior" major="Finance & Information Systems" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="acox.png" name="Aidan Cox" role="Director of Education" year="Junior" major="Environmental Studies and Political Science" minor="Business" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="szhang.png" name="Stacy Zhang" role="Director of Marketing" year="Sophomore" major="Finance, Accounting, Information Systems" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="aparsuram.png" name="Arihant Parsuram" role="Director of Events" year="Senior" major="Accounting" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="mwidmann.png" name="Malia Widmann" role="Sustainability Curriculum Lead" year="Sophomore" major="Entrepreneurship and Environmental & Sustainability Studies" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="svangala.png" name="Sai Vangala" role="Sustainability Curriculum Lead" year="Senior" major="Finance, Information Systems" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
-          <TeamPage img="gnavarro.png" name="Gabriel Navarro" role="Director of Outreach" year="Senior" major="Marketing, Entrepreneurship" minor="" statement="placeholder" linkedin="test" twit="test" instagram="test" />
+          {
+            members.map((member: { photo: any; name: any; role: any; year: any; major: any; minor: any; description: any; linkedin: any; twitter: any; instagram: any; }) => {
+              const {
+                photo,
+                name,
+                role,
+                year,
+                major,
+                minor,
+                description,
+                linkedin,
+                twitter,
+                instagram
+              } = member;
+              const newUrl = photo ? urlFor(photo)?.url() : null;
+              return <TeamPage img={newUrl ? newUrl : ""} name={name} role={role} year={year} major={major} minor={minor} statement={description} linkedin={linkedin} twit={twitter} instagram={instagram} key={name} />
+            })
+          }
         </div>
       </main>
     </div>
