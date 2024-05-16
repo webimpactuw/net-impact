@@ -35,7 +35,7 @@ export default function Committees() {
         </div>
 
         <div className="relative self-stretch min-h-[738px] px-[57.82px] py-[101.19px] bg-white flex-col justify-start items-start gap-[72.28px] flex overflow-auto">
-            <div className="self-stretch justify-start items-start gap-[114px] inline-flex">
+            <div className="flex-col lg:flex-none self-stretch justify-start items-start gap-[114px] inline-flex">
                 <div className="flex-col justify-start items-start gap-6 inline-flex">
                     <div className="text-slate-900 text-2xl font-medium font-['General Sans'] leading-[33.60px]">Table of contents</div>
                     <div className="self-stretch h-[204px] flex-col justify-start items-start flex">
@@ -55,22 +55,22 @@ export default function Committees() {
                     </div>
                 </div>
                 <div className="grow shrink basis-0 flex-col justify-start items-start inline-flex">
-                    <div className="self-stretch h-[16%] pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-[28px] font-medium font-['General Sans'] leading-[42px]">Events Committee: </div>
                     </div>
-                    <div className="self-stretch h-[16%] pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">The events committee helps organize large and small scale club events, such as speaker panels, career fairs, case competitions, and weekly member meetings. We are looking for students who want to gain experience in event planning, including ideation, budgeting, outreach, promotion, and implementation. </div>
                     </div>
-                    <div className="self-stretch h-[16%] pt-8 pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pt-8 pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-[28px] font-medium font-['General Sans'] leading-[42px]">Marketing Committee: </div>
                     </div>
-                    <div className="self-stretch h-[16%] pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">The marketing committee is responsible for shaping how Net Impact’s sustainability and social responsibility initiatives are communicated to the world. This includes helping with marketing tasks such as creating engaging content that highlights our work, interacting with our online communities, and reaching out to like-minded organizations for potential collaborations to further our mission. </div>
                     </div>
-                    <div className="self-stretch h-[16%] pt-6 pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pt-6 pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-[28px] font-medium font-['General Sans'] leading-[42px]">Education Committee: </div>
                     </div>
-                    <div className="self-stretch h-[16%] pb-4 flex-col justify-start items-start flex">
+                    <div className="self-stretch lg:h-[16%] pb-4 flex-col justify-start items-start flex">
                         <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">The Education committee focuses on advancing ESG and sustainability initiatives in our academic programs. We are looking for students to help design exciting class concepts and lesson plans. Our team collaborates with Foster Faculty and the UW Administration to explore new educational offerings, such as the sustainability minor, certificate program, or elective courses. Furthermore, you will be helping to promote and boost enrollment in sustainability-focused courses like Fin 490, part of the Sustainability Curriculum project.</div>
                     </div>
                 </div>
