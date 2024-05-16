@@ -121,7 +121,7 @@ export default async function Home() {
       PAST SPONSORS
       ==================== */}
       <section className="flex items-center px-16 py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-[16px] flex-col w-[768px] text-[#11122D] text-center">
+        <div className="flex gap-[16px] flex-col lg:w-[768px] text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
