@@ -4,8 +4,24 @@ import CurrentInfoBox2 from "./components/CurrentInfoBox2";
 import CurrentInfoBox3 from "./components/CurrentInfoBox3";
 import CurrentInfoBox4 from "./components/CurrentInfoBox4";
 import Image from "next/image";
+import { SanityDocument } from "next-sanity";
+import { client, sanityFetch } from "@/sanity/client";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import imageUrlBuilder from "@sanity/image-url";
 
-export default function Home() {
+const SPONSOR_QUERY = `*[_type == "sponsors"]`;
+
+const { projectId, dataset } = client.config();
+function urlFor(source: SanityImageSource) {
+  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
+}
+
+export default async function Home() {
+  const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
+  const {
+    images
+  } = sponsors[0];
+
   return (
     <main>
       {/* ====================
@@ -111,14 +127,20 @@ export default function Home() {
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
         <div className="flex gap-16 items-center h-[103px] overflow-hidden">
-          <figure className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          {
+            images.map((img: SanityImageSource) => {
+              const newUrl = img ? urlFor(img)?.width(103).height(103).url() : null;
+              return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={103} width={103} />
+            })
+          }
+          {/* <figure className="bg-[url('/sponsors/tmobile.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/terrapower.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/paceequity.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/rei.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/kitsapbank.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/lmn.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
           <figure className="bg-[url('/sponsors/emeraldcities.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
-          <figure className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" />
+          <figure className="bg-[url('/sponsors/bluelogo.png')] bg-contain bg-no-repeat bg-center w-[103px] h-[103px]" /> */}
         </div>
       </section>
     </main>
