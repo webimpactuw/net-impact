@@ -35,7 +35,7 @@ export default function Committees() {
         </div>
 
         <div className="relative self-stretch min-h-[738px] px-[57.82px] py-[101.19px] bg-white flex-col justify-start items-start gap-[72.28px] flex overflow-auto">
-            <div className="flex-col lg:flex-none self-stretch justify-start items-start gap-[114px] inline-flex">
+            <div className="flex-col md:flex-row self-stretch justify-start items-start gap-[114px] inline-flex">
                 <div className="flex-col justify-start items-start gap-6 inline-flex">
                     <div className="text-slate-900 text-2xl font-medium font-['General Sans'] leading-[33.60px]">Table of contents</div>
                     <div className="self-stretch h-[204px] flex-col justify-start items-start flex">

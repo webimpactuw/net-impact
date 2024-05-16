@@ -65,7 +65,7 @@ export default function About() {
       OUR VALUES
       ==================== */}
       <section className="flex justify-center px-16 py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-4 flex-col lg:w-[1312px] text-[#11122D]">
+        <div className="flex gap-4 flex-col text-[#11122D]">
           <p className="text-[16px] font-medium leading-6 text-center lg:text-left">Our Values</p>
           <p className="text-[36px] font-medium leading-12 lg:leading-8">Education. Activism. Career Development.</p>
         </div>

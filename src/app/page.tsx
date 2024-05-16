@@ -76,12 +76,12 @@ export default async function Home() {
       {/* ====================
       CURRENT INFORMATION
       ==================== */}
-      <section className="flex lg:h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
+      <section className="flex xl:h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
           <h1 className="text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
         </div>
-        <div className="lg:flex gap-8">
+        <div className="xl:flex gap-8">
           <div className="lg:flex flex-col gap-8">
             <CurrentInfoBox1 />
             <div className="lg:flex gap-8 lg:h-[340px]">
@@ -100,7 +100,7 @@ export default async function Home() {
       OUR VALUES
       ==================== */}
       <section className="flex justify-center px-16 py-[112px] gap-[80px] flex-col">
-        <div className="flex gap-4 flex-col lg:w-[1312px] text-[#11122D]">
+        <div className="flex gap-4 flex-col text-[#11122D]">
           <p className="text-[16px] font-medium leading-6 text-center lg:text-left">Our Values</p>
           <p className="text-[36px] font-medium leading-12 lg:leading-8">Education. Activism. Career Development.</p>
         </div>
