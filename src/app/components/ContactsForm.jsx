@@ -25,7 +25,7 @@ export default function ContactsForm() {
   };
     return(
         
-        <div className ="flex flex-col justify-between w-[45%] h-[685px] ">
+        <div className ="flex flex-col justify-between lg:w-[45%] h-[685px] mb-10 lg:mb-0">
           {/* Title*/}
             <form ref= {form} onSubmit = {sendEmail} className = "flex-grow ">
           <div className = "flex flex-col gap-2 w-full h-[100px]">
