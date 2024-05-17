@@ -24,9 +24,9 @@ export default function Committees() {
                             <div className="max-w-[649px] self-stretch flex-col justify-start items-start gap-[21.67px] flex">
                                 <div className="self-stretch text-white text-[56px] font-medium font-['General Sans'] leading-[67.20px]">Committees</div>
                                 <div className="self-stretch text-white text-lg font-normal font-['General Sans'] leading-[27px]">Net Impact committees offer any member a chance to get hands-on leadership experience in a field of interest while advancing club sustainability initiatives. Committees meet weekly or biweekly outside of regular Net Impact meetings, and are open to any UW student. *No prior experience is required. </div>
-                                <div className="px-6 py-3 bg-teal-600 rounded-lg justify-center items-end gap-2 inline-flex">
+                                <a href=""><div className="px-6 py-3 bg-teal-600 hover:bg-teal-900 active:bg-teal-400 transition delay-75 rounded-lg justify-center items-end gap-2 inline-flex">
                                     <div className="text-white text-base font-medium font-['General Sans'] leading-normal">Join our Committees!</div>
-                                </div>
+                                </div></a>
                             </div>
                         </div>
                     </div>
