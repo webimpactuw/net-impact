@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import DropDownButton from "./DropDownButton"
 export default function NavBar(){
-    
+
+
     return( 
 
         <header className = "flex items-center px-16 py-5 justify-between absolute w-full font-medium z-10"> {/*60 px horizontal 20 px vertical */}
