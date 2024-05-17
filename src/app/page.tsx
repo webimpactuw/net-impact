@@ -34,11 +34,12 @@ export default function Home() {
             <p className="text-[#11122D] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
           </div>
           <div className="flex gap-[4%] text-[18px] font-medium">
-            <div className="w-3/4 py-3 px-6 bg-white border border-[#2B9575] rounded-full">
-              <p className="opacity-50">Join our team by adding your email...</p>
-            </div>
-            <div className="w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center">
-              <p className="text-white">Join Us</p>
+            
+            <div className="w-3/4 flex h-200 bg-white border border-[#2B9575] rounded-full">                      
+              <input name= "user_email" id="email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-full" placeholder ="Join our team by adding your email..." required />
+            </div> 
+            <div className="cursor-pointer w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center px-6 py-3 hover:bg-teal-900 active:bg-teal-400 transition delay-15009  gap-2 ">
+              <div className="text-white  cursor-pointer text-base font-normal font-['General Sans'] leading-normal">Join Us</div>
             </div>
           </div>
         </div>
