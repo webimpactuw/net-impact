@@ -8,7 +8,7 @@ export default async function CurrentInfoBox1() {
     const { type, days, time, location, description } = meeting[0];
 
     return (
-        <div className="w-[640px] h-[629px] p-[48px] rounded-[20px] border-[1px] border-[#2B9575]">
+        <div className="lg:w-[640px] w-11/12 lg:m-0 m-auto lg:h-[629px] p-[48px] rounded-[20px] border-[1px] border-[#2B9575]">
             <p className="text-[16px] font-medium">When we meet?</p>
             <h1 className="text-[40px] font-medium mb-[70px]">{ type } Meetings</h1>
             <h2 className="text-[24px] font-medium mb-[36px]">{ days } <br /> { time } <br /> { location }</h2>
