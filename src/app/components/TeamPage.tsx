@@ -15,8 +15,8 @@ type TeamPageProps = {
 
 export default function TeamPage(props: TeamPageProps) {
     return (
-        <div className="w-[30%] flex flex-col gap-6 text-[#11122D]">
-            <figure className="rounded-3xl overflow-hidden w-[395px] h-[395px] relative">
+        <div className="md:w-[30%] flex flex-col gap-6 text-[#11122D] mb-10 md:mb-0">
+            <figure className="rounded-3xl overflow-hidden w-[420px] h-[420px] md:w-[200px] md:h-[200px] lg:w-[350px] lg:h-[350px] relative mx-auto">
                 <Image src={ props.img } alt={ props.name } layout="fill" objectFit="cover" />
             </figure>
             <div>

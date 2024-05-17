@@ -38,7 +38,7 @@ export default async function OurTeam() {
           <Image alt="teamimg" src="/team/teamimg.png" layout="fill" objectFit="cover" />
         </figure>
 
-        <div className="flex justify-between flex-wrap">
+        <div className="flex md:flex-row flex-col md:justify-between flex-wrap">
           {
             members.map((member: { photo: any; name: any; role: any; year: any; major: any; minor: any; description: any; linkedin: any; twitter: any; instagram: any; }) => {
               const {

@@ -37,7 +37,7 @@ export default async function Gallery() {
           <h1 className="text-[48px] font-medium leading-[120%] mb-[24px]">Gallery</h1>
           <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">See more about what we do at Net Impact!</p>
         </div>
-        <div className="flex gap-8 m-auto">
+        <div className="flex lg:flex-row flex-col gap-8 m-auto">
           {
             columns.map((imgs) => {
               return <div key={imgs[0]} className="flex flex-col gap-8">
