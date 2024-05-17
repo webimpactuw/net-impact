@@ -72,7 +72,7 @@ export default function ContactsForm() {
           {/*Submit button */}
 
           
-          <button type="submit" className="mt-10 px-[24px] py-[12px] bg-[#2B9575] text-[16px] font-normal rounded-[8px] text-white">Submit</button>
+          <button type="submit" className="mt-10 px-[24px] py-[12px] bg-[#2B9575] text-[16px] font-normal rounded-[8px] text-white checked:bg-gray-400">Submit</button>
             
    
         

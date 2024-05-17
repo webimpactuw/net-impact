@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 
-export default function DropDownButton({buttonName = "Default"}){
+export default function DropDownButton({buttonName = "Default", dropdownItems = []}){
     return (
     <div className = "flex md:w-36 md:max-w-7xl justify-between">
         <Link href= "/about" className="flex items-center gap-2 relative group"> {/*removed justify between*/}
@@ -19,21 +19,18 @@ export default function DropDownButton({buttonName = "Default"}){
                 <div className="border-t border-gray-400 md:w-156 ">
                     
                 </div>
-                <span className="md:w-auto">Event 1</span>
+                <span className="md:w-auto">Fall Panel</span>
                 <div className="border-t border-gray-400 md:w-156">
                     
                 </div>
-                <span className="md:w-auto">Event 2</span>
+                <span className="md:w-auto">Fall Panel</span>
                 <div className="border-t border-gray-400 md:w-156">
                     
                 </div>
-                <span className="md:w-auto">Event 3</span>
-                
+                <span className="md:w-auto">Past Events</span>
             </div>
         </Link>
     </div>
     )
-   
-    
 }
     

@@ -10,11 +10,17 @@ export default function Footer() {
                         </div>
                         <div className="w-full sm:w-2/3 grow shrink basis-0 self-stretch flex-col justify-start items-start gap-4 inline-flex">
                             <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                                <div className="grow shrink basis-0 h-12 p-3 bg-white rounded-lg border border-slate-900 justify-start items-center gap-2 flex">
-                                    <div className="grow shrink basis-0 text-slate-900 text-base font-normal font-['General Sans'] leading-normal">Enter your email</div>
-                                </div>
+                                  
+                                   
+                                       
+                                        <div className="flex h-200 w-full">
+                                        
+                                            <input name= "user_email" id="email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-black " placeholder ="Enter your email" required />
+                                        </div> 
+                                        
+                               
                                 <a href="" target="_blank">
-                                    <div className="px-6 py-3 bg-teal-600 hover:bg-teal-900 active:bg-teal-400 transition delay-75 rounded-lg justify-center items-center gap-2 flex">
+                                    <div className="cursor-pointer px-6 py-3 bg-teal-600 hover:bg-teal-900 active:bg-teal-400 transition delay-75 rounded-lg justify-center items-center gap-2 flex">
                                         <div className="text-white text-base font-normal font-['General Sans'] leading-normal">Subscribe</div>
                                     </div>
                                 </a>
