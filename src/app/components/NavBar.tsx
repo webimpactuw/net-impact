@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import DropDownButton from "./DropDownButton"
+import DropDownButton2 from './DropDownButton2'
 export default function NavBar(){
-
 
     return( 
 
@@ -14,11 +14,10 @@ export default function NavBar(){
             <ul className = "flex gap-6">
                 <li className = "text-base inline-block mr-10"><a href = "/">Home</a></li>
                 <DropDownButton buttonName="About Us"/>
-                <DropDownButton buttonName="Events"/>
+                <DropDownButton2 buttonName="Events"/>
                 <li className = "text-base inline-block mr-6"><a href = "/projects">Projects</a></li>
                 <li className = "text-base inline-block ml-5"><a href = "/contacts">Contacts</a></li>
             </ul>
         </header>
-        
     )
 }
