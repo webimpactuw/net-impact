@@ -3,8 +3,14 @@
 import Image from 'next/image'
 import DropDownButton from "./DropDownButton"
 import DropDownButton2 from './DropDownButton2'
+import { useState } from 'react';
+
 export default function NavBar(){
     const [showNav, setShowNav] = useState(false);
+
+    const toggleNav = () => {
+        setShowNav(!showNav);
+    }
 
     return( 
 
@@ -17,10 +23,14 @@ export default function NavBar(){
                 </button>
             </div>
 
-            <ul className = "flex gap-6">
-                <li className = "text-base inline-block mr-10"><a href = "/">Home</a></li>
-                <DropDownButton buttonName="About Us"/>
-                <DropDownButton2 buttonName="Events"/>
+            <ul className = {`${showNav ? 'hidden' : 'flex'} md:flex md:flex-row flex-col gap-6 md:my-0 my-6`}>    
+                <li className = "text-base hidden lg:inline-block mr-10"><a href = "/">Home</a></li>
+                <li className="block">
+                    <DropDownButton buttonName="About Us"/>
+                </li>
+                <li className="block">
+                    <DropDownButton2 buttonName="Events"/>
+                </li>
                 <li className = "text-base inline-block mr-6"><a href = "/projects">Projects</a></li>
                 <li className = "text-base inline-block md:ml-5"><a href = "/contacts">Contacts</a></li>
             </ul>
