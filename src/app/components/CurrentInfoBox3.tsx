@@ -2,7 +2,7 @@ import ChevronLink from "./ChevronLink"
 
 export default function CurrentInfoBox3() {
     return (
-        <div className="w-[640px] h-[272px] flex rounded-[20px] border-[1px] border-[#2B9575]">
+        <div className="lg:w-[640px] w-11/12 lg:h-[272px] lg:m-0 m-auto my-8 flex rounded-[20px] border-[1px] border-[#2B9575]">
             <figure className="w-1/2 bg-[url('/infobox1.jpg')] bg-cover rounded-l-[20px]" />
             <div className="flex flex-col justify-between p-[24px] w-1/2">
                 <div>

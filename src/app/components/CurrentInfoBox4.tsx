@@ -2,8 +2,8 @@ import ChevronLink from "./ChevronLink"
 
 export default function CurrentInfoBox4() {
     return (
-        <div className="w-[640px] h-[572px] flex flex-col rounded-[20px] border-[1px] border-[#2B9575]">
-            <div className="h-[328px] p-[48px] flex flex-col justify-center gap-[32px]">
+        <div className="lg:w-[640px] w-11/12 lg:h-[572px] lg:m-0 m-auto my-8 flex flex-col rounded-[20px] border-[1px] border-[#2B9575]">
+            <div className="lg:h-[328px] p-[48px] flex flex-col justify-center gap-[32px]">
                 <div>
                     <p className="text-[16px] font-medium mb-[8px]">Fall 2024</p>
                     <h1 className="text-[40px] font-medium mb-[24px]">Fall Panel Coming Soon...</h1>

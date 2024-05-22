@@ -25,7 +25,7 @@ export default function ContactsForm() {
   };
     return(
         
-        <div className ="flex flex-col justify-between w-[45%] h-[685px] ">
+        <div className ="flex flex-col justify-between lg:w-[45%] h-[685px] mb-10 lg:mb-0">
           {/* Title*/}
             <form ref= {form} onSubmit = {sendEmail} className = "flex-grow ">
           <div className = "flex flex-col gap-2 w-full h-[100px]">
@@ -72,7 +72,7 @@ export default function ContactsForm() {
           {/*Submit button */}
 
           
-          <button type="submit" className="mt-10 px-[24px] py-[12px] bg-[#2B9575] text-[16px] font-normal rounded-[8px] text-white">Submit</button>
+          <button type="submit" className="mt-10 px-[24px] py-[12px] bg-[#2B9575] text-[16px] font-normal rounded-[8px] text-white checked:bg-gray-400">Submit</button>
             
    
         
