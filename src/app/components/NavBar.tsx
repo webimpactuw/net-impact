@@ -14,7 +14,7 @@ export default function NavBar(){
 
     return( 
 
-        <header className = "md:flex md:flex-row flex-col items-center px-8 sm:px-16 py-5 justify-between md:absolute w-full font-medium z-10"> {/*60 px horizontal 20 px vertical */}
+        <header className = "md:flex md:flex-row flex-col items-center px-8 sm:px-16 py-5 justify-between md:absolute w-full font-medium z-20"> {/*60 px horizontal 20 px vertical */}
 
             <div className="flex md:flex-none items-center justify-between">
                 <a href="/"><Image src="/logo.png" alt="My Image" width={62} height={62}/></a>

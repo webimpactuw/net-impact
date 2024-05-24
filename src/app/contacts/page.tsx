@@ -1,6 +1,4 @@
 import { Metadata } from 'next'
-import NavBar from "../components/NavBar";
-import Image from 'next/image'
 import ContactsList from "../components/ContactsList"
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -19,7 +17,7 @@ export default function Contacts() {
 
       {/*background thing */}
 
-        <div className = "flex w-full h-[919] flex-col justify-around z-20">
+        <div className = "flex w-full h-[919] flex-col justify-around z-10">
           <div className = "flex lg:flex-row flex-col-reverse pt-40 justify-between px-16">
             <ContactsForm/>
         
