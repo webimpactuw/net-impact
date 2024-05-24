@@ -7,8 +7,6 @@ import Image from 'next/image';
 
 const GALLERY_QUERY = `*[_type == "gallery"]`;
 
-export const revalidate = 60;
-
 const { projectId, dataset } = client.config();
 function urlFor(source: SanityImageSource) {
   return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
@@ -17,6 +15,8 @@ function urlFor(source: SanityImageSource) {
 export const metadata: Metadata = {
   title: 'Gallery',
 }
+
+export const dynamic = 'force-dynamic';
 
 export default async function Gallery() {
   const gallery = await sanityFetch<SanityDocument[]>({query: GALLERY_QUERY});

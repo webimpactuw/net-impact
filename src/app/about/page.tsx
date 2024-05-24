@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'About Us',
 }
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default function About() {
   return (

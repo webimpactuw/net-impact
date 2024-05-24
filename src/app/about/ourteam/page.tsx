@@ -7,8 +7,6 @@ import imageUrlBuilder from "@sanity/image-url";
 import { BiPhotoAlbum } from 'react-icons/bi';
 import Image from 'next/image';
 
-export const revalidate = 60;
-
 const TEAM_QUERY = `*[_type == "team"]`;
 
 const { projectId, dataset } = client.config();
@@ -19,6 +17,8 @@ function urlFor(source: SanityImageSource) {
 export const metadata: Metadata = {
   title: 'Our Team',
 }
+
+export const dynamic = 'force-dynamic';
 
 export default async function OurTeam() {
   const team = await sanityFetch<SanityDocument[]>({query: TEAM_QUERY});

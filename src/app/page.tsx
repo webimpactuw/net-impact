@@ -16,7 +16,7 @@ function urlFor(source: SanityImageSource) {
   return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
 }
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
