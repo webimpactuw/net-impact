@@ -14,7 +14,7 @@ export default function DropDownButton({buttonName = "Default", dropdownItems = 
             </div>
 
             {/*dropdown */}
-            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all duration-200 md:group-hover:flex opacity-0 hover:opacity-100">
+            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all duration-200 md:group-hover:flex md:opacity-0 hover:opacity-100">
                 <p className="opacity-0 hidden sm:inline">iama3333333genius</p>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     

@@ -40,12 +40,12 @@ export default async function Home() {
       ==================== */}
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
-      <header className="lg:h-[1000px] px-[3.5%] py-[10%] lg:pt-[5%] flex flex-col-reverse lg:flex-row justify-between gap-[3.5%] items-center bg-slate-100">
-        <div className="lg:w-1/2 h-1/2 flex gap-16 flex-col z-10 pt-16 lg:pt-0">
+      <header className="lg:h-[1000px] px-[3.5%] py-[10%] pt-0 md:pt-[10%] lg:pt-[5%] flex flex-col-reverse lg:flex-row justify-between gap-[3.5%] items-center bg-slate-100">
+        <div className="lg:w-1/2 h-1/2 flex gap-8 xl:gap-16 flex-col z-10 pt-16 lg:pt-0">
           <h2 className="text-[#2C3E3E] text-[40px] font-semibold leading-[110%] z-20 text-center lg:text-left">Net Impact UW</h2>
           <div className="z-20 text-center lg:text-left">
             <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
-            <h1 className="font-bold text-[40px] xl:text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
+            <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
           </div>
           <div className="lg:w-[90%] z-20 text-center lg:text-left">
             <p className="text-[rgb(17,18,45)] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
