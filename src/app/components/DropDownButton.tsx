@@ -4,7 +4,7 @@ export default function DropDownButton({buttonName = "Default", dropdownItems = 
     return (
     <div className = "sm:flex w-full sm:w-36 max-w-7xl justify-between">
         <Link href= "/about" className="flex flex-col sm:flex-row sm:items-center gap-2 relative group"> {/*removed justify between*/}
-            <span>{buttonName}</span>
+            <span className="group-hover:text-gray-400 transition-all">{buttonName}</span>
 
             <div className="hidden md:block">
             <svg width="14" height="8" viewBox="0 0 14 8" fill="black" xmlns="http://www.w3.org/2000/svg">
@@ -13,18 +13,18 @@ export default function DropDownButton({buttonName = "Default", dropdownItems = 
             </div>
 
             {/*dropdown */}
-            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all md:group-hover:flex">
+            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all duration-200 md:group-hover:flex opacity-0 hover:opacity-100">
                 <p className="opacity-0 hidden sm:inline">iama3333333genius</p>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     
                 </div>
-                <Link href="/about/gallery" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block">
+                <Link href="/about/gallery" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block transition-colors">
                 Gallery
                 </Link>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     
                 </div>
-                <Link href="/about/ourteam"className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block">
+                <Link href="/about/ourteam"className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block transition-colors">
                 Our team
                 </Link>
             </div>

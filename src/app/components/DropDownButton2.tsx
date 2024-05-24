@@ -14,24 +14,24 @@ export default function DropDownButton({buttonName = "Default", dropdownItems = 
             </div>
 
             {/*dropdown */}
-            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all md:group-hover:flex">
+            <div className = "sm:absolute left-0 top-0 md:hidden sm:flex flex-row md:flex-col gap-2 transition-all duration-200 md:group-hover:flex opacity-0 hover:opacity-100">
                 <p className="opacity-0 hidden sm:inline">iama3333333genius</p>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     
                 </div>
-                <Link href="/events/climatesummit"className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-40 md:w-auto m-2 sm:m-0 inline-block">
+                <Link href="/events/climatesummit"className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-40 md:w-auto m-2 sm:m-0 inline-block transition-colors">
                     Climate Summit
                 </Link>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     
                 </div>
-                <Link href="/events/fallpanel" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-24 md:w-auto m-2 sm:m-0 inline-block">
+                <Link href="/events/fallpanel" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-24 md:w-auto m-2 sm:m-0 inline-block transition-colors">
                     Fall Panel
                 </Link>
                 <div className="border-t border-gray-400 w-156 hidden sm:inline">
                     
                 </div>
-                <Link href="/events/pastevents" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block">
+                <Link href="/events/pastevents" className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-28 md:w-auto m-2 sm:m-0 inline-block transition-colors">
                     Past Events
                 </Link>
             </div>

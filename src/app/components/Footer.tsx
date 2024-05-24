@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer>
@@ -25,14 +27,13 @@ export default function Footer() {
                                     </div>
                                 </a>
                             </div>
-                            <div className="self-stretch"><span className="text-slate-900 text-xs font-normal font-['General Sans'] leading-[18px]">By subscribing you agree to with our <a href="" target="_blank" className="underline hover:no-underline active:text-slate-400" >Privacy Policy</a></span></div>
                         </div>
                     </div>
                     <div className="self-stretch h-px bg-slate-100" />
                     <div className="self-stretch justify-between gap-20 lg:gap-0 items-start flex flex-col lg:flex-row">
                         <div className="grow shrink basis-0 self-stretch justify-start items-start inline-flex w-full lg:w-1/2">
                             <div className="w-[818px] grow shrink basis-0 self-stretch flex-col justify-between items-start inline-flex">
-                                <div className="text-slate-900 text-4xl font-semibold font-['General Sans'] leading-[54px]"><a href="https://www.uwnetimpact.org/" className="hover:underline active:text-slate-400">Net Impact UW</a></div>
+                                <div className="text-slate-900 text-4xl font-semibold font-['General Sans'] leading-[54px]"><a href="/" className="hover:underline active:text-slate-400">Net Impact UW</a></div>
                                 <div className="w-full h-[85px] flex-col justify-start items-start gap-10 inline-flex">
                                     <div className="w-24 h-6 justify-start items-start gap-3 inline-flex">
                                         <div className="w-6 h-6 relative">
@@ -65,9 +66,8 @@ export default function Footer() {
                                         </div>
                                     </div>
                                     <div className="self-stretch justify-start gap-3 flex flex-wrap flex-col lg:flex-row">
-                                        <div className="text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]">© 2023 Net Impact. All rights reserved.</div>
+                                        <div className="text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]">© 2024 Net Impact. All rights reserved.</div>
                                         <div className="justify-start items-start gap-6 flex">
-                                            <div className="text-slate-900 text-sm font-normal font-['General Sans'] underline leading-[21px] hover:no-underline active:text-slate-400"><a href="" target="_blank" >Privacy Policy</a></div>
                                             <div className="text-slate-900 text-sm font-normal font-['General Sans'] underline leading-[21px] hover:no-underline active:text-slate-400"><a href="" target="_blank" >Terms of Service</a></div>
                                             <div className="text-slate-900 text-sm font-normal font-['General Sans'] underline leading-[21px] hover:no-underline active:text-slate-400"><a href="" target="_blank" >Cookies Settings</a></div>
                                         </div>
@@ -77,38 +77,32 @@ export default function Footer() {
                         </div>
                         <div className="lg:justify-end justify-start items-start gap-[15%] flex w-full lg:w-1/2">
                             <div className="flex-col justify-start items-start gap-4 inline-flex">
-                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal">Home</div>
+                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal pb-2 hover:underline"><Link href="/">Home</Link></div>
+                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal py-2 hover:underline"><Link href="/projects">Projects</Link></div>
+                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal py-2 hover:underline"><Link href="/contacts">Contacts</Link></div>
+                            </div>
+                            <div className="flex-col justify-start items-start gap-4 inline-flex">
+                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal hover:underline"><Link href="/about">About Us</Link></div>
                                 <div className="self-stretch h-[185px] flex-col justify-start items-start flex">
                                     <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Projects</a></div>
+                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><Link href="/about/gallery" className="hover:underline active:text-slate-400" >Gallery</Link></div>
                                     </div>
                                     <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Contacts</a></div>
+                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><Link href="/about/ourteam" className="hover:underline active:text-slate-400" >Our Team</Link></div>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex-col justify-start items-start gap-4 inline-flex">
-                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal">About Us</div>
+                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal hover:underline"><Link href="/events">Events</Link></div>
                                 <div className="self-stretch h-[185px] flex-col justify-start items-start flex">
                                     <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Gallery</a></div>
+                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><Link href="/events/climatesummit" className="hover:underline active:text-slate-400" >Climate Summit</Link></div>
                                     </div>
                                     <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Our Team</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex-col justify-start items-start gap-4 inline-flex">
-                                <div className="self-stretch text-slate-900 text-base font-medium font-['General Sans'] leading-normal">Events</div>
-                                <div className="self-stretch h-[185px] flex-col justify-start items-start flex">
-                                    <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Climate Summit</a></div>
+                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><Link href="/events/fallpanel" className="hover:underline active:text-slate-400" >Fall Panel</Link></div>
                                     </div>
                                     <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Fall Panel</a></div>
-                                    </div>
-                                    <div className="self-stretch py-2 justify-start items-start inline-flex">
-                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><a href="" target="_blank" className="hover:underline active:text-slate-400" >Past Events</a></div>
+                                        <div className="grow shrink basis-0 text-slate-900 text-sm font-normal font-['General Sans'] leading-[21px]"><Link href="/events/pastevents" className="hover:underline active:text-slate-400" >Past Events</Link></div>
                                     </div>
                                 </div>
                             </div>
