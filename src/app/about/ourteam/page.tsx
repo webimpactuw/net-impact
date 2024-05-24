@@ -7,6 +7,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import { BiPhotoAlbum } from 'react-icons/bi';
 import Image from 'next/image';
 
+export const revalidate = 60;
+
 const TEAM_QUERY = `*[_type == "team"]`;
 
 const { projectId, dataset } = client.config();

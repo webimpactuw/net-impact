@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   description: "...",
 };
 
-// TODO: change layout to include NavBar at top and Footer at bottom
 export default function RootLayout({
   children,
 }: Readonly<{
