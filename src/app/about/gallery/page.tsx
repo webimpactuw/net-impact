@@ -7,6 +7,8 @@ import Image from 'next/image';
 
 const GALLERY_QUERY = `*[_type == "gallery"]`;
 
+export const revalidate = 60;
+
 const { projectId, dataset } = client.config();
 function urlFor(source: SanityImageSource) {
   return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
