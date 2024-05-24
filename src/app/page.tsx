@@ -109,18 +109,21 @@ export default async function Home() {
             left-[50.1px] sm:left-[77.5px] lg:left-[155px] 
             w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
-            bg-[#2B9575] bg-opacity-45 rounded-full" />
+            bg-[#2B9575] bg-opacity-45 rounded-full text-center 
+            pt-10 sm:pt-20 lg:pt-40 lg:text-[30px] font-medium">Activism</figure>
           <figure className="absolute 
             left-[100.3px] sm:left-[155px] lg:left-[310px] 
             top-[94px] sm:top-[139.5px] lg:top-[279px] 
             w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
-            bg-[#5CB5B0] bg-opacity-70 rounded-full" />
+            bg-[#5CB5B0] bg-opacity-70 rounded-full 
+            pl-10 sm:pl-24 lg:pl-52 pt-12 sm:pt-24 lg:pt-52 lg:text-[30px] font-medium">Career<br/>Development</figure>
           <figure className="absolute 
             top-[94px] sm:top-[139.5px] lg:top-[279px] 
             w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
-            bg-[#097E97] bg-opacity-50 rounded-full" />
+            bg-[#097E97] bg-opacity-50 rounded-full 
+            pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
           <figure className="absolute 
             left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
             top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
