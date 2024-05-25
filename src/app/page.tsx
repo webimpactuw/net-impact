@@ -22,9 +22,7 @@ function urlFor(source: SanityImageSource) {
 
 export default async function Home() {
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
-  const {
-    images
-  } = sponsors[0];
+  const images = [];
 
   return (
     <main>

@@ -20,7 +20,7 @@ export const projectsType = {
             type: 'url',
         },
         {
-            name: 'description',
+            name: 'information',
             type: 'array',
             of: [{
                 name: 'chapter',
