@@ -6,17 +6,19 @@ import CurrentInfoBox4 from "./components/CurrentInfoBox4";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
 import { client, sanityFetch } from "@/sanity/client";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import SponsorScroll from "./components/SponsorScroll";
 import imageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 
+export const dynamic = 'force-dynamic';
+
 const { projectId, dataset } = client.config();
+
 function urlFor(source: SanityImageSource) {
   return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
 }
-
-export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
@@ -146,13 +148,10 @@ export default async function Home() {
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="flex gap-16 items-center h-[103px] overflow-hidden">
-          {
-            images.map((img: SanityImageSource) => {
-              const newUrl = img ? urlFor(img)?.width(103).height(103).url() : null;
-              return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={103} width={103} />
-            })
-          }
+        <div className="relative h-[103px] w-[92%] overflow-hidden">
+          <SponsorScroll images={images.map((img: SanityImageSource) => {
+            return img ? urlFor(img)?.width(103).height(103).url() : null
+          })} />
         </div>
       </section>
     </main>
