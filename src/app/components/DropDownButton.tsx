@@ -3,6 +3,7 @@ import Link from "next/link"
 export default function DropDownButton({buttonName = "Default", dropdownItems = []}){
     return (
     <div className = "sm:flex w-full sm:w-36 max-w-7xl justify-between">
+        {/* TODO: fix hydration error by getting rid of Link redundancy */}
         <Link href= "/about" className="flex flex-col sm:flex-row sm:items-center gap-2 relative group"> {/*removed justify between*/}
             <span className="group-hover:text-gray-400 transition-all">{buttonName}</span>
 

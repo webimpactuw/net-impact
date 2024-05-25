@@ -47,9 +47,6 @@ export default function PastEvents() {
                     <div className="self-stretch text-slate-900 text-[32px] font-medium font-['General Sans'] leading-[41.60px]">Global Sustainability Case Competition</div>
                     <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">In 2022, Net Impact partnered with Nasdaq and Wilcox Farms to host the Global Sustainability Case Competition (GSCC).<br/><br/>In the GSCC, student teams worked together to pitch innovative and sustainable solutions for the High Atlas Foundation, a nonprofit in Morocco.<br/><br/>The solutions focused on empowering small organic farmers to make a living sustainably.</div>
                 </div>
-                {/* <div className="justify-center items-center gap-2 flex">
-                    <ChevronLink text="Gallery" link="/" />
-                </div> */}
             </div>
             <div className="w-px self-stretch bg-teal-600" />
             <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl">

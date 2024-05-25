@@ -27,7 +27,7 @@ export default function FallPanel() {
         
             <div className="h-[84px] relative">
                 <div className="w-full h-[84px] bg-green-100 border-t border-b border-green-600 text-slate-900 text-[22px] font-medium text-center py-6">
-                    UPCOMING: <span className="font-semibold leading-[33px]">THE CLIMATE SOLUTIONS SUMMIT WILL RETURN NEXT FALL</span>
+                    UPCOMING: <strong className="font-semibold leading-[33px]">THE CLIMATE SOLUTIONS SUMMIT WILL RETURN NEXT FALL</strong>
                 </div>
             </div>
         
