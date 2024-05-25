@@ -6,17 +6,19 @@ import CurrentInfoBox4 from "./components/CurrentInfoBox4";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
 import { client, sanityFetch } from "@/sanity/client";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import SponsorScroll from "./components/SponsorScroll";
 import imageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 
+export const dynamic = 'force-dynamic';
+
 const { projectId, dataset } = client.config();
+
 function urlFor(source: SanityImageSource) {
   return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
 }
-
-export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
@@ -40,23 +42,20 @@ export default async function Home() {
       ==================== */}
       {/* TODO: add responsivity for medium sized screens
       TODO: add responsivity for smaller sized screens */}
-      <header className="lg:h-[1000px] px-[3.5%] py-[10%] lg:pt-[5%] flex flex-col-reverse lg:flex-row justify-between gap-[3.5%] items-center bg-slate-100">
-        <div className="lg:w-1/2 h-1/2 flex gap-16 flex-col z-10 pt-16 lg:pt-0">
+      <header className="lg:h-[1000px] px-[3.5%] py-[10%] pt-0 md:pt-[10%] lg:pt-[5%] flex flex-col-reverse lg:flex-row justify-between gap-[3.5%] items-center bg-slate-100">
+        <div className="lg:w-1/2 h-1/2 flex gap-8 xl:gap-16 flex-col z-10 pt-16 lg:pt-0">
           <h2 className="text-[#2C3E3E] text-[40px] font-semibold leading-[110%] z-20 text-center lg:text-left">Net Impact UW</h2>
           <div className="z-20 text-center lg:text-left">
-            <h1 className="font-semibold text-[41px] leading-[110%]">Let&apos;s create a more</h1>
-            <h1 className="font-bold text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
+            <h1 className="font-semibold text-[30px] sm:text-[41px] leading-[110%]">Let&apos;s create a more</h1>
+            <h1 className="font-bold text-[40px] sm:text-[53.679px] leading-[110%] uppercase text-[#2F8097]">Sustainable Future</h1>
           </div>
           <div className="lg:w-[90%] z-20 text-center lg:text-left">
             <p className="text-[rgb(17,18,45)] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
           </div>
-          <div className="flex gap-[4%] text-[18px] font-medium">
-            
-            <div className="w-3/4 flex h-200 bg-white border border-[#2B9575] rounded-full">                      
-              <input name= "user_email" id="email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-full" placeholder ="Join our team by adding your email..." required />
-            </div> 
-            <div className="cursor-pointer w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center px-6 py-3 hover:bg-teal-900 active:bg-teal-400 transition delay-15009  gap-2 ">
-              <div className="text-white  cursor-pointer text-base font-normal font-['General Sans'] leading-normal">Join Us</div>
+          <div className="flex gap-[4%] text-[18px] font-medium">                  
+            <input name= "user_email" id="email" type="email" className="w-3/4 h-[48px] p-4 bg-white text-gray-900 text-[11px] sm:text-sm border border-[#2B9575] rounded-full" placeholder ="Join our team by adding your email..." required />
+            <div className="cursor-pointer w-1/3 xl:w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center sm:px-6 py-3 hover:bg-teal-900 active:bg-teal-400 transition delay-15009  gap-2 ">
+              <div className="text-white cursor-pointer text-base font-normal font-['General Sans'] leading-normal">Join Us</div>
             </div>
           </div>
         </div>
@@ -70,7 +69,7 @@ export default async function Home() {
       OUR MISSION
       ==================== */}
       <section className="flex justify-center py-[250px]">
-        <div className=" flex justify-center items-center gap-[16px] flex-col w-1/2 text-[#11122D] text-center">
+        <div className=" flex justify-center items-center gap-[16px] flex-col w-3/4 sm:w-1/2 text-[#11122D] text-center">
           <p className="text-[16px] font-medium leading-6">Our Mission</p>
           <p className="text-[24px] font-normal leading-8">Net Impact UW is a sustainable business club, aiming to <strong className="font-semibold">inspire environmental action</strong> and <strong className="font-semibold">increase awareness</strong> through Education, Activism, & Career Development.</p>
         </div>
@@ -81,15 +80,15 @@ export default async function Home() {
       ==================== */}
       <section className="flex xl:h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
-          <h1 className="text-[48px] font-medium leading-[120%]">Current Information</h1>
+          <h1 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
         </div>
         <div className="xl:flex gap-8">
           <div className="lg:flex flex-col gap-8">
             <CurrentInfoBox1 />
             <div className="lg:flex gap-8 lg:h-[340px]">
-              <CurrentInfoBox2 header="Take a look at who we are & what we do" desc="View our event pictures" />
-              <CurrentInfoBox2 header="Read through our journey!" desc="Read how Net Impact was created" />
+              <CurrentInfoBox2 header="Take a look at who we are & what we do" desc="View our event pictures" link="/about/gallery" />
+              <CurrentInfoBox2 header="Read through our journey!" desc="Read how Net Impact was created" link="/about" />
             </div>
           </div>
           <div className="lg:flex flex-col gap-8">
@@ -107,11 +106,32 @@ export default async function Home() {
           <p className="text-[16px] font-medium leading-6 text-center lg:text-left">Our Values</p>
           <p className="text-[36px] font-medium leading-12 lg:leading-8">Education. Activism. Career Development.</p>
         </div>
-        <div className="w-[386.5px] lg:w-[773px] h-[371px] lg:h-[742px] relative m-auto">
-          <figure className="absolute left-[77.5px] lg:left-[155px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
-          <figure className="absolute left-[155px] lg:left-[310px] top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
-          <figure className="absolute top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
-          <figure className="absolute left-[153.56px] lg:left-[307.12px] top-[168.06px] lg:top-[336.12px] w-[78.376px] lg:w-[156.752px] h-[78.376px] lg:h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
+        <div className="w-[250px] sm:w-[386.5px] lg:w-[773px] h-[250px] sm:h-[371px] lg:h-[742px] relative m-auto">
+          <figure className="absolute 
+            left-[50.1px] sm:left-[77.5px] lg:left-[155px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#2B9575] bg-opacity-45 rounded-full text-center 
+            pt-10 sm:pt-20 lg:pt-40 lg:text-[30px] font-medium">Activism</figure>
+          <figure className="absolute 
+            left-[100.3px] sm:left-[155px] lg:left-[310px] 
+            top-[94px] sm:top-[139.5px] lg:top-[279px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#5CB5B0] bg-opacity-70 rounded-full 
+            pl-10 sm:pl-24 lg:pl-52 pt-12 sm:pt-24 lg:pt-52 lg:text-[30px] font-medium">Career<br/>Development</figure>
+          <figure className="absolute 
+            top-[94px] sm:top-[139.5px] lg:top-[279px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#097E97] bg-opacity-50 rounded-full 
+            pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
+          <figure className="absolute 
+            left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
+            top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
+            w-[50.7px] sm:w-[78.376px] lg:w-[156.752px] 
+            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px] 
+            bg-[url('/NI+logo.png')] bg-cover" />
         </div>
         <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
           <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
@@ -128,13 +148,10 @@ export default async function Home() {
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="flex gap-16 items-center h-[103px] overflow-hidden">
-          {
-            images.map((img: SanityImageSource) => {
-              const newUrl = img ? urlFor(img)?.width(103).height(103).url() : null;
-              return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={103} width={103} />
-            })
-          }
+        <div className="relative h-[103px] w-[270px] lg:w-[832px] xl:w-[1166px] 2xl:w-[1500px] overflow-hidden">
+          <SponsorScroll images={images.map((img: SanityImageSource) => {
+            return img ? urlFor(img)?.width(103).height(103).url() : null
+          })} />
         </div>
       </section>
     </main>

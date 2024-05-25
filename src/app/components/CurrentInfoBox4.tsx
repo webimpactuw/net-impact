@@ -1,4 +1,5 @@
 import ChevronLink from "./ChevronLink"
+import Link from "next/link"
 
 export default function CurrentInfoBox4() {
     return (
@@ -10,8 +11,8 @@ export default function CurrentInfoBox4() {
                     <p className="text-[16px] font-normal">Stay tuned for our upcoming Fall Panel! For quicker updates follow our instagram @netimpactuw</p>
                 </div>
                 <div className="flex items-center gap-[24px]">
-                    <button className="px-[24px] py-[12px] bg-[#E1E0DC] text-[16px] font-normal text-[#62615D] rounded-[8px]">View Past Fall Panels</button>
-                    <ChevronLink text="Stay Updated" />
+                    <Link href="/events/pastevents"><button className="px-[24px] py-[12px] bg-[#E1E0DC] hover:bg-[#bebdbb] text-[16px] font-normal  hover:text-[#62615D] rounded-[8px] transition-all">View Past Fall Panels</button></Link>
+                    <ChevronLink text="Stay Updated" link="/events/fallpanel" />
                 </div>
             </div>
             <figure className="h-[244px] bg-[url('/infobox2.jpg')] bg-cover bg-[center_bottom_-1.5rem] rounded-b-[20px]" />

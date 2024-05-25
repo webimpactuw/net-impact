@@ -71,11 +71,32 @@ export default function About() {
           <p className="text-[16px] font-medium leading-6 text-center lg:text-left">Our Values</p>
           <p className="text-[36px] font-medium leading-12 lg:leading-8">Education. Activism. Career Development.</p>
         </div>
-        <div className="w-[386.5px] lg:w-[773px] h-[371px] lg:h-[742px] relative m-auto">
-          <figure className="absolute left-[77.5px] lg:left-[155px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#2B9575] bg-opacity-45 rounded-full" />
-          <figure className="absolute left-[155px] lg:left-[310px] top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#5CB5B0] bg-opacity-70 rounded-full" />
-          <figure className="absolute top-[139.5px] lg:top-[279px] w-[231.5px] lg:w-[463px] h-[231.5px] lg:h-[463px] bg-[#097E97] bg-opacity-50 rounded-full" />
-          <figure className="absolute left-[153.56px] lg:left-[307.12px] top-[168.06px] lg:top-[336.12px] w-[78.376px] lg:w-[156.752px] h-[78.376px] lg:h-[156.752px] bg-[url('/NI+logo.png')] bg-cover" />
+        <div className="w-[250px] sm:w-[386.5px] lg:w-[773px] h-[250px] sm:h-[371px] lg:h-[742px] relative m-auto">
+          <figure className="absolute 
+            left-[50.1px] sm:left-[77.5px] lg:left-[155px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#2B9575] bg-opacity-45 rounded-full text-center 
+            pt-10 sm:pt-20 lg:pt-40 lg:text-[30px] font-medium">Activism</figure>
+          <figure className="absolute 
+            left-[100.3px] sm:left-[155px] lg:left-[310px] 
+            top-[94px] sm:top-[139.5px] lg:top-[279px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#5CB5B0] bg-opacity-70 rounded-full 
+            pl-10 sm:pl-24 lg:pl-52 pt-12 sm:pt-24 lg:pt-52 lg:text-[30px] font-medium">Career<br/>Development</figure>
+          <figure className="absolute 
+            top-[94px] sm:top-[139.5px] lg:top-[279px] 
+            w-[149.7px] sm:w-[231.5px] lg:w-[463px] 
+            h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
+            bg-[#097E97] bg-opacity-50 rounded-full 
+            pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
+          <figure className="absolute 
+            left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
+            top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
+            w-[50.7px] sm:w-[78.376px] lg:w-[156.752px] 
+            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px] 
+            bg-[url('/NI+logo.png')] bg-cover" />
         </div>
         <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
           <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />

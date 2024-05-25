@@ -10,7 +10,7 @@ export default function CurrentInfoBox3() {
                     <h1 className="text-[24px] font-medium mb-[8px]">See Our Past Weekly Meetings</h1>
                     <p className="text-[16px] font-normal">View our past meeting activities!</p>
                 </div>
-                <ChevronLink text="Weekly Meetings" />
+                <ChevronLink text="Weekly Meetings" link="/events/pastevents" />
             </div>
         </div>
     )
