@@ -3,9 +3,9 @@ import Link from "next/link"
 export default function DropDownButton({buttonName = "Default", dropdownItems = []}){
     return (
     <div className = "sm:flex w-full sm:w-36 max-w-7xl justify-between">
-        <Link href= "/events" className="flex flex-col sm:flex-row sm:items-center gap-2 relative group"> {/*removed justify between*/}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 relative group cursor-default"> {/*removed justify between*/}
             {/*removed justify between*/}
-            <span className="group-hover:text-gray-400 transition-all">{buttonName}</span>
+            <span>{buttonName}</span>
 
             <div className="hidden md:block">
             <svg width="14" height="8" viewBox="0 0 14 8" fill="black" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ export default function DropDownButton({buttonName = "Default", dropdownItems = 
                     Past Events
                 </Link>
             </div>
-        </Link>
+        </div>
     </div>
     ) 
 }

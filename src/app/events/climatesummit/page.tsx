@@ -6,45 +6,53 @@ export const metadata: Metadata = {
 }
 
 export default function ClimateSummit() {
+    // const gallery = await sanityFetch<SanityDocument[]>({query: GALLERY_QUERY});
+    // const {
+    //     images
+    // } = gallery[0];
+    // const imgLength = images.length;
+    // const colSize = imgLength / 3;
+    // const columns = [images.slice(0, colSize), images.slice(colSize, 2 * colSize), images.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
+
 return(
-<div className="w-[1440px] h-[3200px] relative bg-slate-100">
-    <div className="w-[1440px] px-[366px] gap-100 justify-center items-center flex">
+<div className="relative bg-slate-100">
+    <div className="absolute w-full overflow-hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2200" height="424" viewBox="0 0 1400 424" fill="none">
+            <path d="M63.6648 -85.2876C-33.6799 -67.4735 -119.217 -33.0075 -206.293 11.6968C-259.574 39.0506 -312.133 66.9877 -357.694 104.83C-404.446 143.662 -436.126 187.596 -456.688 242.253C-460.325 251.922 -502.778 357.278 -472.048 356.557C-453.221 356.115 -432.808 351.739 -414.293 349.271C-377.836 344.409 -341.404 339.289 -305.078 333.511C-225.468 320.848 -152.406 307.529 -82.0365 268.972C79.1335 180.664 240.56 89.6568 424.414 51.6927C480.873 40.0345 539.257 27.7344 596.987 24.4727C616.716 23.3581 620.889 22.1062 624.011 40.2585C629.739 73.5543 606.809 110.994 595.726 141.936C581.122 182.707 566.367 229.839 570.583 272.888C573.597 303.656 601.023 315.577 631.708 316.084C658.896 316.532 686.969 312.68 713.966 310.092C779.378 303.824 844.666 296.625 909.837 288.042C1022.63 273.19 1131.61 250.775 1241.69 223.069C1323.4 202.503 1409.04 194.113 1492.27 181.231" stroke="white" stroke-width="133.326" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div className="px-[366px] py-[100px] gap-100 justify-center items-center flex">
         <div className="flex-grow flex-shrink basis-0 self-stretch flex flex-col justify-start items-center gap-5">
-            <div className="self-stretch text-center text-slate-900 text-[56px] font-medium font-['General Sans'] leading-[150%] mt-20">
+            <div className="self-stretch text-center text-slate-900 text-[56px] font-medium leading-[150%] mt-20 z-10">
                 Climate Solutions Summit
             </div>
-            <div className="w-[863px] text-center text-cyan-700 text-xl font-normal font-['General Sans'] mb-10">
+            <div className="text-center text-cyan-700 text-xl font-normal mb-10 z-10">
                 REOCCURRING SPRING EVENT
             </div>
         </div>
     </div>
 
-    <div className="w-[1440px] h-[84px] relative">
-        <div className="w-[1440px] h-[84px] left-0 top-0 absolute bg-green-100 border-t border-b border-green-600"/>
-            <div className="left-[310px] top-[26px] absolute">
-                <span className="text-slate-900 text-[22px] font-medium font-['General Sans'] leading-[33px]">
-                    UPCOMING:
-                </span>
-                <span className="text-slate-900 text-[22px] font-semibold font-['General Sans'] leading-[33px]">
-                    THE CLIMATE SOLUTIONS SUMMIT WILL RETURN NEXT SPRING
-                </span>
-            </div>
+    <div className="h-[84px] relative">
+        <div className="w-full h-[84px] bg-green-100 border-t border-b border-green-600 text-slate-900 text-[22px] font-medium text-center py-6">
+            UPCOMING: <strong className="font-semibold leading-[33px]">THE CLIMATE SOLUTIONS SUMMIT WILL RETURN NEXT SPRING</strong>
         </div>
+    </div>
 
 
-        <div className="w-[1440px] h-[877px] relative bg-white">
-    <div className="h-[625.11px] left-[64px] top-[180.94px] absolute flex flex-wrap flex-row-reverse gap-6">
-        <img className="w-[616px] h-[640px] rounded-[20px]" src="https://via.placeholder.com/616x640"/>
+    <div className="h-[877px] relative bg-white">
+    <div className="h-[625.11px] py-32 mx-16 flex flex-wrap flex-row-reverse gap-6">
+        <img className="h-[640px] rounded-[20px]" src="https://via.placeholder.com/616x640"/>
         <div className="flex-1">
             <div className="flex-col justify-start items-start gap-6">
                 <div>
-                    <span className="text-teal-600 text-lg font-medium font-['General Sans'] leading-[27px]">
+                    <span className="text-teal-600 text-lg font-medium leading-[27px]">
                         SPRING 2023<br/>
                     </span>
-                    <span className="text-slate-900 text-[38px] font-medium font-['General Sans'] leading-[57px]">
+                    <span className="text-slate-900 text-[38px] font-medium leading-[57px]">
                         Event Summary<br/>
                     </span>
-                    <span className="text-slate-900 text-lg font-normal font-['General Sans'] leading-[27px]">
+                    <span className="text-slate-900 text-lg font-normal leading-[27px]">
                         <br/>Last year, a coalition of sustainability and business organizations launched the first Climate Solutions
                         Summit. The event explored scaling and implementing clean energy technology in the wake of the Inflation 
                         Reduction Act.<br/>
@@ -59,13 +67,13 @@ return(
 
                 <div className="pt-[14.44px] flex gap-[14.44px]">
                     <div className="px-[21.67px] py-[10.83px] bg-slate-100 rounded-lg border border-teal-600 flex items-center">
-                        <div className="text-slate-900 text-sm font-medium font-['General Sans'] leading-snug">Case Competition</div>
+                        <div className="text-slate-900 text-sm font-medium leading-snug">Case Competition</div>
                     </div>
                     <div className="px-[21.67px] py-[10.83px] bg-slate-100 rounded-lg border border-teal-600 flex items-center">
-                        <div className="text-slate-900 text-sm font-medium font-['General Sans'] leading-snug">Convention</div>
+                        <div className="text-slate-900 text-sm font-medium leading-snug">Convention</div>
                     </div>
                     <div className="px-[21.67px] py-[10.83px] bg-slate-100 rounded-lg border border-teal-600 flex items-center">
-                        <div className="text-slate-900 text-sm font-medium font-['General Sans'] leading-snug">Promo Video</div>
+                        <div className="text-slate-900 text-sm font-medium leading-snug">Promo Video</div>
                     </div>
                 </div>
             </div>
@@ -73,25 +81,28 @@ return(
     </div>
 </div>
 
-        <div className="w-[1440px] h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20 inline-flex">
+        <div className="w-full h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20 inline-flex">
             <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">
                 <div className="self-stretch h-[587.45px] flex-col justify-start items-start gap-6 flex">
-                    <div className="self-stretch text-center text-slate-900 text-5xl font-medium font-['General Sans'] leading-[72px]">
+                    <div className="self-stretch text-center text-slate-900 text-5xl font-medium leading-[72px]">
                         Past Summits
                     </div>
-                    <div className="w-[1312px] h-[467.45px] relative">
-                        <div className="left-[470px] top-[429.45px] absolute text-center text-slate-900 text-[25px] font-medium font-['General Sans'] leading-[37.50px]">
-                            2022 Climate Solutions Summit
+                    <div className="w-full h-[467.45px] relative">
+                        <div>
+                            <img className="w-1/3 h-[363px] left-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10" src="https://via.placeholder.com/980x416" />
+                            <img className="w-2/3 h-[416px] rounded-[20px] relative shadow m-auto z-20" src="https://via.placeholder.com/980x416" />
+                            <img className="w-1/3 h-[363px] right-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10" src="https://via.placeholder.com/980x416" />
                         </div>
-                        <div className="w-[1312px] h-[363px] left-0 top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow border border-indigo-500" />
-                        <img className="w-[980px] h-[416px] left-[146px] top-0 absolute rounded-[20px] shadow" src="https://via.placeholder.com/980x416" />
-                        <div className="left-[1243px] top-[170px] absolute text-center text-white/opacity-90 text-[50px] font-bold font-['General Sans'] leading-[75px]"></div>
-                        <div className="left-[43px] top-[170px] absolute text-center text-white/opacity-90 text-[50px] font-bold font-['General Sans'] leading-[75px]"></div>
-                    </div>
-                    <div className="w-[1312px] h-[0px] px-[50px] justify-center items-center gap-[5px] inline-flex">
-                        <div className="w-2 h-2 bg-neutral-400 rounded-full" />
-                        <div className="w-2 h-2 bg-zinc-300 rounded-full" />
-                        <div className="w-2 h-2 bg-zinc-300 rounded-full" />
+                        <div className="text-center text-slate-900 text-[25px] mt-4 font-medium leading-[37.50px]">
+                            <p>2022 Climate Solutions Summit</p>
+                            <div className="h-[0px] px-[50px] justify-center items-center gap-[5px] inline-flex">
+                                <div className="w-2 h-2 bg-neutral-400 rounded-full" />
+                                <div className="w-2 h-2 bg-zinc-300 rounded-full" />
+                                <div className="w-2 h-2 bg-zinc-300 rounded-full" />
+                            </div>
+                        </div>
+                        {/* <div className="left-[1243px] top-[170px] absolute text-center text-white/opacity-90 text-[50px] font-bold leading-[75px]"></div>
+                        <div className="left-[43px] top-[170px] absolute text-center text-white/opacity-90 text-[50px] font-bold leading-[75px]"></div> */}
                     </div>
                 </div>
             </div>
@@ -107,7 +118,7 @@ return(
                     See more about what we did in the 2023 Summit
                 </div>
             </div>
-            <div className="w-[1312px] justify-start items-start gap-8 inline-flex">
+            <div className="justify-start items-start gap-8 inline-flex">
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-8 inline-flex">
                     <img className="w-[416px] h-[416px] rounded-[20px]" src="https://via.placeholder.com/416x416" />
                     <img className="w-[416px] h-[416px] rounded-[20px]" src="https://via.placeholder.com/416x416" />
