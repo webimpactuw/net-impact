@@ -4,9 +4,12 @@ export const sponsorType = {
     type: 'document',
     fields: [
         {
-            name: 'images',
-            type: 'array',
-            of: [{type: 'image'}]
+            name: 'name',
+            type: 'string',
+        },
+        {
+            name: 'sourceImage',
+            type: 'image',
         }
     ]
 }

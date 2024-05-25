@@ -1,12 +1,21 @@
 export const galleryType = {
     name: 'gallery',
-    title: 'Gallery',
+    title: 'Gallery Image',
     type: 'document',
     fields: [
         {
-            name: 'images',
-            type: 'array',
-            of: [{type: 'image'}]
-        }
+            name: 'galleryImage',
+            type: 'object',
+            fields: [
+                {
+                    name: 'subtitle',
+                    type: 'string'
+                },
+                {
+                    name: 'imageSource',
+                    type: 'image'
+                }
+            ]
+         }
     ]
 }

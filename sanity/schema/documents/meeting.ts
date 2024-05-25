@@ -1,6 +1,6 @@
 export const meetingType = {
     name: 'meeting',
-    title: 'MeetingInfo',
+    title: 'Meeting Information',
     type: 'document',
     fields: [
         {
