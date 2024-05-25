@@ -11,7 +11,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Instagram</h1>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "underline">https://www.instagram.com/netimpactuw/</a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.instagram.com/netimpactuw/</a>
                     </div>
 
                 </div>
@@ -27,7 +27,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Linkedin</h1>
-                        <a href="https://www.linkedin.com/company/net-impact-uw/" className = "underline">https://www.linkedin.com/company/net-impact-uw/</a>
+                        <a href="https://www.linkedin.com/company/net-impact-uw/" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.linkedin.com/company/net-impact-uw/</a>
                     </div>
 
                 </div>
@@ -45,7 +45,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Slack</h1>
-                        <a href="https://www.netimpactuw.slack.com" className = "underline">https://www.netimpactuw.slack.com</a>
+                        <a href="https://www.netimpactuw.slack.com" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.netimpactuw.slack.com</a>
                     </div>
 
                 </div>
