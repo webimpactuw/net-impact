@@ -148,7 +148,7 @@ export default async function Home() {
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="relative h-[103px] w-[92%] overflow-hidden">
+        <div className="relative h-[103px] w-[270px] lg:w-[832px] xl:w-[1166px] 2xl:w-[1500px] overflow-hidden">
           <SponsorScroll images={images.map((img: SanityImageSource) => {
             return img ? urlFor(img)?.width(103).height(103).url() : null
           })} />
