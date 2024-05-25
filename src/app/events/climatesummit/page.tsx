@@ -15,13 +15,19 @@ export default function ClimateSummit() {
     // const columns = [images.slice(0, colSize), images.slice(colSize, 2 * colSize), images.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
 
 return(
-<div className="h-[3200px] relative bg-slate-100">
-    <div className="px-[366px] gap-100 justify-center items-center flex">
+<div className="relative bg-slate-100">
+    <div className="absolute w-full overflow-hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2200" height="424" viewBox="0 0 1400 424" fill="none">
+            <path d="M63.6648 -85.2876C-33.6799 -67.4735 -119.217 -33.0075 -206.293 11.6968C-259.574 39.0506 -312.133 66.9877 -357.694 104.83C-404.446 143.662 -436.126 187.596 -456.688 242.253C-460.325 251.922 -502.778 357.278 -472.048 356.557C-453.221 356.115 -432.808 351.739 -414.293 349.271C-377.836 344.409 -341.404 339.289 -305.078 333.511C-225.468 320.848 -152.406 307.529 -82.0365 268.972C79.1335 180.664 240.56 89.6568 424.414 51.6927C480.873 40.0345 539.257 27.7344 596.987 24.4727C616.716 23.3581 620.889 22.1062 624.011 40.2585C629.739 73.5543 606.809 110.994 595.726 141.936C581.122 182.707 566.367 229.839 570.583 272.888C573.597 303.656 601.023 315.577 631.708 316.084C658.896 316.532 686.969 312.68 713.966 310.092C779.378 303.824 844.666 296.625 909.837 288.042C1022.63 273.19 1131.61 250.775 1241.69 223.069C1323.4 202.503 1409.04 194.113 1492.27 181.231" stroke="white" stroke-width="133.326" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div className="px-[366px] py-[100px] gap-100 justify-center items-center flex">
         <div className="flex-grow flex-shrink basis-0 self-stretch flex flex-col justify-start items-center gap-5">
-            <div className="self-stretch text-center text-slate-900 text-[56px] font-medium leading-[150%] mt-20">
+            <div className="self-stretch text-center text-slate-900 text-[56px] font-medium leading-[150%] mt-20 z-10">
                 Climate Solutions Summit
             </div>
-            <div className="text-center text-cyan-700 text-xl font-normal mb-10">
+            <div className="text-center text-cyan-700 text-xl font-normal mb-10 z-10">
                 REOCCURRING SPRING EVENT
             </div>
         </div>
