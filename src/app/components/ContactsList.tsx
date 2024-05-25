@@ -1,6 +1,6 @@
 export default function ContactsList() {
     return (
-        <div className="flex flex-col w-full lg:h-[375px] justify-around px-16">
+        <div className="flex flex-col w-full lg:h-[375px] justify-around px-24">
             <div className="lg:flex justify-between lg:h-[151px]"> {/** horizontal thing */}
                 {/** Instagram*/}
                 <div className="flex flex-col justify-between my-10 lg:my-0">
@@ -10,7 +10,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Instagram</h1>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.instagram.com/netimpactuw/</a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "text-sm xl:text-lg underline opacity-100 hover:opacity-50 transition-all">https://www.instagram.com/netimpactuw/</a>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Linkedin</h1>
-                        <a href="https://www.linkedin.com/company/net-impact-uw/" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.linkedin.com/company/net-impact-uw/</a>
+                        <a href="https://www.linkedin.com/company/net-impact-uw/" className = "text-sm xl:text-lg underline opacity-100 hover:opacity-50 transition-all">https://www.linkedin.com/company/net-impact-uw/</a>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@ export default function ContactsList() {
 
                     <div className="flex flex-col gap-3 mt-10">
                         <h1 className="font-medium text-[32px] text-[#11122D]">Slack</h1>
-                        <a href="https://www.netimpactuw.slack.com" className = "underline opacity-100 hover:opacity-50 transition-all">https://www.netimpactuw.slack.com</a>
+                        <a href="https://www.netimpactuw.slack.com" className = "text-sm xl:text-lg underline opacity-100 hover:opacity-50 transition-all">https://www.netimpactuw.slack.com</a>
                     </div>
                 </div>
             </div>

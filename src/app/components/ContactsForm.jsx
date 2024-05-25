@@ -35,7 +35,7 @@ export default function ContactsForm() {
 
           {/*Name */}
           <div className = "flex flex-col justify-between w-full h-[80px] mt-6">
-            <h1>Name</h1>
+            <h1 className='font-normal'>Name</h1>
             <div className="flex h-200">
               <input name= "user_name" type="name" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-green-600" required />
             </div> 
@@ -43,7 +43,7 @@ export default function ContactsForm() {
 
           {/* Email*/}
           <div className = "flex flex-col justify-between w-full h-[80px] mt-6">
-            <h1>Email</h1>
+            <h1 className='font-normal'>Email</h1>
             <div className="flex h-200">
               <input name= "user_email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-green-600" required />
             </div> 
@@ -51,7 +51,7 @@ export default function ContactsForm() {
 
           {/* Message*/}
             <div className = "flex flex-col gap-2 mb-4 w-full h-[212px]  mt-6">
-            <h1>Message</h1>
+            <h1 className='font-normal'>Message</h1>
             <textarea
             name= "user_email" className="peer h-[180px] w-full resize-none rounded-lg border border-green-600 px-3 py-2.5 text-sm font-normal"
             placeholder="Type your message...">
@@ -66,7 +66,7 @@ export default function ContactsForm() {
                   mt-1 shrink-0
                 checked:bg-gray-400"
             />
-            <h1>I accept the Terms</h1>
+            <h1 className='font-normal'>I accept the <a className="underline cursor-pointer">Terms</a></h1>
           </div>
 
           {/*Submit button */}
