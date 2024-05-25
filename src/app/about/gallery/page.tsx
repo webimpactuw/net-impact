@@ -46,8 +46,8 @@ export default async function Gallery() {
                 {
                   imgs.map((img: SanityImageSource) => {
                     // const newUrl: string = urlForImage(img);
-                    const newUrl = img ? urlFor(img)?.width(416).url() : null;
-                    return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={300} width={416} className="grid-item rounded-2xl opacity-100 hover:opacity-60 cursor-pointer transition-all" />
+                    const newUrl = img ? urlFor(img)?.width(544).url() : null;
+                    return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={300} width={544} className="grid-item rounded-2xl opacity-100 hover:opacity-60 cursor-pointer transition-all" />
                   })
                 }
               </div>
