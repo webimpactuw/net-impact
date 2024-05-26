@@ -148,7 +148,7 @@ export const eventsType = {
             type: 'array',
             group: 'images',
             of: [{
-                name: 'pastImage',
+                name: 'pastEvent',
                 type: 'object',
                 fields: [
                     {
@@ -157,11 +157,12 @@ export const eventsType = {
                         type: 'string',
                     },
                     {
-                        name: 'imageSource',
-                        description: 'The image representing the past event',
-                        type: 'image',
+                        name: 'galleryImages',
+                        description: 'The images representing the past event',
+                        type: 'array',
                         validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
                             rule.required().error(`Object must have an image`),
+                        of: [{ type: 'image' }]
                     }
                 ]
             }]

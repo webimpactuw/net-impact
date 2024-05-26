@@ -4,6 +4,7 @@ import { SanityDocument } from "next-sanity";
 import { urlFor, sanityFetch } from "@/sanity/client";
 import Image from 'next/image'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import PastGallery from '@/app/components/PastGallery';
 
 export const metadata: Metadata = {
   title: 'Events'
@@ -88,6 +89,8 @@ return event ? (
         </div>
     </div>
 </div>
+
+{/* <PastGallery  /> */}
 
         <div className="w-full h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20 inline-flex">
             <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">
