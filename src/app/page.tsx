@@ -16,7 +16,8 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
-  const headerImage = assets[0].logo ? urlFor(assets[0].headerImage)?.url() : '';
+  const headerImage = assets[0].headerImage ? urlFor(assets[0].headerImage)?.url() : '';
+  const logo = assets[0].logo ? urlFor(assets[0].logo)?.url() : '';
   const educImage = assets[0].educationImage ? urlFor(assets[0].educationImage)?.url() : '';
   const actiImage = assets[0].activismImage ? urlFor(assets[0].activismImage)?.url() : '';
   const careImage = assets[0].careerImage ? urlFor(assets[0].careerImage)?.url() : '';
@@ -121,12 +122,13 @@ export default async function Home() {
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
             bg-[#097E97] bg-opacity-50 rounded-full 
             pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
-          <figure className="absolute 
+          <figure className='absolute 
             left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
             top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
             w-[50.7px] sm:w-[78.376px] lg:w-[156.752px] 
-            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px] 
-            bg-[url('/NI+logo.png')] bg-cover" />
+            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px]'>
+              <Image alt="logo" src={logo ? logo : ''} layout="fill" objectFit="cover" />
+          </figure>
         </div>
         <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
           <ValuesBox img={educImage ? educImage : ''} header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />

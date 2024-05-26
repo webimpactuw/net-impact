@@ -2,6 +2,10 @@ import { Metadata } from 'next'
 import TimeLineBox from '../components/TimeLineBox';
 import ValuesBox from '../components/ValuesBox';
 import Image from 'next/image';
+import { SanityDocument } from "next-sanity";
+import { sanityFetch, urlFor } from "@/sanity/client";
+
+const ASSET_QUERY = `*[_type == "assets"]`;
  
 export const metadata: Metadata = {
   title: 'About Us',
@@ -9,7 +13,14 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function About() {
+export default async function About() {
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
+  const headerImage = assets[0].aboutImage ? urlFor(assets[0].aboutImage)?.url() : '';
+  const logo = assets[0].logo ? urlFor(assets[0].logo)?.url() : '';
+  const educImage = assets[0].educationImage ? urlFor(assets[0].educationImage)?.url() : '';
+  const actiImage = assets[0].activismImage ? urlFor(assets[0].activismImage)?.url() : '';
+  const careImage = assets[0].careerImage ? urlFor(assets[0].careerImage)?.url() : '';
+
   return (
     <main>
       {/* ====================
@@ -29,11 +40,13 @@ export default function About() {
       {/* w-[1440px] h-[751px] */}
       <header className="px-16 pb-20 pt-44 box-border flex flex-col gap-20 items-center bg-slate-100 z-10">
         <div className="flex flex-col items-center text-[#11122D] z-10">
-          <Image src="/NI+logo.png" width={130} height={130} alt="logo" />
+          <Image src={logo ? logo : ''} width={130} height={130} alt="logo" />
           <h1 className="text-center text-[56px] font-medium leading-[120%]">About Us</h1>
           <p className="text-center text-[#2F8097] text-[18px] font-normal leading-[150%]">Who Are We: Introducing Net Impact</p>
         </div>
-        <figure className="w-[90%] h-[400px] lg:h-[700px] bg-[url('/home1.png')] bg-cover bg-center rounded-3xl z-10" />
+        <figure className="w-[90%] h-[400px] lg:h-[700px] rounded-3xl z-10 overflow-hidden relative">
+        <Image alt="aboutImg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
+        </figure>
       </header>
 
       {/* ====================
@@ -91,17 +104,18 @@ export default function About() {
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
             bg-[#097E97] bg-opacity-50 rounded-full 
             pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
-          <figure className="absolute 
+          <figure className='absolute 
             left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
             top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
             w-[50.7px] sm:w-[78.376px] lg:w-[156.752px] 
-            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px] 
-            bg-[url('/NI+logo.png')] bg-cover" />
+            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px]'>
+              <Image alt="logo" src={logo ? logo : ''} layout="fill" objectFit="cover" />
+          </figure>
         </div>
         <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
-          <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
-          <ValuesBox img="values2.png" header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
-          <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
+          <ValuesBox img={educImage ? educImage : ''} header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
+          <ValuesBox img={actiImage ? actiImage : ''} header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
+          <ValuesBox img={careImage ? careImage : ''} header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
         </div>
       </section>
     </main>
