@@ -1,11 +1,20 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { sanityFetch, urlFor } from '@/sanity/client'
+import { SanityDocument } from 'next-sanity'
+import { projectsType } from '../../../sanity/schema/documents/projects'
 
 export const metadata: Metadata = {
   title: 'Projects',
 }
 
-export default function Projects() {
+const PROJECT_QUERY = `*[
+  _type == "projects"
+]`
+
+export default async function Projects() {
+    const projects = await sanityFetch<SanityDocument>({query: PROJECT_QUERY});
+
     return (
       <main className="bg-[#EFF5F8] relative">
         <svg className="absolute z-1 w-screen overflow-hidden" width="1440" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,40 +25,28 @@ export default function Projects() {
           <div className="text-center text-green-500 text-5xl font-medium font-['General Sans'] leading-snug">Projects</div>
         </div>
 
-        <div className="w-full px-16 pb-20 flex-col lg:flex-row justify-start items-center gap-20 inline-flex mt-10">
+        <div className="w-full px-20 pb-20 flex-col lg:flex-row justify-start items-center gap-[5%] inline-flex mt-10 flex-wrap">
+          {
+            projects.map((project: SanityDocument) => {
+              const projImage = project && project.projectImage ? urlFor(project.projectImage)?.url() : '';
 
-          <div className="w-full px-[57.78px] py-[101.11px] bg-slate-900 rounded-[40px] flex-col justify-center items-start gap-[72.22px] flex relative">
-            <Image className="rounded-[40px] w-full h-full absolute top-0 left-0 z-10" src="/home4.jpg" alt="Consulting Image" layout="fill" objectFit="cover"/>
-            <div className="w-full h-full absolute top-0 left-0 bg-slate-900 opacity-80 rounded-[40px] z-20" />
-            <div className="flex-col justify-start items-start gap-[21.67px] flex z-20 mb-16 relative">
-              <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
+              return (<div key={ project.name } className="w-[820px] px-[57.78px] py-[101.11px] bg-slate-900 rounded-[40px] flex-col justify-center items-start gap-[72.22px] flex relative">
+              <Image className="rounded-[40px] w-full h-full absolute top-0 left-0 z-10" src={ projImage ? projImage : ''} alt="Consulting Image" layout="fill" objectFit="cover"/>
+              <div className="w-full h-full absolute top-0 left-0 bg-slate-900 opacity-80 rounded-[40px] z-20" />
+              <div className="flex-col justify-start items-start gap-[21.67px] flex z-20 mb-16 relative">
                 <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
-                  <div className="text-center text-green-500 text-sm font-medium font-['General Sans'] leading-snug">Projects</div>
-                  <div className="max-w-[649px] self-stretch flex-col justify-start items-start gap-[21.67px] flex">
-                      <a href='./projects/consulting/'><div className="hover:text-slate-400 active:text-slate-600 transition delay-75 self-stretch text-white text-[56px] font-medium font-['General Sans'] leading-[67.20px]">Consulting</div></a>
-                      <div className="self-stretch text-white text-lg font-normal font-['General Sans'] leading-[27px]">Learn more about our efforts through consulting!</div>
+                  <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
+                    <div className="text-center text-green-500 text-sm font-medium font-['General Sans'] leading-snug">Projects</div>
+                    <div className="max-w-[649px] self-stretch flex-col justify-start items-start gap-[21.67px] flex">
+                        <a href={`/projects/${ project.slug.current }`}><div className="hover:text-slate-400 active:text-slate-600 transition delay-75 self-stretch text-white text-[56px] font-medium font-['General Sans'] leading-[67.20px]">{ project.name }</div></a>
+                        <div className="self-stretch text-white text-lg font-normal font-['General Sans'] leading-[27px]">{ project.learnmore }</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="w-full px-[57.78px] py-[101.11px] bg-slate-900 rounded-[40px] flex-col justify-center items-start gap-[72.22px] flex relative">
-          <Image className="rounded-[40px] w-full h-full absolute top-0 left-0 z-10" src="/values1.png" alt="Consulting Image" layout="fill" objectFit="cover"/>
-            <div className="w-full h-full absolute top-0 left-0 bg-slate-900 opacity-80 rounded-[40px] z-20" />
-            <div className="flex-col justify-start items-start gap-[21.67px] flex z-20 mb-16 relative">
-              <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
-                <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
-                  <div className="text-center text-green-500 text-sm font-medium font-['General Sans'] leading-snug">Projects</div>
-                  <div className="max-w-[649px] self-stretch flex-col justify-start items-start gap-[21.67px] flex">
-                    <a href='./projects/committees/'><div className="hover:text-slate-400 active:text-slate-600 transition delay-75 self-stretch text-white text-[56px] font-medium font-['General Sans'] leading-[67.20px]">Committees</div></a>
-                    <div className="self-stretch text-white text-lg font-normal font-['General Sans'] leading-[27px]">Learn more about our efforts through our committees!</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+            </div>);
+            })
+          }
         </div>
 
       </main>

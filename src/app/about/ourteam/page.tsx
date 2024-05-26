@@ -1,18 +1,10 @@
 import { Metadata } from 'next'
 import TeamPage from '@/app/components/TeamPage';
 import { SanityDocument } from "next-sanity";
-import { client, sanityFetch } from "@/sanity/client";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import imageUrlBuilder from "@sanity/image-url";
-import { BiPhotoAlbum } from 'react-icons/bi';
+import { urlFor, sanityFetch } from "@/sanity/client";
 import Image from 'next/image';
 
-const TEAM_QUERY = `*[_type == "team"]`;
-
-const { projectId, dataset } = client.config();
-function urlFor(source: SanityImageSource) {
-  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
-}
+const TEAM_QUERY = `*[_type == "team"] | order(ordering asc)`;
  
 export const metadata: Metadata = {
   title: 'Our Team',
@@ -22,9 +14,6 @@ export const dynamic = 'force-dynamic';
 
 export default async function OurTeam() {
   const team = await sanityFetch<SanityDocument[]>({query: TEAM_QUERY});
-  const {
-    members
-  } = team[0];
 
   return (
     <div className="bg-slate-100">
@@ -36,27 +25,15 @@ export default async function OurTeam() {
       <main className="px-16 py-28 flex flex-col gap-20 text-[#11122D] bg-white z-10">
         <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">Our Team</p>
         <h1 className="text-[48px] font-medium leading-[120%]">Introduce the team</h1>
-        <figure className="m-auto relative overflow-hidden w-[95%] h-[400px] lg:h-[700px] bg-[url('/teamimg.png')] bg-cover bg-center rounded-3xl z-10">
+        <figure className="m-auto relative overflow-hidden w-[95%] h-[400px] lg:h-[700px] rounded-3xl z-10">
           <Image alt="teamimg" src="/team/teamimg.png" layout="fill" objectFit="cover" />
         </figure>
 
         <div className="flex md:flex-row flex-col gap-[5%] flex-wrap">
           {
-            members.map((member: { photo: any; name: any; role: any; year: any; major: any; minor: any; description: any; linkedin: any; twitter: any; instagram: any; }) => {
-              const {
-                photo,
-                name,
-                role,
-                year,
-                major,
-                minor,
-                description,
-                linkedin,
-                twitter,
-                instagram
-              } = member;
-              const newUrl = photo ? urlFor(photo)?.url() : null;
-              return <TeamPage img={newUrl ? newUrl : ""} name={name} role={role} year={year} major={major} minor={minor} statement={description} linkedin={linkedin} twit={twitter} instagram={instagram} key={name} />
+            team.map((member: SanityDocument) => {
+              const newUrl = member.photo ? urlFor(member.photo)?.url() : null;
+              return <TeamPage img={newUrl ? newUrl : ""} name={member.name} role={member.role} year={member.year} major={member.major} minor={member.minor} statement={member.statement} linkedin={member.linkedin} twit={member.twitter} instagram={member.instagram} key={member.name} />
             })
           }
         </div>

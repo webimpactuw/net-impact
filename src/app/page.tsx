@@ -5,24 +5,22 @@ import CurrentInfoBox3 from "./components/CurrentInfoBox3";
 import CurrentInfoBox4 from "./components/CurrentInfoBox4";
 import Image from "next/image";
 import { SanityDocument } from "next-sanity";
-import { client, sanityFetch } from "@/sanity/client";
+import { sanityFetch, urlFor } from "@/sanity/client";
 import SponsorScroll from "./components/SponsorScroll";
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+const ASSET_QUERY = `*[_type == "assets"]`;
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 
 export const dynamic = 'force-dynamic';
 
-const { projectId, dataset } = client.config();
-
-function urlFor(source: SanityImageSource) {
-  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
-}
-
 export default async function Home() {
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
-  const images: any = [];
+  const headerImage = assets[0].headerImage ? urlFor(assets[0].headerImage)?.url() : '';
+  const logo = assets[0].logo ? urlFor(assets[0].logo)?.url() : '';
+  const educImage = assets[0].educationImage ? urlFor(assets[0].educationImage)?.url() : '';
+  const actiImage = assets[0].activismImage ? urlFor(assets[0].activismImage)?.url() : '';
+  const careImage = assets[0].careerImage ? urlFor(assets[0].careerImage)?.url() : '';
 
   return (
     <main>
@@ -59,7 +57,7 @@ export default async function Home() {
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
         <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] h-[300px] lg:h-[700px] mt-16 lg:mt-0">
-          <Image alt="headerimg" src="/headerimg.jpg" layout="fill" objectFit="cover" />
+          <Image alt="headerimg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
         </figure>
       </header>
 
@@ -76,7 +74,7 @@ export default async function Home() {
       {/* ====================
       CURRENT INFORMATION
       ==================== */}
-      <section className="flex xl:h-[1276px] items-center px-16 py-[112px] gap-[80px] flex-col">
+      <section className="flex xl:h-[1276px] items-center py-[112px] gap-[80px] flex-col">
         <div className="flex flex-col items-center gap-[18px] text-[#132515] text-center">
           <h1 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">Current Information</h1>
           <p className="text-[18px] font-normal leading-[150%]">What is Net Impact currently doing?</p>
@@ -124,17 +122,18 @@ export default async function Home() {
             h-[149.7px] sm:h-[231.5px] lg:h-[463px] 
             bg-[#097E97] bg-opacity-50 rounded-full 
             pl-8 sm:pl-16 lg:pl-28 pt-16 sm:pt-28 lg:pt-60 lg:text-[30px] font-medium">Education</figure>
-          <figure className="absolute 
+          <figure className='absolute 
             left-[99.3px] sm:left-[153.56px] lg:left-[307.12px] 
             top-[113.2px] sm:top-[168.06px] lg:top-[336.12px] 
             w-[50.7px] sm:w-[78.376px] lg:w-[156.752px] 
-            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px] 
-            bg-[url('/NI+logo.png')] bg-cover" />
+            h-[50.7px] sm:h-[78.376px] lg:h-[156.752px]'>
+              <Image alt="logo" src={logo ? logo : ''} layout="fill" objectFit="cover" />
+          </figure>
         </div>
         <div className="lg:flex lg:h-[500px] text-[#11122D] justify-between">
-          <ValuesBox img="values1.png" header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
-          <ValuesBox img="values2.png" header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
-          <ValuesBox img="values3.png" header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
+          <ValuesBox img={educImage ? educImage : ''} header="Education" desc="Increasing awareness of the climate crisis and climate solutions through member meetings and the Sustainability Curriculum Initiative." />
+          <ValuesBox img={actiImage ? actiImage : ''} header="Activism" desc="Driving environmental change on campus through volunteering, philanthropy, and the Net Impact Consultancy." />
+          <ValuesBox img={careImage ? careImage : ''} header="Career Development" desc="Connecting members with meaningful sustainability career opportunities through speaker meetings, panel events, and the Climate Solutions Summit (CSS)." />
         </div>
       </section>
 
@@ -147,8 +146,8 @@ export default async function Home() {
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
         <div className="relative h-[103px] w-[270px] lg:w-[832px] xl:w-[1166px] 2xl:w-[1500px] overflow-hidden">
-          <SponsorScroll images={images.map((img: SanityImageSource) => {
-            return img ? urlFor(img)?.width(103).height(103).url() : null
+          <SponsorScroll images={sponsors.map((img: SanityDocument) => {
+            return img.sourceImage ? urlFor(img.sourceImage)?.width(103).height(103).url() : null
           })} />
         </div>
       </section>

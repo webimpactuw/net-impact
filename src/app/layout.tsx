@@ -1,33 +1,40 @@
-import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { Metadata } from 'next';
+import { SanityDocument } from 'next-sanity';
+import { sanityFetch, urlFor } from '@/sanity/client';
 
 const generalSans = localFont({ src: './GeneralSans-Variable.woff2' });
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Net Impact",
-    default: "Net Impact",
+    default: "Net Impact"
   },
-  // TODO: replace
-  description: "...",
 };
 
 export const dynamic = 'force-dynamic';
+const ASSET_QUERY = `*[_type == "assets"]`;
+const CUR_EVENTS_QUERY = `*[_type == "event" && !pastEvent]{shortName,slug}`;
+const SOCIALS_QUERY = `*[_type == "socials"]`;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
+  const events = await sanityFetch<SanityDocument[]>({query: CUR_EVENTS_QUERY});
+  const socials = await sanityFetch<SanityDocument[]>({query: SOCIALS_QUERY});
+  
   return (
     <html lang="en" className="font-light">
       <body className={generalSans.className}>
-        <NavBar />
+        <NavBar logo={assets[0].logo ? urlFor(assets[0].logo)?.width(544).url() : ''} events={events} />
           {children}
-        <Footer />
+        <Footer socials={socials[0]} events={events} />
       </body>
     </html>
   );
