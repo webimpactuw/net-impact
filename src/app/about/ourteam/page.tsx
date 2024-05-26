@@ -4,6 +4,7 @@ import { SanityDocument } from "next-sanity";
 import { urlFor, sanityFetch } from "@/sanity/client";
 import Image from 'next/image';
 
+const ASSET_QUERY = `*[_type == "assets"]`;
 const TEAM_QUERY = `*[_type == "team"] | order(ordering asc)`;
  
 export const metadata: Metadata = {
@@ -13,7 +14,10 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function OurTeam() {
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
   const team = await sanityFetch<SanityDocument[]>({query: TEAM_QUERY});
+
+  const headerImage = assets[0].aboutImage ? urlFor(assets[0].aboutImage)?.url() : '';
 
   return (
     <div className="bg-slate-100">
@@ -26,7 +30,7 @@ export default async function OurTeam() {
         <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">Our Team</p>
         <h1 className="text-[48px] font-medium leading-[120%]">Introduce the team</h1>
         <figure className="m-auto relative overflow-hidden w-[95%] h-[400px] lg:h-[700px] rounded-3xl z-10">
-          <Image alt="teamimg" src="/team/teamimg.png" layout="fill" objectFit="cover" />
+          <Image alt="teamimg" src={ headerImage ? headerImage : '' } layout="fill" objectFit="cover" />
         </figure>
 
         <div className="flex md:flex-row flex-col gap-[5%] flex-wrap">
