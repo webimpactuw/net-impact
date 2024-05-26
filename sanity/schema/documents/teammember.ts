@@ -74,5 +74,11 @@ export const memberType = {
             type: 'url',
             group: 'socials',
         },
+        {
+            name: 'ordering',
+            description: 'The priority at which the member is displayed on the "Our Team" page. 1 indicates higher priority, higher numbers indicate lower priority',
+            type: 'number',
+            group: 'info',
+        }
     ]
 }

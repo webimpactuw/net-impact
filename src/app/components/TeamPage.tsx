@@ -25,8 +25,8 @@ export default function TeamPage(props: TeamPageProps) {
                 <p className="text-[16px] font-normal leading-[150%]">
                     Year: { props.year } <br />
                     Major: { props.major } <br />
-                    { props.minor !== "N/A" && `Minor: ${props.minor}` }
-                    { props.minor !== "N/A" && <br /> }
+                    { props.minor && `Minor: ${props.minor}` }
+                    { props.minor && <br /> }
                     <br />
                     &quot;{ props.statement }&quot;
                 </p>

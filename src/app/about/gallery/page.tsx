@@ -1,16 +1,9 @@
 import { Metadata } from 'next'
 import { SanityDocument } from "next-sanity";
-import { client, sanityFetch } from "@/sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { urlFor, sanityFetch } from "@/sanity/client";
 import Image from 'next/image';
 
 const GALLERY_QUERY = `*[_type == "gallery"]`;
-
-const { projectId, dataset } = client.config();
-function urlFor(source: SanityImageSource) {
-  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
-}
 
 export const metadata: Metadata = {
   title: 'Gallery',
@@ -20,12 +13,9 @@ export const dynamic = 'force-dynamic';
 
 export default async function Gallery() {
   const gallery = await sanityFetch<SanityDocument[]>({query: GALLERY_QUERY});
-  const {
-    images
-  } = gallery[0];
-  const imgLength = images.length;
+  const imgLength = gallery.length;
   const colSize = imgLength / 3;
-  const columns = [images.slice(0, colSize), images.slice(colSize, 2 * colSize), images.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
+  const columns = [gallery.slice(0, colSize), gallery.slice(colSize, 2 * colSize), gallery.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
   
   return (
     <div className="bg-slate-100">
@@ -42,11 +32,10 @@ export default async function Gallery() {
         <div className="flex lg:flex-row flex-col gap-8 m-auto">
           {
             columns.map((imgs) => {
-              return <div key={imgs[0]} className="flex flex-col gap-8">
+              return <div key={imgs[0].imageSource} className="flex flex-col gap-8">
                 {
-                  imgs.map((img: SanityImageSource) => {
-                    // const newUrl: string = urlForImage(img);
-                    const newUrl = img ? urlFor(img)?.width(544).url() : null;
+                  imgs.map((img: SanityDocument) => {
+                    const newUrl = img.imageSource ? urlFor(img.imageSource)?.width(544).url() : null;
                     return <Image key={newUrl} src={newUrl || "test.png"} alt="test" height={300} width={544} className="grid-item rounded-2xl opacity-100 hover:opacity-60 cursor-pointer transition-all" />
                   })
                 }
