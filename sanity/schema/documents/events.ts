@@ -1,3 +1,4 @@
+import { SanityDocument } from "next-sanity";
 import { AiFillCalendar } from "react-icons/ai";
 
 export const eventsType = {
@@ -20,34 +21,59 @@ export const eventsType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
+            name: 'pastEvent',
+            description: 'Whether the event is an upcoming or a past event',
+            type: 'boolean',
+            group: 'info'
+        },
+        {
             name: 'type',
             description: 'Whether the event is reoccuring, the general time, etc. (i.e. "Reoccuring Spring Event")',
             type: 'string',
             group: 'info',
-            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
-                rule.required().error(`Required to generate a page on the website`),
+            hidden: ({value, document}: {value: unknown, document: SanityDocument}) => document?.pastEvent,
+            validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
+                rule.custom((value, context) => {
+                    if (!context?.document?.pastEvent) {
+                        return 'Required to generate a page on the website'
+                    }
+                    return true
+                }),
         },
         {
             name: 'status',
             description: 'The message displayed on the page for the event (i.e. "Upcoming: The event will return next spring")',
             type: 'string',
             group: 'info',
+            hidden: ({value, document}: {value: unknown, document: SanityDocument}) => document?.pastEvent,
         },
         {
             name: 'time',
             description: 'The general time of the event, formatted as "[Season] [Year]" (i.e. "Spring 2023")',
             type: 'string',
             group: ['info', 'description'],
-            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
-                rule.required().error(`Required to generate a page on the website`),
+            hidden: ({value, document}: {value: unknown, document: SanityDocument}) => document?.pastEvent,
+            validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
+                rule.custom((value, context) => {
+                    if (!context?.document?.pastEvent) {
+                        return 'Required to generate a page on the website'
+                    }
+                    return true
+                }),
         },
         {
             name: 'descriptionHeader',
             description: 'The header for the description of the event',
             type: 'string',
             group: 'description',
-            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
-                rule.required().error(`Required to generate a page on the website`),
+            hidden: ({value, document}: {value: unknown, document: SanityDocument}) => document?.pastEvent,
+            validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
+                rule.custom((value, context) => {
+                    if (!context?.document?.pastEvent) {
+                        return 'Required to generate a page on the website'
+                    }
+                    return true
+                }),
         },
         {
             name: 'description',
@@ -69,6 +95,7 @@ export const eventsType = {
             description: 'The buttons representing various resources/links on the page for the event',
             type: 'array',
             group: 'description',
+            hidden: ({value, document}: {value: unknown, document: SanityDocument}) => document?.pastEvent,
             of: [{
                 name: 'button',
                 type: 'object',

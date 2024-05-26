@@ -24,5 +24,10 @@ export const spotlightType = {
             description: 'A brief description of the event on the homepage',
             type: 'text'
         },
+        {
+            name: 'spotlightImg',
+            description: 'An image to highlight the event with on the homepage',
+            type: 'image'
+        }
     ]
 }

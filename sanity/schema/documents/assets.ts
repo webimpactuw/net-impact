@@ -8,12 +8,14 @@ export const assetType = {
     groups: [
         {name: 'header', title: 'Header Images'},
         {name: 'value', title: 'Our Values Images'},
+        {name: 'misc', title: 'Other Images'},
     ],
     fields: [
         {
             name: 'logo',
             description: 'Logo for Net Impact to be used across the site',
             type: 'image',
+            group: 'misc',
             validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
                 rule.required().error(`Required to generate a page on the website`),
         },
@@ -59,5 +61,11 @@ export const assetType = {
             type: 'image',
             group: 'header',
         },
+        {
+            name: 'projectimg',
+            description: 'Image shown on homepage in the "See Our Projects" box',
+            type: 'image',
+            group: 'misc'
+        }
     ]
 }
