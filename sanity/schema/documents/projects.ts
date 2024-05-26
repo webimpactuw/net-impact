@@ -1,38 +1,55 @@
+import { AiFillProject } from "react-icons/ai";
+
 export const projectsType = {
     name: 'projects',
     title: 'Projects',
     type: 'document',
+    icon: AiFillProject,
     fields: [
         {
             name: 'name',
+            description: 'The name of the project',
             type: 'string',
+            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                rule.required().error(`Required to generate a page on the website`),
         },
         {
             name: 'learnmore',
+            description: 'The text shown on the Projects hub page (i.e. "Learn more about ...")',
             type: 'string',
         },
         {
             name: 'description',
-            type: 'string',
+            description: 'A description of the project',
+            type: 'text',
+            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                rule.required().error(`Required to generate a page on the website`),
         },
         {
             name: 'joinlink',
+            description: 'The link to join/get involved with the project',
             type: 'url',
         },
         {
             name: 'information',
+            description: 'Any relevant information for the project, represented as a series of sections',
             type: 'array',
             of: [{
-                name: 'chapter',
+                name: 'section',
                 type: 'object',
                 fields: [
                     {
                         name: 'header',
-                        type: 'string'
+                        description: 'The header for the section',
+                        type: 'string',
+                        validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                            rule.required().error(`Headers are required for sections`),
                     },
                     {
                         name: 'content',
-                        type: 'string'
+                        description: 'The content in this section',
+                        type: 'array',
+                        of: [{type: 'block'}],
                     }
                 ]
             }]
