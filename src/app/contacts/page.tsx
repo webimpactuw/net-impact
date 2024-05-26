@@ -1,10 +1,23 @@
 import { Metadata } from 'next'
 import ContactsList from "../components/ContactsList"
+import ContactsForm from "../components/ContactsForm"
+import { sanityFetch, urlFor } from '@/sanity/client'
+import { SanityDocument } from 'next-sanity'
+import Image from 'next/image'
+
 export const metadata: Metadata = {
   title: 'Contact Us',
 }
-import ContactsForm from "../components/ContactsForm"
-export default function Contacts() {
+
+const ASSET_QUERY = `*[_type == "assets"]`;
+const SOCIALS_QUERY = `*[_type == "socials"]`;
+
+export default async function Contacts() {
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
+  const socials = await sanityFetch<SanityDocument[]>({query: SOCIALS_QUERY});
+
+  const headerImage = assets[0].contactImage ? urlFor(assets[0].contactImage)?.url() : '';
+
   return (
     <main className = "bg-[#EFF5F8]">
       <div className="absolute z-1 lg:w-full block">
@@ -21,11 +34,13 @@ export default function Contacts() {
           <div className = "flex lg:flex-row flex-col-reverse pt-72 justify-between px-24">
             <ContactsForm/>
         
-            <figure className = "rounded-3xl bg-[url('/team.png')] lg:w-[45%] h-[300px] lg:h-[685px] bg-right lg:mb-0 mb-10" />
+            <figure className = "rounded-3xl lg:w-[45%] h-[300px] lg:h-[685px] lg:mb-0 mb-10 relative overflow-hidden">
+              <Image src={headerImage ? headerImage : ''} alt={'Contacts image'} layout="fill" objectFit="cover" />
+            </figure>
           </div>
         </div>
         <div className = "z-20">
-          <ContactsList/>
+          <ContactsList instagram={ socials[0].instagram } linkedin={ socials[0].linkedin } slack={ socials[0].slack } />
         </div>
       </div>
       
