@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 type SponsorScrollProps = {
-    images: string[];
+    images: (string | null | undefined)[];
 }
 
 export default function SponsorScroll(props: SponsorScrollProps) {
@@ -32,7 +32,10 @@ export default function SponsorScroll(props: SponsorScrollProps) {
             {/* { startIndex } */}
             <div className="flex gap-16 items-center overflow-hidden">
             {
-                props.images.concat(props.images).map((url: string) => {
+                props.images.map((url: string | null | undefined) => {
+                    if (url === null || url === undefined) {
+                        return <></>;
+                    }
                     return <Image key={url} src={url} alt="test" height={103} width={103} />
                 })
             }
