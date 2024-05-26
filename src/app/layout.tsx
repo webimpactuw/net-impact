@@ -3,17 +3,10 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Metadata } from 'next';
-import { client, sanityFetch } from '@/sanity/client';
 import { SanityDocument } from 'next-sanity';
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { sanityFetch, urlFor } from '@/sanity/client';
 
 const generalSans = localFont({ src: './GeneralSans-Variable.woff2' });
-
-const { projectId, dataset } = client.config();
-function urlFor(source: SanityImageSource) {
-  return projectId && dataset ? imageUrlBuilder({ projectId, dataset}).image(source) : null;
-}
 
 export const metadata: Metadata = {
   title: {

@@ -44,25 +44,25 @@ export const assetType = {
             group: 'value',
         },
         {
-            name: 'aboutimg',
+            name: 'aboutImage',
             description: 'Image shown at the top of the about page',
             type: 'image',
             group: 'header',
         },
         {
-            name: 'teamimg',
+            name: 'teamImage',
             description: 'Image shown at the top of the "Our Team" page',
             type: 'image',
             group: 'header',
         },
         {
-            name: 'contactimg',
+            name: 'contactImage',
             description: 'Image shown on the Contacts page',
             type: 'image',
             group: 'header',
         },
         {
-            name: 'projectimg',
+            name: 'projectImage',
             description: 'Image shown on homepage in the "See Our Projects" box',
             type: 'image',
             group: 'misc'
