@@ -17,7 +17,6 @@ export const projectsType = {
             name: 'slug',
             description: 'Slug (URL ending) of the webpage for this event',
             type: 'slug',
-            group: 'info',
             validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
                 rule.required().error(`Required to generate a page on the website`),
         },
@@ -39,8 +38,13 @@ export const projectsType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
-            name: 'joinlink',
-            description: 'The link to join/get involved with the project',
+            name: 'buttonText',
+            description: 'The text shown on the button on the page for the project',
+            type: 'string'
+        },
+        {
+            name: 'buttonLink',
+            description: 'The link the button navigates to, usually to join/get involved with the project',
             type: 'url',
         },
         {
