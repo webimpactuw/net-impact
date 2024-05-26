@@ -1,8 +1,9 @@
 import Link from "next/link"
+import { SanityDocument } from "next-sanity"
 
 type DropDownButtonProps = {
     buttonName: string,
-    events: string[]
+    events: SanityDocument[]
 }
 
 export default function DropDownButton(props: DropDownButtonProps){
@@ -26,8 +27,8 @@ export default function DropDownButton(props: DropDownButtonProps){
                     props.events.map((event) => {
                         return <>
                             <div className="border-t border-gray-400 w-156 hidden sm:inline"></div>
-                            <Link href="/events/climatesummit"className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-40 md:w-auto m-2 sm:m-0 inline-block transition-colors">
-                                { event }
+                            <Link href={`/events/${ event.slug.current }`}className="bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1 text-center md:text-left w-40 md:w-auto m-2 sm:m-0 inline-block transition-colors">
+                                { event.shortName }
                             </Link>
                         </>
 

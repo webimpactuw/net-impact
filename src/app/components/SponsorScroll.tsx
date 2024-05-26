@@ -14,7 +14,7 @@ export default function SponsorScroll(props: SponsorScrollProps) {
         // TODO: make the animation loop around
         const interval = setInterval(() => {
             setStartIndex(startIndex + 1);
-            if (startIndex === props.images.length - 1) {
+            if (startIndex === props.images.length - 9) {
                 setStartIndex(0);
             }
         }, 2000)

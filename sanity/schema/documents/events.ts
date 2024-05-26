@@ -29,6 +29,14 @@ export const eventsType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
+            name: 'slug',
+            description: 'Slug (URL ending) of the webpage for this event',
+            type: 'slug',
+            group: 'info',
+            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                rule.required().error(`Required to generate a page on the website`),
+        },
+        {
             name: 'pastEvent',
             description: 'Whether the event is an upcoming or a past event',
             type: 'boolean',

@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 const ASSET_QUERY = `*[_type == "assets"]`;
-const CUR_EVENTS_QUERY = `*[_type == "event" && !pastEvent]{shortName}`
+const CUR_EVENTS_QUERY = `*[_type == "event" && !pastEvent]{shortName,slug}`;
+const SOCIALS_QUERY = `*[_type == "socials"]`;
 
 export default async function RootLayout({
   children,
@@ -26,13 +27,14 @@ export default async function RootLayout({
 }>) {
   const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
   const events = await sanityFetch<SanityDocument[]>({query: CUR_EVENTS_QUERY});
+  const socials = await sanityFetch<SanityDocument[]>({query: SOCIALS_QUERY});
   
   return (
     <html lang="en" className="font-light">
       <body className={generalSans.className}>
-        <NavBar logo={assets[0].logo ? urlFor(assets[0].logo)?.width(544).url() : ''} events={events.map((event: SanityDocument) => event.shortName)} />
+        <NavBar logo={assets[0].logo ? urlFor(assets[0].logo)?.width(544).url() : ''} events={events} />
           {children}
-        <Footer />
+        <Footer socials={socials[0]} events={events} />
       </body>
     </html>
   );

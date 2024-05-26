@@ -14,6 +14,14 @@ export const projectsType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
+            name: 'slug',
+            description: 'Slug (URL ending) of the webpage for this event',
+            type: 'slug',
+            group: 'info',
+            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                rule.required().error(`Required to generate a page on the website`),
+        },
+        {
             name: 'learnmore',
             description: 'The text shown on the Projects hub page (i.e. "Learn more about ...")',
             type: 'string',

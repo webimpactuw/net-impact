@@ -5,10 +5,11 @@ import DropDownButton from "./DropDownButton"
 import DropDownButton2 from './DropDownButton2'
 import { useState } from 'react';
 import { usePathname } from "next/navigation";
+import { SanityDocument } from 'next-sanity';
 
 type NavBarProps = {
     logo: string | undefined
-    events: string[]
+    events: SanityDocument[]
 }
 
 export default function NavBar(props: NavBarProps){
