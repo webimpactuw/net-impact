@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import ContactsList from "../components/ContactsList"
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us | Net Impact',
 }
 import ContactsForm from "../components/ContactsForm"
 export default function Contacts() {

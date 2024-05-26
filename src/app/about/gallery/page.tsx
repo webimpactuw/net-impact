@@ -13,7 +13,7 @@ function urlFor(source: SanityImageSource) {
 }
 
 export const metadata: Metadata = {
-  title: 'Gallery',
+  title: 'Gallery | Net Impact',
 }
 
 export const dynamic = 'force-dynamic';

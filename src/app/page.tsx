@@ -9,6 +9,11 @@ import { client, sanityFetch } from "@/sanity/client";
 import SponsorScroll from "./components/SponsorScroll";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Net Impact",
+};
 
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 

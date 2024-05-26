@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ChevronLink from '@/app/components/ChevronLink'
 
 export const metadata: Metadata = {
-  title: 'Past Events',
+  title: 'Past Events | Net Impact',
 }
 
 export default function PastEvents() {
