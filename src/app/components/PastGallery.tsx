@@ -12,12 +12,7 @@ export default function PastGallery(props: PastGalleryProps) {
     const [imgIndex, setImgIndex] = useState(0);
     
     return (
-        <div className={`absolute transition-all`} style={
-            { 
-                'left': `-${startIndex * 167}px`,
-                'transitionDuration': '500ms'
-            }
-        }>
+        <div className={`absolute transition-all`}>
             {/* { startIndex } */}
             <div className="flex gap-16 items-center overflow-hidden">
             {
