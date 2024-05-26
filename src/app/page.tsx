@@ -11,10 +11,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Net Impact",
-};
-
+const ASSET_QUERY = `*[_type == "assets"]`;
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 
 export const dynamic = 'force-dynamic';
@@ -27,6 +24,7 @@ function urlFor(source: SanityImageSource) {
 
 export default async function Home() {
   const sponsors = await sanityFetch<SanityDocument[]>({query: SPONSOR_QUERY});
+  const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
 
   return (
     <main>

@@ -1,29 +1,32 @@
-'use client';
-
 import localFont from 'next/font/local';
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import { usePathname } from "next/navigation";
+import { Metadata } from 'next';
 
 const generalSans = localFont({ src: './GeneralSans-Variable.woff2' });
 
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Net Impact",
+    default: "Net Impact"
+  },
+};
+
 export const dynamic = 'force-dynamic';
+const ASSET_QUERY = `*[_type == "assets"]`;
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname(); 
-  const isSanityStudio = pathname.startsWith('/studio');
-
   return (
     <html lang="en" className="font-light">
       <body className={generalSans.className}>
-        {!isSanityStudio && <NavBar />}
+        <NavBar />
           {children}
-        {!isSanityStudio && <Footer />}
+        <Footer />
       </body>
     </html>
   );

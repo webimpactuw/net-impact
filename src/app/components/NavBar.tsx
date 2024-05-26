@@ -4,6 +4,7 @@ import Image from 'next/image'
 import DropDownButton from "./DropDownButton"
 import DropDownButton2 from './DropDownButton2'
 import { useState } from 'react';
+import { usePathname } from "next/navigation";
 
 export default function NavBar(){
     const [showNav, setShowNav] = useState(false);
@@ -12,8 +13,10 @@ export default function NavBar(){
         setShowNav(!showNav);
     }
 
-    return( 
+    const pathname = usePathname(); 
+    const isSanityStudio = pathname.startsWith('/studio');
 
+    return !isSanityStudio ? ( 
         <header className = "md:flex md:flex-row flex-col items-center px-8 sm:px-16 py-5 justify-between md:absolute w-full font-medium z-20"> {/*60 px horizontal 20 px vertical */}
 
             <div className="flex md:flex-none items-center justify-between hover:opacity-80 transition-all">
@@ -35,5 +38,5 @@ export default function NavBar(){
                 <li className = "text-base inline-block md:ml-5 hover:text-gray-400 transition-all"><a href = "/contacts">Contacts</a></li>
             </ul>
         </header>
-    )
+    ) : <></>
 }

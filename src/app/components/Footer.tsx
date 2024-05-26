@@ -1,7 +1,13 @@
+'use client';
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
-    return (
+    const pathname = usePathname(); 
+    const isSanityStudio = pathname.startsWith('/studio');
+
+    return !isSanityStudio ? (
         <footer>
             <div className="w-full h-[571px] relative px-16 py-20 flex-col justify-start items-center gap-20 inline-flex mt-10">
                 <div className="self-stretch h-[380px] flex-col justify-start items-start gap-9 flex">
@@ -111,5 +117,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-    );
+    ) : <></>
 }

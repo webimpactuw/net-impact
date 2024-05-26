@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Events | Net Impact',
+  title: 'Events',
 }
 
 export default function Events() {

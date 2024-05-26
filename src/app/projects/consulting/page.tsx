@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Consulting | Net Impact',
+  title: 'Consulting',
 }
 
 export default function Consulting() {

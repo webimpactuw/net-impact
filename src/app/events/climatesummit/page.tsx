@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Climate Summit | Net Impact'
+  title: 'Climate Summit'
 }
 
 export default function ClimateSummit() {

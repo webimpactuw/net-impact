@@ -4,7 +4,7 @@ import ValuesBox from '../components/ValuesBox';
 import Image from 'next/image';
  
 export const metadata: Metadata = {
-  title: 'About Us | Net Impact',
+  title: 'About Us',
 }
 
 export const dynamic = 'force-dynamic';

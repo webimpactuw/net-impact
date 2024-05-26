@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Fall Panel | Net Impact',
+  title: 'Fall Panel',
 }
 
 export default function FallPanel() {

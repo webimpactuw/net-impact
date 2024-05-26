@@ -15,7 +15,7 @@ function urlFor(source: SanityImageSource) {
 }
  
 export const metadata: Metadata = {
-  title: 'Our Team | Net Impact',
+  title: 'Our Team',
 }
 
 export const dynamic = 'force-dynamic';
