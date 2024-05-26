@@ -21,6 +21,14 @@ export const eventsType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
+            name: 'shortName',
+            description: 'Shorter name of the event, used in the navbar',
+            type: 'string',
+            group: 'info',
+            validation: (rule: { required: () => { (): any; new(): any; error: { (arg0: string): any; new(): any; }; }; }) => 
+                rule.required().error(`Required to generate a page on the website`),
+        },
+        {
             name: 'pastEvent',
             description: 'Whether the event is an upcoming or a past event',
             type: 'boolean',
@@ -35,6 +43,9 @@ export const eventsType = {
             validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
                 rule.custom((value, context) => {
                     if (!context?.document?.pastEvent) {
+                        if (value) {
+                            return true;
+                        }
                         return 'Required to generate a page on the website'
                     }
                     return true
@@ -56,6 +67,9 @@ export const eventsType = {
             validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
                 rule.custom((value, context) => {
                     if (!context?.document?.pastEvent) {
+                        if (value) {
+                            return true;
+                        }
                         return 'Required to generate a page on the website'
                     }
                     return true
@@ -70,6 +84,9 @@ export const eventsType = {
             validation: (rule: { custom: (arg0: (value: any, context: any) => true | "Required to generate a page on the website") => any; }) => 
                 rule.custom((value, context) => {
                     if (!context?.document?.pastEvent) {
+                        if (value) {
+                            return true;
+                        }
                         return 'Required to generate a page on the website'
                     }
                     return true
