@@ -17,7 +17,7 @@ export default async function OurTeam() {
   const assets = await sanityFetch<SanityDocument[]>({query: ASSET_QUERY});
   const team = await sanityFetch<SanityDocument[]>({query: TEAM_QUERY});
 
-  const headerImage = assets[0].aboutImage ? urlFor(assets[0].aboutImage)?.url() : '';
+  const headerImage = assets[0].teamImage ? urlFor(assets[0].teamImage)?.url() : '';
 
   return (
     <div className="bg-slate-100">
