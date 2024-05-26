@@ -19,6 +19,11 @@ export const projectsType = {
             type: 'string',
         },
         {
+            name: 'projectImage',
+            description: 'The image shown on the page for the project',
+            type: 'image'
+        },
+        {
             name: 'description',
             description: 'A description of the project',
             type: 'text',

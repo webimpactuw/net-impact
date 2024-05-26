@@ -15,6 +15,11 @@ export const spotlightType = {
                 rule.required().error(`Required to generate a page on the website`),
         },
         {
+            name: 'time',
+            description: 'The general time of the event, formatted as "[Season] [Year]" (i.e. "Spring 2023")',
+            type: 'string'
+        },
+        {
             name: 'header',
             description: 'The header promoting the event to be shown on the homepage',
             type: 'string'
