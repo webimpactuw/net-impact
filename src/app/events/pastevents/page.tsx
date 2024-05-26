@@ -1,13 +1,20 @@
+import { PortableText } from '@portabletext/react';
 import { Metadata } from 'next'
 import Image from 'next/image'
 import ChevronLink from '@/app/components/ChevronLink'
+import { sanityFetch, urlFor } from '@/sanity/client';
+import { SanityDocument } from 'next-sanity';
 
 export const metadata: Metadata = {
   title: 'Past Events',
 }
 
-export default function PastEvents() {
-  return (
+const PAST_EVENTS_QUERY = `*[_type == "event" && pastEvent]`;
+
+export default async function PastEvents() {
+    const events = await sanityFetch<SanityDocument[]>({query: PAST_EVENTS_QUERY});
+
+    return (
     <div className="w-full bg-slate-100 flex-col inline-flex">
         <div className="absolute overflow-hidden w-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1900" viewBox="0 0 1440 1860" fill="none">
@@ -20,40 +27,32 @@ export default function PastEvents() {
                 <div className="self-stretch text-center text-cyan-700 text-lg font-normal font-['General Sans'] leading-[3px] z-10">View all of our past events</div>
             </div>
         </div>
-    <div className="w-[90%] self-stretch h-[470px] flex-col justify-start items-center gap-16 flex m-auto">
-        <div className="h-[422px] bg-white rounded-[20px] border border-teal-600 justify-start items-start inline-flex z-10">
-            <div className="grow shrink basis-0 self-stretch px-[60px] flex-col justify-center items-start inline-flex">
-                <div className="self-stretch h-[266px] flex-col justify-start items-start gap-2 flex">
-                    <div className="self-stretch text-slate-900 text-[32px] font-medium font-['General Sans'] leading-[41.60px]">2024 Sustainability Career Fair</div>
-                    <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">Student Organizations, ReThink and Net Impact, 
-                        are calling attention to sustainability in the Foster School of Business. <br/><br/>This quarter we are hosting a career fair to connect high-potential
-                        students with quality companies. <br/><br/>Our goal with this event is to highlight sustainability-related organizations and provide employment connections
-                        to current job-seekers and prospective future sustainability professionals. </div>
+    {
+        events.map((event: SanityDocument) => {
+            const imageUrl = event.descriptionImage ? urlFor(event.descriptionImage)?.url() : '';
+            const gallery = event.gallery ? event.gallery : [];
+
+            return (<div key={event.name} className="w-[90%] self-stretch h-[470px] flex-col justify-start items-center gap-16 flex m-auto">
+                <div className="h-[422px] bg-white rounded-[20px] border border-teal-600 justify-start items-start inline-flex z-10">
+                    <div className="grow shrink basis-0 self-stretch px-[60px] flex-col justify-center items-start inline-flex">
+                        <div className="self-stretch h-[266px] flex-col justify-start items-start gap-2 flex">
+                            <div className="self-stretch text-slate-900 text-[32px] font-medium font-['General Sans'] leading-[41.60px]">{ event.name }</div>
+                            <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">
+                                <PortableText value={ event.description } />
+                            </div>
+                        </div>
+                        { gallery.length !== 0 ? <div className="justify-center items-center gap-2 flex">
+                            <ChevronLink text="Gallery" link={`/events/pastevents/${ event.slug.current }`} />
+                        </div> : <></> }
+                    </div>
+                    <div className="w-px self-stretch bg-teal-600" />
+                    <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl">
+                        <Image width={800} height={422} alt="test" src={ imageUrl ? imageUrl : '' } />
+                    </div>
                 </div>
-                <div className="justify-center items-center gap-2 flex">
-                    <ChevronLink text="Gallery" link="/" />
-                </div>
-            </div>
-            <div className="w-px self-stretch bg-teal-600" />
-            <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl">
-                <Image width={800} height={422} alt="test" src="https://via.placeholder.com/655x422" />
-            </div>
-        </div>
-    </div>
-    <div className="w-[90%] self-stretch h-[470px] flex-col justify-start items-center gap-16 flex m-auto">
-        <div className="h-[422px] bg-white rounded-[20px] border border-teal-600 justify-start items-start inline-flex z-10">
-            <div className="grow shrink basis-0 self-stretch px-[60px] flex-col justify-center items-start inline-flex">
-                <div className="self-stretch h-[266px] flex-col justify-start items-start gap-2 flex">
-                    <div className="self-stretch text-slate-900 text-[32px] font-medium font-['General Sans'] leading-[41.60px]">Global Sustainability Case Competition</div>
-                    <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">In 2022, Net Impact partnered with Nasdaq and Wilcox Farms to host the Global Sustainability Case Competition (GSCC).<br/><br/>In the GSCC, student teams worked together to pitch innovative and sustainable solutions for the High Atlas Foundation, a nonprofit in Morocco.<br/><br/>The solutions focused on empowering small organic farmers to make a living sustainably.</div>
-                </div>
-            </div>
-            <div className="w-px self-stretch bg-teal-600" />
-            <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl">
-                <Image width={800} height={422} alt="test" src="https://via.placeholder.com/655x422" />
-            </div>
-        </div>
-    </div>
+            </div>);
+        })
+    }
 </div>
   )
 }

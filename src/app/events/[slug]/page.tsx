@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export const metadata: Metadata = {
-  title: 'Climate Summit'
+  title: 'Events'
 }
 
 const EVENT_QUERY = `*[
