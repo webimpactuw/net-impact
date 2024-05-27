@@ -34,7 +34,7 @@ export default async function Contacts() {
           <div className = "flex lg:flex-row flex-col-reverse pt-72 justify-between px-24">
             <ContactsForm/>
         
-            <figure className = "rounded-3xl lg:w-[45%] h-[300px] lg:h-[685px] lg:mb-0 mb-10 relative overflow-hidden">
+            <figure className = "rounded-3xl lg:w-[45%] h-[300px] lg:h-[685px] lg:mb-0 mb-10 relative overflow-hidden bg-slate-300">
               <Image src={headerImage ? headerImage : ''} alt={'Contacts image'} layout="fill" objectFit="cover" />
             </figure>
           </div>

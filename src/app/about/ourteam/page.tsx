@@ -29,7 +29,7 @@ export default async function OurTeam() {
       <main className="px-16 py-28 flex flex-col gap-20 text-[#11122D] bg-white z-10">
         <p className="text-[#2F8097] text-[20px] font-medium leading-[150%]">Our Team</p>
         <h1 className="text-[48px] font-medium leading-[120%]">Introduce the team</h1>
-        <figure className="m-auto relative overflow-hidden w-[95%] h-[400px] lg:h-[700px] rounded-3xl z-10">
+        <figure className="m-auto relative overflow-hidden w-[95%] h-[400px] lg:h-[700px] rounded-3xl z-10 bg-slate-300">
           <Image alt="teamimg" src={ headerImage ? headerImage : '' } layout="fill" objectFit="cover" />
         </figure>
 

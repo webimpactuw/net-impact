@@ -11,7 +11,7 @@ export default async function CurrentInfoBox3() {
 
     return (
         <div className="lg:w-[640px] w-11/12 lg:h-[272px] lg:m-0 m-auto my-8 flex rounded-[20px] border-[1px] border-[#2B9575]">
-            <figure className="w-1/2 rounded-l-[20px] overflow-hidden relative">
+            <figure className="w-1/2 rounded-l-[20px] overflow-hidden relative bg-slate-300">
                 <Image alt="headerimg" src={projImage ? projImage : ''} layout="fill" objectFit="cover" />
             </figure>
             <div className="flex flex-col justify-between p-[24px] w-1/2">

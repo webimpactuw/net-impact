@@ -46,7 +46,7 @@ export default async function PastEvents() {
                         </div> : <></> }
                     </div>
                     <div className="w-px self-stretch bg-teal-600" />
-                    <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl">
+                    <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl bg-slate-300">
                         <Image width={800} height={422} alt="test" src={ imageUrl ? imageUrl : '' } />
                     </div>
                 </div>

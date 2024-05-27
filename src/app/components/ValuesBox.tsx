@@ -9,7 +9,7 @@ type ValuesBoxProps = {
 export default function ValuesBox(props: ValuesBoxProps) {
     return (
         <div className="flex flex-col gap-8 lg:w-[30%] mb-20 lg:mb-0">
-            <figure className="relative h-[300px] rounded-[20px] overflow-hidden">
+            <figure className="relative h-[300px] rounded-[20px] overflow-hidden bg-slate-300">
                 <Image src={`${ props.img }`} alt={ props.img } layout="fill" objectFit="cover" />
             </figure>
             <div>

@@ -143,7 +143,7 @@ export const eventsType = {
             }]
         },
         {
-            name: 'pastImages',
+            name: 'pastEvents',
             description: 'Images/captions from past versions of the event, if they exist',
             type: 'array',
             group: 'images',

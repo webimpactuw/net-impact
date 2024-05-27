@@ -23,7 +23,7 @@ export default async function CurrentInfoBox4() {
                     <ChevronLink text="Stay Updated" link="/events/fallpanel" />
                 </div>
             </div>
-            <figure className="h-[244px] rounded-b-[20px] relative overflow-hidden">
+            <figure className="h-[244px] rounded-b-[20px] relative overflow-hidden bg-slate-300">
                 <Image alt="headerimg" src={spotlightImage ? spotlightImage : ''} layout="fill" objectFit="cover" />
             </figure>
         </div>
