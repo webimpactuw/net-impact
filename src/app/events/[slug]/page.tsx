@@ -5,6 +5,7 @@ import { urlFor, sanityFetch } from "@/sanity/client";
 import Image from 'next/image'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import PastGallery from '@/app/components/PastGallery';
+import { eventsType } from '../../../../sanity/schema/documents/events';
 
 export const metadata: Metadata = {
   title: 'Events'
@@ -27,6 +28,17 @@ export default async function EventPage({ params, }: { params: {slug: string} })
     const imgLength = gallery.length;
     const colSize = imgLength / 3;
     const columns = [gallery.slice(0, colSize), gallery.slice(colSize, 2 * colSize), gallery.slice(2 * colSize, 3 * colSize + (imgLength % 3))];
+
+    let pastImages: {imageSource: string, subtitle: string}[] = [];
+    if (event.pastEvents) {
+        event.pastEvents.map((event: { subtitle: string, galleryImages:SanityImageSource[]; }) => {
+            event.galleryImages.map((img: SanityImageSource) => {
+                const newUrl = img ? urlFor(img)?.url() : '';
+                const validatedUrl = newUrl ? newUrl : ''
+                pastImages.push({ imageSource: validatedUrl, subtitle: event.subtitle })
+            })
+        })
+    }
 
 return event ? (
 <div className="relative bg-slate-100">
@@ -90,42 +102,7 @@ return event ? (
     </div>
 </div>
 
-{/* <PastGallery  /> */}
-
-        <div className="w-full h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20 inline-flex">
-            <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">
-                <div className="self-stretch h-[587.45px] flex-col justify-start items-start gap-6 flex">
-                    <div className="self-stretch text-center text-slate-900 text-5xl font-medium leading-[72px]">
-                        Past Summits
-                    </div>
-                    {
-                        event.pastImages.map((pastImage: {subtitle: string, imageSource: SanityImageSource }) => {
-                            const newUrl = pastImage.imageSource ? urlFor(pastImage.imageSource)?.url() : null;
-                            return (<div className="w-full h-[467.45px] relative" key={pastImage.subtitle}>
-                                <div>
-                                    <figure className="w-1/3 h-[363px] left-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10" />
-                                    <figure className="w-2/3 h-[416px] rounded-[20px] relative shadow m-auto z-20 overflow-hidden">
-                                        <Image src={ newUrl ? newUrl : "" } alt={ newUrl ? newUrl : "" } layout="fill" objectFit="cover" />
-                                    </figure>
-                                    <figure className="w-1/3 h-[363px] right-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10" />
-                                </div>
-                                <div className="text-center text-slate-900 text-[25px] mt-4 font-medium leading-[37.50px]">
-                                    <p>2022 Climate Solutions Summit</p>
-                                    <div className="h-[0px] px-[50px] justify-center items-center gap-[5px] inline-flex">
-                                        <div className="w-2 h-2 bg-neutral-400 rounded-full" />
-                                        <div className="w-2 h-2 bg-zinc-300 rounded-full" />
-                                        <div className="w-2 h-2 bg-zinc-300 rounded-full" />
-                                    </div>
-                                </div>
-                                <div className="left-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-60 z-20 cursor-pointer">&lt;</div>
-                                <div className="right-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-60 z-20 cursor-pointer">&gt;</div>
-                            </div>);
-                        })
-                    }
-                </div>
-            </div>
-        </div>
-
+<PastGallery past={ pastImages } />  
         
         <div className="px-16 py-28 bg-white flex-col justify-start items-center gap-20 flex">
             <div className="h-[109px] flex-col justify-start items-center gap-6 flex">
