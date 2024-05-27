@@ -102,7 +102,9 @@ return event ? (
     </div>
 </div>
 
-<PastGallery past={ pastImages } />  
+{
+    pastImages.length !== 0 ? <PastGallery past={ pastImages } />  : <></>
+} 
         
         <div className="px-16 py-28 bg-white flex-col justify-start items-center gap-20 flex">
             <div className="h-[109px] flex-col justify-start items-center gap-6 flex">

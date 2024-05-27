@@ -11,7 +11,7 @@ export default function DropDownButton(props: DropDownButtonProps){
     <div className = "sm:flex w-full sm:w-36 max-w-7xl justify-between">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 relative group cursor-default"> {/*removed justify between*/}
             {/*removed justify between*/}
-            <span>{ props.buttonName }</span>
+            <span className="group-hover:text-gray-400">{ props.buttonName }</span>
 
             <div className="hidden md:block">
             <svg width="14" height="8" viewBox="0 0 14 8" fill="black" xmlns="http://www.w3.org/2000/svg">
