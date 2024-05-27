@@ -23,8 +23,8 @@ export default async function PastEvents() {
         </div>
         <div className="h-[272px] px-16 py-52 flex-col justify-start items-center gap-20 flex">
             <div className="h-28 flex-col justify-start items-center gap-6 flex">
-                <div className="self-stretch h-[61px] text-center text-slate-900 text-[56px] font-medium font-['General Sans'] leading-[67.20px] z-10">Past Events</div>
-                <div className="self-stretch text-center text-cyan-700 text-lg font-normal font-['General Sans'] leading-[3px] z-10">View all of our past events</div>
+                <div className="self-stretch sm:h-[61px] text-center text-slate-900 text-[48px] sm:text-[56px] font-medium font-['General Sans'] leading-[67.20px] z-10">Past Events</div>
+                <div className="self-stretch text-center text-cyan-700 text-lg font-normal font-['General Sans'] sm:leading-[3px] z-10">View all of our past events</div>
             </div>
         </div>
     {
@@ -32,12 +32,12 @@ export default async function PastEvents() {
             const imageUrl = event.descriptionImage ? urlFor(event.descriptionImage)?.url() : '';
             const gallery = event.gallery ? event.gallery : [];
 
-            return (<div key={event.name} className="w-[90%] self-stretch h-[470px] flex-col justify-start items-center gap-16 flex m-auto">
-                <div className="h-[422px] bg-white rounded-[20px] border border-teal-600 justify-start items-start inline-flex z-10">
-                    <div className="grow shrink basis-0 self-stretch px-[60px] flex-col justify-center items-start inline-flex">
-                        <div className="self-stretch h-[266px] flex-col justify-start items-start gap-2 flex">
+            return (<div key={event.name} className="w-[90%] self-stretch my-8 flex-col justify-start items-center gap-16 flex m-auto">
+                <div className="bg-white rounded-[20px] border border-teal-600 justify-start items-start xl:inline-flex z-10">
+                    <div className="grow shrink basis-0 self-stretch px-[60px] flex-col justify-center items-start inline-flex py-8 xl:py-0">
+                        <div className="self-stretch flex-col justify-start items-start gap-2 flex">
                             <div className="self-stretch text-slate-900 text-[32px] font-medium font-['General Sans'] leading-[41.60px]">{ event.name }</div>
-                            <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">
+                            <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal py-4 xl:py-0">
                                 <PortableText value={ event.description } />
                             </div>
                         </div>
@@ -46,8 +46,8 @@ export default async function PastEvents() {
                         </div> : <></> }
                     </div>
                     <div className="w-px self-stretch bg-teal-600" />
-                    <div className="h-[422px] flex-col justify-center items-end inline-flex overflow-hidden rounded-r-2xl bg-slate-300">
-                        <Image width={800} height={422} alt="test" src={ imageUrl ? imageUrl : '' } />
+                    <div className="w-full h-[300px] xl:w-[700px] xl:h-[422px] flex-col justify-center items-end inline-flex overflow-hidden xl:rounded-r-2xl rounded-b-2xl xl:rounded-b-none bg-slate-300 relative">
+                        <Image layout="fill" objectFit="cover" alt="test" src={ imageUrl ? imageUrl : '' } />
                     </div>
                 </div>
             </div>);
