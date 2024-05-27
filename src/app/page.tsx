@@ -56,7 +56,7 @@ export default async function Home() {
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
-        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] h-[300px] lg:h-[700px] mt-16 lg:mt-0 bg-slate-300">
+        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] 2xl:w-[700px] h-[300px] lg:h-[700px] mt-16 lg:mt-0 bg-slate-300">
           <Image alt="headerimg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
         </figure>
       </header>
@@ -145,7 +145,7 @@ export default async function Home() {
           <p className="text-[16px] font-medium leading-6">Our Connections</p>
           <p className="text-[36px] font-medium leading-8">Past Sponsors</p>
         </div>
-        <div className="relative h-[103px] w-[270px] lg:w-[832px] xl:w-[1166px] 2xl:w-[1500px] overflow-hidden">
+        <div className="relative h-[103px] w-[270px] md:w-[480px] lg:w-[832px] xl:w-[1166px] 2xl:w-[1300px] overflow-hidden">
           <SponsorScroll images={sponsors.map((img: SanityDocument) => {
             return img.sourceImage ? urlFor(img.sourceImage)?.width(103).height(103).url() : null
           })} />

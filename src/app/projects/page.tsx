@@ -25,20 +25,20 @@ export default async function Projects() {
           <div className="text-center text-green-500 text-5xl font-medium font-['General Sans'] leading-snug">Projects</div>
         </div>
 
-        <div className="w-full px-20 pb-20 flex-col lg:flex-row justify-start items-center gap-[5%] inline-flex mt-10 flex-wrap">
+        <div className="w-full px-4 sm:px-20 pb-20 flex-col lg:flex-row justify-center items-center gap-[5%] inline-flex mt-10 flex-wrap">
           {
             projects.map((project: SanityDocument) => {
               const projImage = project && project.projectImage ? urlFor(project.projectImage)?.url() : '';
 
-              return (<div key={ project.name } className="w-[820px] px-[57.78px] py-[101.11px] bg-slate-900 rounded-[40px] flex-col justify-center items-start gap-[72.22px] flex relative">
+              return (<div key={ project.name } className="w-11/12 md:w-[600px] lg:w-[820px] px-[57.78px] py-[101.11px] bg-slate-900 rounded-[40px] flex-col justify-center items-start gap-[72.22px] flex relative my-4">
               <Image className="rounded-[40px] w-full h-full absolute top-0 left-0 z-10" src={ projImage ? projImage : ''} alt="Consulting Image" layout="fill" objectFit="cover"/>
               <div className="w-full h-full absolute top-0 left-0 bg-slate-900 opacity-80 rounded-[40px] z-20" />
               <div className="flex-col justify-start items-start gap-[21.67px] flex z-20 mb-16 relative">
                 <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
                   <div className="self-stretch flex-col justify-start items-start gap-[14.44px] flex">
                     <div className="text-center text-green-500 text-sm font-medium font-['General Sans'] leading-snug">Projects</div>
-                    <div className="max-w-[649px] self-stretch flex-col justify-start items-start gap-[21.67px] flex">
-                        <a href={`/projects/${ project.slug.current }`}><div className="hover:text-slate-400 active:text-slate-600 transition delay-75 self-stretch text-white text-[56px] font-medium font-['General Sans'] leading-[67.20px]">{ project.name }</div></a>
+                    <div className="self-stretch flex-col justify-start items-start gap-[21.67px] flex">
+                        <a href={`/projects/${ project.slug.current }`}><div className="hover:text-slate-400 active:text-slate-600 transition delay-75 self-stretch text-white text-[32px] sm:text-[42px] md:text-[56px] font-medium font-['General Sans'] leading-[67.20px]">{ project.name }</div></a>
                         <div className="self-stretch text-white text-lg font-normal font-['General Sans'] leading-[27px]">{ project.learnmore }</div>
                     </div>
                   </div>

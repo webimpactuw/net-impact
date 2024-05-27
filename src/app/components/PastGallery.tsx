@@ -34,7 +34,7 @@ export default function PastGallery(props: PastGalleryProps) {
     }
     
     return (
-        <div className="w-full h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20 inline-flex">
+        <div className="hidden md:inline-flex w-full h-[735px] px-16 py-[100px] bg-white justify-start items-center gap-20">
             <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">
                 <div className="self-stretch h-[587.45px] flex-col justify-start items-start gap-6 flex">
                     <div className="self-stretch text-center text-slate-900 text-5xl font-medium leading-[72px]">

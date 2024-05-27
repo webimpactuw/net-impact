@@ -11,7 +11,7 @@ export default async function CurrentInfoBox4() {
     const spotlightImage = spotlight[0].spotlightImg ? urlFor(spotlight[0].spotlightImg)?.url() : '';
 
     return (
-        <div className="lg:w-[640px] w-11/12 lg:h-[572px] lg:m-0 m-auto my-8 flex flex-col rounded-[20px] border-[1px] border-[#2B9575]">
+        <div className="lg:w-[900px] xl:w-[600px] 2xl:w-[710px] w-11/12 lg:h-[572px] lg:m-0 m-auto my-8 flex flex-col rounded-[20px] border-[1px] border-[#2B9575]">
             <div className="lg:h-[328px] p-[48px] flex flex-col justify-center gap-[32px]">
                 <div>
                     <p className="text-[16px] font-medium mb-[8px]">{ spotlight[0].time }</p>

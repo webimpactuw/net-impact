@@ -10,7 +10,7 @@ export default async function CurrentInfoBox3() {
     const projImage = assets[0].projectImage ? urlFor(assets[0].projectImage)?.url() : '';
 
     return (
-        <div className="lg:w-[640px] w-11/12 lg:h-[272px] lg:m-0 m-auto my-8 flex rounded-[20px] border-[1px] border-[#2B9575]">
+        <div className="lg:w-[900px] xl:w-[600px] 2xl:w-[710px] w-11/12 lg:h-[272px] lg:m-0 m-auto my-8 flex rounded-[20px] border-[1px] border-[#2B9575]">
             <figure className="w-1/2 rounded-l-[20px] overflow-hidden relative bg-slate-300">
                 <Image alt="headerimg" src={projImage ? projImage : ''} layout="fill" objectFit="cover" />
             </figure>
