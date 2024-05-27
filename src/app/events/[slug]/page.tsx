@@ -69,7 +69,7 @@ return event ? (
 
     <div className="h-[877px] relative bg-white">
     <div className="h-[625.11px] py-32 mx-16 flex flex-wrap flex-row-reverse gap-6">
-        <figure className="w-[35%] h-[640px] rounded-[20px] relative overflow-hidden">
+        <figure className="w-[35%] h-[640px] rounded-[20px] relative overflow-hidden bg-slate-300">
             <Image src={descImage ? descImage : ''} alt={descImage ? descImage : 'description image'} layout="fill" objectFit="cover" />
         </figure>
         <div className="flex-1">

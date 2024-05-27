@@ -44,8 +44,8 @@ export default async function About() {
           <h1 className="text-center text-[56px] font-medium leading-[120%]">About Us</h1>
           <p className="text-center text-[#2F8097] text-[18px] font-normal leading-[150%]">Who Are We: Introducing Net Impact</p>
         </div>
-        <figure className="w-[90%] h-[400px] lg:h-[700px] rounded-3xl z-10 overflow-hidden relative">
-        <Image alt="aboutImg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
+        <figure className="w-[90%] h-[400px] lg:h-[700px] rounded-3xl z-10 overflow-hidden relative bg-slate-300">
+          <Image alt="aboutImg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
         </figure>
       </header>
 

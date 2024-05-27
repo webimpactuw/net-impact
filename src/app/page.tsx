@@ -56,7 +56,7 @@ export default async function Home() {
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}
-        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] h-[300px] lg:h-[700px] mt-16 lg:mt-0">
+        <figure className="relative rounded-3xl overflow-hidden pointer-events-none w-11/12 lg:w-[609px] h-[300px] lg:h-[700px] mt-16 lg:mt-0 bg-slate-300">
           <Image alt="headerimg" src={headerImage ? headerImage : ''} layout="fill" objectFit="cover" />
         </figure>
       </header>
