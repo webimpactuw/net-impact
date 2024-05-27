@@ -20,6 +20,17 @@ export default function PastGallery(props: PastGalleryProps) {
         if (imgIndex !== props.past.length - 1) {
             setImgIndex(imgIndex + 1);
         }
+        console.log(imgIndex);
+    }
+
+    const getOffset = (offset: number): string => {
+        if (offset === 0) {
+            return '33%';
+        }
+        else if (offset < 0) {
+            return '12%';
+        }
+        return '58%';
     }
     
     return (
@@ -29,35 +40,45 @@ export default function PastGallery(props: PastGalleryProps) {
                     <div className="self-stretch text-center text-slate-900 text-5xl font-medium leading-[72px]">
                         Past Summits
                     </div>
-                        <div className="w-full h-[467.45px] relative">
+                        <div className="w-full h-[800px] relative">
                             <div>
-                                <figure className="w-1/3 h-[363px] left-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10 overflow-hidden">
-                                    { imgIndex !== 0 ? <Image src={  props.past[imgIndex - 1].imageSource } alt={ props.past[imgIndex - 1].imageSource } layout="fill" objectFit="cover" /> : <></> }
-                                </figure>
-                                <figure className="w-2/3 h-[416px] rounded-[20px] relative shadow m-auto z-20 overflow-hidden">
-                                    <Image src={ props.past[imgIndex].imageSource } alt={ props.past[imgIndex].imageSource } layout="fill" objectFit="cover" />
-                                </figure>
-                                <figure className="w-1/3 h-[363px] right-[50px] top-[26.89px] absolute bg-black/opacity-40 rounded-[20px] shadow z-10 overflow-hidden">
-                                    { imgIndex !== props.past.length - 1 ? <Image src={ props.past[imgIndex + 1].imageSource } alt={ props.past[imgIndex + 1].imageSource } layout="fill" objectFit="cover" /> : <></> }
-                                </figure>
+                                {
+                                    props.past.map((img: {imageSource: string, subtitle: string}, index: number) => {
+                                        return (
+                                            <figure key={index} className="rounded-[20px] absolute shadow overflow-hidden transition-all duration-500" style={{
+                                                width: (index >= imgIndex - 1 && index <= imgIndex + 1) ? '33.33333%' : 0,
+                                                height: (index === imgIndex) ? '416px' : '363px',
+                                                left: getOffset(index - imgIndex),
+                                                top: (index !== imgIndex) ? '26.89px' : 0,
+                                                zIndex: (index === imgIndex) ? 20 : 10,
+                                                margin: (index === imgIndex) ? 'auto' : 0
+                                            }}>
+                                                <Image src={ img.imageSource } alt={ img.imageSource } layout="fill" objectFit="cover" />
+                                            </figure>
+                                        );
+                                    })
+                                }
                             </div>
-                            <div className="text-center text-slate-900 text-[25px] mt-4 font-medium leading-[37.50px]">
+                            <div className="text-center text-slate-900 text-[25px] mt-[450px] font-medium leading-[37.50px]">
                                 <p>{ props.past[imgIndex].subtitle }</p>
                                 <div className="h-[0px] px-[50px] justify-center items-center gap-[5px] inline-flex">
-                                    <div className="w-2 h-2 bg-neutral-400 rounded-full" />
-                                    <div className="w-2 h-2 bg-zinc-300 rounded-full" />
-                                    <div className="w-2 h-2 bg-zinc-300 rounded-full" />
+                                    {
+                                        props.past.map((_, index) => {
+                                            return (<div key={index} className="w-2 h-2 bg-neutral-400 rounded-full" style={{
+                                                backgroundColor: index === imgIndex ? 'rgb(163, 163, 163)' : 'rgb(212, 212, 216)'
+                                            }} />)
+                                        })
+                                    }
                                 </div>
                             </div>
-                             <div className="left-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-40 cursor-pointer" style={{
-                                zIndex: imgIndex === 0 ? 0 : 20,
+                        <div className="left-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-60 cursor-pointer" style={{
                                 color: imgIndex === 0 ? 'gray' : ''
                             }} onClick={decrement}>&lt;</div>
-                            <div className="right-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-40 cursor-pointer" style={{
+                        <div className="right-[5%] top-[181.5px] absolute text-center text-[50px] font-bold leading-[75px] transition-all opacity-100 hover:opacity-60 cursor-pointer" style={{
                                 zIndex: imgIndex === props.past.length - 1 ? 0 : 20,
                                 color: imgIndex === props.past.length - 1 ? 'gray' : ''
                             }} onClick={increment}>&gt;</div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
