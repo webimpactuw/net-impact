@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
+
+import NavBar from "../components/NavBar";
+
+import Image from 'next/image'
 import ContactsList from "../components/ContactsList"
 import ContactsForm from "../components/ContactsForm"
 import { sanityFetch, urlFor } from '@/sanity/client'
 import { SanityDocument } from 'next-sanity'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -42,6 +45,7 @@ export default async function Contacts() {
         <div className = "z-20">
           <ContactsList instagram={ socials[0].instagram } linkedin={ socials[0].linkedin } slack={ socials[0].slack } />
         </div>
+        
       </div>
       
       

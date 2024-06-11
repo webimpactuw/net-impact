@@ -9,6 +9,9 @@ import { sanityFetch, urlFor } from "@/sanity/client";
 import SponsorScroll from "./components/SponsorScroll";
 
 const ASSET_QUERY = `*[_type == "assets"]`;
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import imageUrlBuilder from "@sanity/image-url";
+import HomeNewsletter from "./components/HomeNewsletter"
 const SPONSOR_QUERY = `*[_type == "sponsors"]`;
 
 export const dynamic = 'force-dynamic';
@@ -48,11 +51,10 @@ export default async function Home() {
           <div className="lg:w-[90%] z-20 text-center lg:text-left">
             <p className="text-[rgb(17,18,45)] text-[23px] font-medium">We aim to inspire environmental action and increase awareness through Education, Activism, & Career Development.</p>
           </div>
-          <div className="flex gap-[4%] text-[18px] font-medium">                  
-            <input name= "user_email" id="email" type="email" className="w-3/4 h-[48px] p-4 bg-white text-gray-900 text-[11px] sm:text-sm border border-[#2B9575] rounded-full" placeholder ="Join our team by adding your email..." required />
-            <div className="cursor-pointer w-1/3 xl:w-1/5 flex bg-[#2B9575] uppercase rounded-full justify-center items-center sm:px-6 py-3 hover:bg-teal-900 active:bg-teal-400 transition delay-15009  gap-2 ">
-              <div className="text-white cursor-pointer text-base font-normal font-['General Sans'] leading-normal">Join Us</div>
-            </div>
+          <div className="flex gap-[4%] text-[18px] font-medium">
+            <div className = "w-full">
+              <HomeNewsletter></HomeNewsletter>
+            </div>  
           </div>
         </div>
         {/* TODO: consider making this more static/less responsive, only changing at media breakpoints */}

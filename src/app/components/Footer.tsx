@@ -1,5 +1,5 @@
 'use client';
-
+import FooterNewsletter from "./Newsletter"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SanityDocument } from "next-sanity";
@@ -11,7 +11,7 @@ type FooterProps = {
 
 export default function Footer(props: FooterProps) {
     const pathname = usePathname(); 
-    const isSanityStudio = pathname.startsWith('/studio');
+    const isSanityStudio = pathname !== null ? pathname.startsWith('/studio') : false
 
     return !isSanityStudio ? (
         <footer>
@@ -22,23 +22,19 @@ export default function Footer(props: FooterProps) {
                             <div className="self-stretch text-slate-900 text-lg font-medium font-['General Sans'] leading-[27px]">Join our newsletter</div>
                             <div className="self-stretch text-slate-900 text-base font-normal font-['General Sans'] leading-normal">Get connected to know our updates!</div>
                         </div>
-                        <div className="w-full sm:w-2/3 grow shrink basis-0 self-stretch flex-col justify-start items-start gap-4 inline-flex">
-                            <div className="self-stretch justify-start items-start gap-4 inline-flex">
+                        <div className=" w-full sm:w-2/3 grow shrink basis-0 self-stretch flex-col justify-start items-start gap-4 inline-flex">
+                            <div className="self-stretch justify-end items-end gap-4 inline-flex">
                                   
                                    
                                        
-                                        <div className="flex h-200 w-full">
+                                <div className= "w-[80%] items-end gap-4">
+                                    <FooterNewsletter></FooterNewsletter>
+                                </div>
                                         
-                                            <input name= "user_email" id="email" type="email" className="w-full h-[48px] p-4 border text-gray-900 text-sm rounded-lg border-black " placeholder ="Enter your email" required />
-                                        </div> 
                                         
-                               
-                                <a href="" target="_blank">
-                                    <div className="cursor-pointer px-6 py-3 bg-teal-600 hover:bg-teal-900 active:bg-teal-400 transition delay-75 rounded-lg justify-center items-center gap-2 flex">
-                                        <div className="text-white text-base font-normal font-['General Sans'] leading-normal">Subscribe</div>
-                                    </div>
-                                </a>
+                          
                             </div>
+
                         </div>
                     </div>
                     <div className="self-stretch h-px bg-slate-100" />
