@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import NavBar from "../components/NavBar";
+
 import Image from 'next/image'
 import ContactsList from "../components/ContactsList"
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function Contacts() {
         <div className = "z-20">
           <ContactsList/>
         </div>
+        
       </div>
       
       

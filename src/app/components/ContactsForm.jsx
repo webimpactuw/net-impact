@@ -1,24 +1,31 @@
 'use client'
 import emailjs from '@emailjs/browser';
-import React, { useRef } from 'react';
-
+import React, { useRef, useState} from 'react';
+import { z } from "zod";
 export default function ContactsForm() {
+
+    const [status, setStatus] = useState("idle");  
+
     const form = useRef();
+    
 
     const sendEmail = (e) => {
+    
     e.preventDefault();
 
     emailjs
       .sendForm('service_rpu35te', //service id goes here
        'template_z6dmo6f', //template id goes here
         form.current, {
-        publicKey: 'ZAC8E57VINuHlqUS8', //public key goes here
+        publicKey: 'fl53x_ue_JXSjQB-da', //public key goes here
       })
       .then(
         () => {
+          setStatus("success")
           console.log('SUCCESS!');
         },
         (error) => {
+          setStatus("error")
           console.log('FAILED...', error.text);
         },
       );
@@ -59,8 +66,8 @@ export default function ContactsForm() {
             </div>
           
 
-          {/* Terms checkbox*/}
-          <div className = "flex gap-4 mt-6">
+          {/* Terms checkbox
+           <div className = "flex gap-4 mt-6">
             <input type="checkbox" id="some_id" className="
                 appearance-none w-4 h-4 border border-black  bg-white
                   mt-1 shrink-0
@@ -68,7 +75,16 @@ export default function ContactsForm() {
             />
             <h1>I accept the Terms</h1>
           </div>
-
+          */}
+         
+         <div className="server-message pt-4 text-green-600">
+            {status === "success" ? (
+              <p className="text-green-600">Successfully sent your message!</p>
+            ) : null}
+            {status === "error" ? (
+              <p className="text-orange-600">There was an error with sending your message. Please email {} instead.</p>
+            ) : null}
+          </div>
           {/*Submit button */}
 
           
