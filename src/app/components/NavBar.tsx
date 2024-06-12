@@ -20,7 +20,7 @@ export default function NavBar(props: NavBarProps){
     }
 
     const pathname = usePathname(); 
-    const isSanityStudio = pathname.startsWith('/studio');
+    const isSanityStudio = pathname !== null ? pathname.startsWith('/studio'): false;
 
     return !isSanityStudio ? ( 
         <header className = "md:flex md:flex-row flex-col items-center px-8 sm:px-16 py-5 justify-between md:absolute w-full font-medium z-20"> {/*60 px horizontal 20 px vertical */}
